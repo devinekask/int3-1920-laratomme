@@ -1,19 +1,22 @@
 <?php
 
-class Controller {
+class Controller
+{
 
   public $route;
   protected $viewVars = array();
   protected $env = 'development';
 
-  public function filter() {
+  public function filter()
+  {
     if (basename(dirname(dirname(__FILE__))) != 'src') {
       $this->env = 'production';
     }
     call_user_func(array($this, $this->route['action']));
   }
 
-  public function render() {
+  public function render()
+  {
     // set js variable according to environment (development / production)
     $this->set('js', '<script src="http://localhost:8080/script.js"></script>'); // webpack dev server
     // NEW : CSS
@@ -32,11 +35,13 @@ class Controller {
     }
   }
 
-  public function set($variableName, $value) {
+  public function set($variableName, $value)
+  {
     $this->viewVars[$variableName] = $value;
   }
 
-  private function createViewVarWithContent() {
+  private function createViewVarWithContent()
+  {
     extract($this->viewVars, EXTR_OVERWRITE);
     ob_start();
     require __DIR__ . '/../view/' . strtolower($this->route['controller']) . '/' . $this->route['action'] . '.php';
@@ -44,9 +49,9 @@ class Controller {
     $this->set('content', $content);
   }
 
-  private function renderInLayout() {
+  private function renderInLayout()
+  {
     extract($this->viewVars, EXTR_OVERWRITE);
     include __DIR__ . '/../view/layout.php';
   }
-
 }

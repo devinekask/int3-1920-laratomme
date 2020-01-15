@@ -1,31 +1,32 @@
 <?php
 
-class DAO {
+class DAO
+{
 
   // Properties
-  private static $dbHost = "localhost";
-	private static $dbName = "todos";
-	private static $dbUser = "todos";
-	private static $dbPass = "todos";
-	private static $sharedPDO;
-	protected $pdo;
+  private static $sharedPDO;
+  protected $pdo;
 
   // Constructor
-	function __construct() {
+  function __construct()
+  {
 
-		if(empty(self::$sharedPDO)) {
-			self::$sharedPDO = new PDO("mysql:host=" . self::$dbHost . ";dbname=" . self::$dbName, self::$dbUser, self::$dbPass);
-			self::$sharedPDO->exec("SET CHARACTER SET utf8");
-			self::$sharedPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-			self::$sharedPDO->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-		}
+    if (empty(self::$sharedPDO)) {
 
-		$this->pdo =& self::$sharedPDO;
+      $dbHost = getenv('PHP_DB_HOST') ?: "localhost";
+      $dbName = getenv('PHP_DB_DATABASE') ?: "boekit";
+      $dbUser = getenv('PHP_DB_USERNAME') ?: "boekit";
+      $dbPass = getenv('PHP_DB_PASSWORD') ?: "boekit2020";
 
-	}
+      self::$sharedPDO = new PDO("mysql:host=" . $dbHost . ";dbname=" . $dbName, $dbUser, $dbPass);
+      self::$sharedPDO->exec("SET CHARACTER SET utf8");
+      self::$sharedPDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      self::$sharedPDO->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
+    }
+
+    $this->pdo = &self::$sharedPDO;
+  }
 
   // Methods
 
 }
-
- ?>
