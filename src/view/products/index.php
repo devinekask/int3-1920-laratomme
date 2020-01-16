@@ -78,6 +78,7 @@
               <!-- <?php echo '<img src="' . $productImage['image'] . '" alt="' . $product['name'] . '" />'; ?> -->
             </div>
             <p class="product-title"><?php echo $product['name']; ?></p>
+            <!-- link naar detailpagina in naam en image -->
             <div>
               <p class="categorie"><?php echo $product['categorie']; ?></p>
             </div>
