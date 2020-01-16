@@ -12,23 +12,25 @@
   <div class="page">
     <header class="header">
 
-      <!-- Insert logo Humo -->
-      <h1 class="hidden">Webshop Humo</h1>
-      <img class="logo_humo" src="./src/assets/logo_humo" alt="logo_humo">
-      <div class="navigation_main">
-        <nav>
+      <nav>
+        <div>
           <ul>
             <li>Home</li>
             <li>Actua</li>
             <li>Humor</li>
             <li>Tv/Film</li>
+          </ul>
+        </div>
+        <div><img class="logo_humo" src="./src/assets/logo_humo" alt="logo_humo"></div>
+        <div>
+          <ul>
             <li>Muziek</li>
             <li>Boeken</li>
             <li><a href="index.php">Webshop</a></li>
             <li><a href="index.php?page=cart"><?php echo $numItems; ?>Item(s)<img src="./src/assets/cart_icon" alt="cart_icon"></a></li>
           </ul>
-        </nav>
-      </div>
+        </div>
+      </nav>
 
       <?php
       if (!empty($_SESSION['error'])) {
