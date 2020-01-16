@@ -42,24 +42,28 @@
 </section>
 
 <section>
-  <div>
-    <?php echo '<img src="' . $product_image['image'] . '" alt="' . $product['name'] . '" />'; ?>
-  </div>
-  <header>
-    <h3 class="product-title"><?php echo $product['name']; ?></h3>
-  </header>
-  <div>
-    <p class="categorie"><?php echo $product['categorie']; ?></p>
-  </div>
-  <div>
-    <p class="price"><?php echo money_format("%i", $product['price']); ?></p>
-  </div>
-  <div>
-    <form method="post" action="index.php?page=cart">
-      <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>" />
-      <button class="btn-add" type="submit" name="action" value="add"></button>
-    </form>
-  </div>
+
+  <?php foreach ($products as $product) : ?>
+    <div>
+      <!-- <?php echo '<img src="' . $productImage['image'] . '" alt="' . $product['name'] . '" />'; ?> -->
+    </div>
+    <header>
+      <h3 class="product-title"><?php echo $product['name']; ?></h3>
+    </header>
+    <div>
+      <p class="categorie"><?php echo $product['categorie']; ?></p>
+    </div>
+    <div>
+      <p class="price"><?php echo money_format("%i", $product['price']); ?></p>
+    </div>
+    <div>
+      <form method="post" action="index.php?page=cart">
+        <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>" />
+        <button class="btn-add" type="submit" name="action" value="add"></button>
+      </form>
+    </div>
+  <?php endforeach; ?>
+
 </section>
 
 <section>
