@@ -11,7 +11,7 @@
 
 <body class="layout">
 
-  <header class=" header">
+  <header class="header">
     <div class="width_content">
       <ul>
         <li>Home</li>

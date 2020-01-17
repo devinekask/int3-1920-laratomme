@@ -6,15 +6,17 @@
   --colorSecondary: #f8f8f4;
   --colorDarkGray: #504d4e;
   --colorLightGray: #e5e5e5;
+  --paddingLittle: .63rem; /*10px*/
   --paddingSmall: .94rem; /* 15px */
   --paddingMedium: 1.25rem; /* 20px */
   --paddingLarger: 1.56rem; /* 25px */
   --paddingBig: 1.88rem; /* 30px */
+  --paddingBigger: 2.5rem; /* 40px */
   --fontSmall: .88rem; /* 12px */
-  --fontRegular: 1.13rem; /* 18px */
-  --fontMedium: 1.25rem; /* 20px */
+  --fontRegular: 1rem; /* 16px */
+  --fontMedium: 1.13rem; /* 18px */
   --fontLarger: 1.38rem; /* 22px */
-  --fontBig: 1.75rem; /* 28px */
+  --fontBig: 1.63rem; /* 26px */
   --font: 'Roboto', sans-serif;
   --textUppercase: uppercase;
   --fontWeightRegular: 400;

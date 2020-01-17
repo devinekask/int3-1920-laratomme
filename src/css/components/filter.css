@@ -12,3 +12,15 @@
 .filter_submit {
   text-align: center;
 }
+
+.searchinput {
+  background: url(/assets/img/icons/search.svg) no-repeat;
+  padding-left: var(--paddingLittle);
+  background-position: right center;
+  background-size: 25px 15px;
+  border: 1px solid #e5e5e5;
+  color: #858585;
+  font-size: .88rem;
+  padding-top: var(--paddingLittle);
+  padding-bottom: var(--paddingLittle);
+}

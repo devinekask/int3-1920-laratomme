@@ -2,24 +2,22 @@ body {
   font-size: var(--fontRegular);
   font-family: var(--font);
   font-weight: var(--fontWeightRegular);
-
-  @media (--only-medium-screen) {
-    font-size: var(--fontMedium);
-  }
+  line-height: 150%;
 }
 
-h1, .h1-like {
+h1 {
   font-size: var(--fontBig);
   font-family: var(--font);
   font-weight: var(--fontWeightBold);
-  margin: 0 0 1rem;
+  color: var(--colorWhite);
+  background-color: var(--colorRed);
+  width: fit-content;
+  padding: var(--paddingLittle);
+  text-transform: var(--textUppercase);
 }
 
-h2, .h2-like {
-  display: block;
-  font-size: var(--fontSmall);
+h2 {
+  font-size: var(--fontLarger);
   font-family: var(--font);
-  font-weight: var(--fontWeightRegular);
-  text-transform: uppercase;
-  margin: 0 0 .65rem;
+  font-weight: var(--fontWeightBold);
 }

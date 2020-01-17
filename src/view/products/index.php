@@ -1,12 +1,13 @@
 <!-- webshop all products page -->
 <section class="title_webshop">
   <h1 class="header_title">Webshop Humo</h1>
+  <img src="/assets/img/dotted.png" alt="dotted line">
 </section>
 
 <section class="campaign">
   <div class="campaign_content">
     <div class="campaign_image">
-      <img src="" alt="campaign_books_humo">
+      <img src="/assets/img/boekencovers.jpg" alt="campaign_books_humo">
     </div>
     <div class="campaign_information">
       <div>
@@ -14,8 +15,8 @@
         <p>Ontvang kortingsbon bij Humo en bestel je boek online via de webshop.</p>
         <p>Laat je meeslepen door Humo’s top 10 SF, met onder andere The Handmaids Tale en Neuromancer.</p>
       </div>
-      <div>
-        <p class="campaign_button"><a href=""></a>Bekijk boeken</p>
+      <div class="arrow_moveout">
+        <p><a class="campaign_button" href="">Bekijk boeken <span class="arrow_icon"></span></a></p>
         <!-- link naar boeken categorie in webshop -->
       </div>
     </div>
@@ -29,6 +30,7 @@
       <div class="searchbox">
         <form action="" role="search">
           <input class="searchinput" type="search" maxlength="512" aria-label="Search" placeholder="Zoek in shop...">
+          <span class="search_icon"></span>
         </form>
       </div>
       <div class="filter_option">

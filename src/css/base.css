@@ -1,6 +1,8 @@
 
 html {
   box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 /* stylelint-disable */
@@ -15,4 +17,6 @@ body {
   font-size: var(--fontRegular);
   background-color: var(--colorLightest);
   color: var(--colorText);
+  max-width: 100%;
+  overflow-x: hidden;
 }
