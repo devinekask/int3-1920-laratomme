@@ -1,23 +1,29 @@
 :root {
-  --colorLightest: white;
-  --colorText: #211f1f;
-  --colorMain: #f9d2cb;
-  --colorSecondary: #a3f4dc;
-  --colorGray: #fafafa;
-  --colorGrayDark: #9c9c9c;
+  --colorWhite: white;
+  --colorText: black;
+  --colorHumoWhite: #fdfefc;
+  --colorRed: #e2001a;
+  --colorSecondary: #f8f8f4;
+  --colorDarkGray: #504d4e;
+  --colorLightGray: #e5e5e5;
   --paddingSmall: .94rem; /* 15px */
   --paddingMedium: 1.25rem; /* 20px */
+  --paddingLarger: 1.56rem; /* 25px */
   --paddingBig: 1.88rem; /* 30px */
   --fontSmall: .75rem; /* 12px */
   --fontRegular: 1.13rem; /* 18px */
   --fontMedium: 1.25rem; /* 20px */
+  --fontLarger: 1.38rem; /* 22px */
   --fontBig: 1.75rem; /* 28px */
   --font: 'Roboto', sans-serif;
+  --textUppercase: uppercase;
   --fontWeightRegular: 400;
-  --fontWeightBold: 500;
+  --fontWeightMedium: 500;
+  --fontWeightBold: 700;
+  --largeWidth: 1076px;
 }
 
-@custom-media --only-small-screen (width >= 320px);
-@custom-media --only-regular-screen (width >= 768px);
-@custom-media --only-medium-screen (width >= 1280px);
+@custom-media --only-small-screen (width <= 320px);
+@custom-media --only-regular-screen (width <= 768px);
+@custom-media --only-medium-screen (width <= 1280px);
 @custom-media --only-large-screen (width >= 1440px);

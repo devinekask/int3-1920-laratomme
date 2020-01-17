@@ -27,8 +27,8 @@
     <aside class="controls_webshop">
       <h3>Filter producten:</h3>
       <div class="searchbox">
-        <form action="" role="search"><input type="search" maxlength="512" aria-label="Search" placeholder="Zoek in shop...">
-          <button type="submit" title="Search">
+        <form action="" role="search">
+          <input class="searchinput" type="search" maxlength="512" aria-label="Search" placeholder="Zoek in shop...">
         </form>
       </div>
       <div class="filter_option">

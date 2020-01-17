@@ -1,17 +1,48 @@
 .header {
+  width: 100%;
+  background-color: var(--colorSecondary);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+  display: flex;
+  justify-content: center;
+}
+
+.width_content {
+  width: var(--largeWidth);
   display: inline-flex;
   justify-content: space-evenly;
 }
 
 .header ul {
-  display: flex;
   list-style-type: none;
+  display: contents;
+  line-height: 70px;
 }
 
 .header li {
-  padding-left: 1rem;
+  text-transform: var(--textUppercase);
+  font-size: var(--fontLarger);
+  font-weight: var(--fontWeightBold);
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0;
+
 }
 
 .header img {
   align-self: center;
+}
+
+.header a {
+  text-decoration: none;
+  padding-left: var(--paddingMedium);
+  padding-right: var(--paddingMedium);
+  color: var(--colorRed);
+  background-color: white;
+  display: block;
+  line-height: 70px;
+}
+
+.header li:hover {
+  color: var(--colorRed);
+  transition: .2s ease-in-out color;
 }

@@ -4,25 +4,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   <title>Webshop Humo</title>
   <?php echo $css; ?>
 </head>
 
 <body class="layout">
+
   <header class=" header">
-    <ul>
-      <li>Home</li>
-      <li>Actua</li>
-      <li>Humor</li>
-      <li>Tv/Film</li>
-    </ul>
-    <img class="logo_humo" src="./src/assets/logo_humo" alt="logo_humo">
-    <ul>
-      <li>Muziek</li>
-      <li>Boeken</li>
-      <li><a href="index.php">Webshop</a></li>
-      <!-- <li><a href="index.php?page=cart"><?php echo $numItems; ?>Item(s)<img src="./src/assets/cart_icon" alt="cart_icon"></a></li> -->
-    </ul>
+    <div class="width_content">
+      <ul>
+        <li>Home</li>
+        <li>Actua</li>
+        <li>Humor</li>
+        <li>Tv/Film</li>
+      </ul>
+      <img class="logo_humo" src="./assets/img/humo_logo.svg" alt="logo_humo">
+      <ul>
+        <li>Muziek</li>
+        <li>Boeken</li>
+        <li><a href="index.php">Webshop</a></li>
+        <!-- <li><a href="index.php?page=cart"><?php echo $numItems; ?>Item(s)<img src="./src/assets/cart_icon" alt="cart_icon"></a></li> -->
+      </ul>
+    </div>
   </header>
 
   <?php
@@ -63,7 +67,9 @@
       </ul>
     </div>
   </footer>
+
   <?php echo $js; ?>
+
 </body>
 
 </html>

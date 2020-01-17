@@ -29,9 +29,9 @@ class ProductsController extends Controller
       header('Location: index.php');
     }
 
-    $productImages = $this->productImagesDAO->selectImagesByProductId($product['id']);
+    // $productImages = $this->productImagesDAO->selectImagesByProductId($product['id']);
 
     $this->set('product', $product);
-    $this->set('productImages', $productImages);
+    // $this->set('productImages', $productImages);
   }
 }
