@@ -1,27 +1,12 @@
 .layout {
-  @media (--only-medium-screen) {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: min-content auto;
-    height: 100vh;
-  }
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 70px 1fr 150px;
+  height: 100vh;
 }
 
-.header {
-  @media (--only-medium-screen) {
-    grid-column: 1;
-  }
-}
-
-.prices {
-  @media (--only-medium-screen) {
-    grid-column: 1;
-  }
-}
-
-.content {
-  @media (--only-medium-screen) {
-    grid-column: 2;
-    grid-row: 1 / span 2;
-  }
+.main {
+  display: grid;
+  grid-template-columns: 1fr 1076px 1fr;
+  grid-template-rows: 124px 312px 1fr;
 }
