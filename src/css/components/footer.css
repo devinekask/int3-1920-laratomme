@@ -1,6 +1,27 @@
 .footer ul {
   list-style-type: none;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 0;
+  color: var(--colorWhite);
+  font-size: var(--fontSmall);
+}
+
+.footer {
+  background-color: var(--colorText);
+  display: flex;
+  justify-content: center;
+}
+
+.flex_footer {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex li {
+  margin-right: var(--paddingMedium);
 }
