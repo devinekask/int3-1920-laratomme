@@ -1,0 +1,14 @@
+.controls_webshop h3 {
+  margin-bottom: var(--paddingBig);
+  text-align: center;
+}
+
+.controls_webshop div {
+  margin-bottom: var(--paddingMedium);
+  margin-left: var(--paddingSmall);
+  margin-right: var(--paddingSmall);
+}
+
+.filter_submit {
+  text-align: center;
+}

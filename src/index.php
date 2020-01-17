@@ -3,6 +3,8 @@ session_start();
 ini_set('display_errors', true);
 error_reporting(E_ALL);
 
+setlocale(LC_ALL, 'nl_BE');
+
 // basic .env file parsing
 if (file_exists("../.env")) {
   $variables = parse_ini_file("../.env", true);

@@ -4,15 +4,21 @@
 </section>
 
 <section class="campaign">
-  <div class="campaign_image">
-    <img src="" alt="campaign_books_humo">
-  </div>
-  <div class="campaign_information">
-    <h2>10 weken lang een Science Ficiton boek bij Humo!</h2>
-    <p>Ontvang kortingsbon bij Humo en bestel je boek online via de webshop.</p>
-    <p>Laat je meeslepen door Humo’s top 10 SF, met onder andere The Handmaids Tale en Neuromancer.</p>
-    <p><a href=""></a>Bekijk boeken</p>
-    <!-- link naar boeken categorie in webshop -->
+  <div class="campaign_content">
+    <div class="campaign_image">
+      <img src="" alt="campaign_books_humo">
+    </div>
+    <div class="campaign_information">
+      <div>
+        <h2>10 weken lang een Science Ficiton boek bij Humo!</h2>
+        <p>Ontvang kortingsbon bij Humo en bestel je boek online via de webshop.</p>
+        <p>Laat je meeslepen door Humo’s top 10 SF, met onder andere The Handmaids Tale en Neuromancer.</p>
+      </div>
+      <div>
+        <p class="campaign_button"><a href=""></a>Bekijk boeken</p>
+        <!-- link naar boeken categorie in webshop -->
+      </div>
+    </div>
   </div>
 </section>
 
@@ -72,27 +78,31 @@
         </div>
       </div>
       <div class="products_list">
-        <div class="product">
-          <?php foreach ($products as $product) : ?>
-            <div>
-              <!-- <?php echo '<img src="' . $productImage['image'] . '" alt="' . $product['name'] . '" />'; ?> -->
+        <?php foreach ($products as $product) : ?>
+          <div class="product">
+            <div class="product_image">
+              <!-- //<?php echo '<img src="' . $productImage['image'] . '" alt="' . $product['name'] . '" />'; ?> -->
             </div>
-            <p class="product-title"><?php echo $product['name']; ?></p>
-            <!-- link naar detailpagina in naam en image -->
-            <div>
-              <p class="categorie"><?php echo $product['categorie']; ?></p>
+            <div class="product_information">
+              <div>
+                <p class="product-title"><?php echo $product['name']; ?></p>
+                <!-- link naar detailpagina in naam en image -->
+                <div>
+                  <!-- <p class="categorie"><?php echo $product['Categorie']; ?></p> -->
+                </div>
+                <div>
+                  <p class="price"> <?php echo money_format("%i", $product['price']); ?></p>
+                </div>
+              </div>
+              <div>
+                <form method="post" action="index.php?page=cart">
+                  <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>" />
+                  <button class="btn-add" type="submit" name="action" value="add">+</button>
+                </form>
+              </div>
             </div>
-            <div>
-              <p class="price"><?php echo money_format("%i", $product['price']); ?></p>
-            </div>
-            <div>
-              <form method="post" action="index.php?page=cart">
-                <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>" />
-                <button class="btn-add" type="submit" name="action" value="add"></button>
-              </form>
-            </div>
-          <?php endforeach; ?>
-        </div>
+          </div>
+        <?php endforeach; ?>
       </div>
     </div>
   </div>

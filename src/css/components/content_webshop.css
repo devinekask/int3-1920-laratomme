@@ -1,3 +1,23 @@
 .content_webshop {
   grid-column: 2;
 }
+
+.wrapper_shop {
+  display: flex;
+  justify-content: space-between;
+}
+
+.refinements_webshop {
+  display: flex;
+  justify-content: space-between;
+}
+
+.products_list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: var(--paddingMedium);
+}
+
+.controls_webshop {
+  margin-right: var(--paddingBig);
+}

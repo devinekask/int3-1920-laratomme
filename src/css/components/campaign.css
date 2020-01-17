@@ -1,3 +1,20 @@
 .campaign {
   grid-column: 2;
+  align-self: center;
+}
+
+.campaign_content {
+  padding: var(--paddingMedium);
+  display: flex;
+  justify-content: flex-start;
+}
+
+.campaign_image {
+  margin-right: var(--paddingBig);
+}
+
+.campaign_information {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }

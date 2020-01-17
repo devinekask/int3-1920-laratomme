@@ -5,9 +5,9 @@
   --colorSecondary: #a3f4dc;
   --colorGray: #fafafa;
   --colorGrayDark: #9c9c9c;
-  --spacerSmall: .75rem; /* 12px */
-  --spacerRegular: 1rem; /* 16px */
-  --spacerBig: 1.88rem; /* 30px */
+  --paddingSmall: .94rem; /* 15px */
+  --paddingMedium: 1.25rem; /* 20px */
+  --paddingBig: 1.88rem; /* 30px */
   --fontSmall: .75rem; /* 12px */
   --fontRegular: 1.13rem; /* 18px */
   --fontMedium: 1.25rem; /* 20px */

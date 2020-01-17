@@ -10,21 +10,19 @@
 
 <body class="layout">
   <header class=" header">
-    <nav class="header_menu">
-      <ul>
-        <li>Home</li>
-        <li>Actua</li>
-        <li>Humor</li>
-        <li>Tv/Film</li>
-      </ul>
-      <img class="logo_humo" src="./src/assets/logo_humo" alt="logo_humo">
-      <ul>
-        <li>Muziek</li>
-        <li>Boeken</li>
-        <li><a href="index.php">Webshop</a></li>
-        <!-- <li><a href="index.php?page=cart"><?php echo $numItems; ?>Item(s)<img src="./src/assets/cart_icon" alt="cart_icon"></a></li> -->
-      </ul>
-    </nav>
+    <ul>
+      <li>Home</li>
+      <li>Actua</li>
+      <li>Humor</li>
+      <li>Tv/Film</li>
+    </ul>
+    <img class="logo_humo" src="./src/assets/logo_humo" alt="logo_humo">
+    <ul>
+      <li>Muziek</li>
+      <li>Boeken</li>
+      <li><a href="index.php">Webshop</a></li>
+      <!-- <li><a href="index.php?page=cart"><?php echo $numItems; ?>Item(s)<img src="./src/assets/cart_icon" alt="cart_icon"></a></li> -->
+    </ul>
   </header>
 
   <?php
