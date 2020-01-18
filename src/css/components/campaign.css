@@ -22,9 +22,9 @@
 
 .campaign_button {
   background-color: var(--colorWhite);
-  border: .5px solid black;
+  border: .5px solid var(--colorText);
   box-sizing: border-box;
-  box-shadow: 0 3px 0 black;
+  box-shadow: 0 3px 0 var(--colorText);
   width: fit-content;
   padding-top: var(--paddingLittle);
   padding-bottom: var(--paddingLittle);

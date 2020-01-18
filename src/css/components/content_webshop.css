@@ -1,5 +1,6 @@
 .content_webshop {
   grid-column: 2;
+  margin-top: var(--paddingBigger);
 }
 
 .wrapper_shop {

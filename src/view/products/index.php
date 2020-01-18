@@ -26,30 +26,30 @@
 <section class="content_webshop">
   <div class="wrapper_shop">
     <aside class="controls_webshop">
-      <h3>Filter producten:</h3>
+      <h3>Filters</h3>
       <form method="GET" action="index.php">
-        <div class="searchbox">
+        <div class="searchbox filter_item">
           <input name="search" class="searchinput" type="search" maxlength="512" aria-label="Search" placeholder="Zoek in shop...">
           <span class="search_icon"></span>
         </div>
-        <div class="filter_option">
-          <p>Filter op prijs</p>
-          <p>Van €2 tot €60</p>
-          <!-- vul prijs hier in via js -->
-          <input name="price" type="range" min="1" max="100" value="50" class="price-slider" id="price-slider">
+        <div class="filter_option filter_item">
+          <p class="filter_red">Filter op prijs</p>
+          <p>Prijs tot €60</p>
+          <input name="price" type="range" min="1" max="100" value="50" class="slider" id="price">
         </div>
-        <div class="filter_option">
-          <p>Selecteer een categorie</p>
+        <div class="filter_option filter_item">
+          <p class="filter_red">Selecteer een categorie</p>
           <div class="categorie_options">
             <?php foreach ($categories as $categorie) : ?>
               <div>
-                <input name="categories[]" value="<?php echo $categorie['id']; ?>" type="checkbox"><?php echo $categorie['name']; ?>
+                <input name="categories[]" value="<?php echo $categorie['id']; ?>" type="checkbox">
+                <label for="<?php echo $categorie['id']; ?>" class="checkbox"><?php echo $categorie['name']; ?></label>
               </div>
             <?php endforeach; ?>
           </div>
         </div>
-        <div class="filter_submit">
-          <button type="submit" name="action" value="filter">Filter</button>
+        <div class="filter_submit filter_item">
+          <button type="submit" name="action" value="filter">Filter<span class="arrow_white"></span></button>
         </div>
       </form>
     </aside>
