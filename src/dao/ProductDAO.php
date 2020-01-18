@@ -5,19 +5,52 @@ require_once(__DIR__ . '/DAO.php');
 class ProductDAO extends DAO
 {
 
-  public function selectAllWithFilter()
+  public function selectAllWithFilter($data)
   {
-    $sql = "SELECT p.id, p.name, p.price, p.description_long, c.name AS categorie, pi.image_url FROM int3_bi_products AS p INNER JOIN int3_bi_categorie AS c ON p.categorie_id = c.id
-    LEFT JOIN int3_bi_product_images AS pi ON pi.product_id = p.id AND pi.thumbnail = 1";
+    $sql = "SELECT p.id, p.name, p.price, p.description_long, c.name AS categorie, p.thumbnail_url FROM int3_bi_products AS p INNER JOIN int3_bi_categorie AS c ON p.categorie_id = c.id WHERE 1 = 1";
+
+    if (!empty($data['search'])) {
+      $sql .= " AND p.name = :search";
+    }
+
+    if (!empty($data['price'])) {
+      $sql .= " AND p.price <= :price";
+    }
+
+    if (!empty($data['categories'])) {
+      $sql .= " AND p.categorie_id in (:categories)";
+    }
+
+    if (!empty($data['id'])) {
+      $sql .= " AND p.id != :id LIMIT 3";
+    }
+
     $stmt = $this->pdo->prepare($sql);
+
+    if (!empty($data['id'])) {
+      $stmt->bindValue(':id', $data['id']);
+    }
+
+    if (!empty($data['search'])) {
+      $stmt->bindValue(':search', $data['search']);
+    }
+
+    if (!empty($data['price'])) {
+      $stmt->bindValue(':price', $data['price']);
+    }
+
+    if (!empty($data['categories'])) {
+      $stmt->bindValue(':categories', implode(",", $data['categories']));
+    }
+
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
   }
 
   public function selectById($id)
   {
-    $sql = "SELECT p.id, p.name, p.price, p.description_long, c.name AS categorie, pi.image_url FROM int3_bi_products AS p INNER JOIN int3_bi_categorie AS c ON p.categorie_id = c.id
-    LEFT JOIN int3_bi_product_images AS pi ON pi.product_id = p.id AND pi.thumbnail = 1 WHERE p.id = :id";
+    $sql = "SELECT p.id, p.name, p.price, p.description_long, p.image_url, c.id AS categorie_id, c.name AS categorie FROM int3_bi_products AS p INNER JOIN int3_bi_categorie AS c ON p.categorie_id = c.id
+    WHERE p.id = :id";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(':id', $id);
     $stmt->execute();

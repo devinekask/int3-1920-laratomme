@@ -27,32 +27,31 @@
   <div class="wrapper_shop">
     <aside class="controls_webshop">
       <h3>Filter producten:</h3>
-      <div class="searchbox">
-        <form action="" role="search">
-          <input class="searchinput" type="search" maxlength="512" aria-label="Search" placeholder="Zoek in shop...">
+      <form method="GET" action="index.php">
+        <div class="searchbox">
+          <input name="search" class="searchinput" type="search" maxlength="512" aria-label="Search" placeholder="Zoek in shop...">
           <span class="search_icon"></span>
-        </form>
-      </div>
-      <div class="filter_option">
-        <p>Filter op prijs</p>
-        <p>Van €2 tot €60</p>
-        <!-- vul prijs hier in via js -->
-        <input type="range" min="1" max="100" value="50" class="price-slider" id="price-slider">
-      </div>
-      <div class="filter_option">
-        <p>Selecteer een categorie</p>
-        <div class="categorie_options">
-          <?php foreach ($categories as $categorie) : ?>
-            <div>
-              <input name="<?php echo $categorie['id']; ?>" type="checkbox">
-              <label for="<?php echo $categorie['id']; ?>"><?php echo $categorie['name']; ?></label>
-            </div>
-          <?php endforeach; ?>
         </div>
-      </div>
-      <div class="filter_submit">
-        <button type="submit" name="action" value="filter">Filter</button>
-      </div>
+        <div class="filter_option">
+          <p>Filter op prijs</p>
+          <p>Van €2 tot €60</p>
+          <!-- vul prijs hier in via js -->
+          <input name="price" type="range" min="1" max="100" value="50" class="price-slider" id="price-slider">
+        </div>
+        <div class="filter_option">
+          <p>Selecteer een categorie</p>
+          <div class="categorie_options">
+            <?php foreach ($categories as $categorie) : ?>
+              <div>
+                <input name="categories[]" value="<?php echo $categorie['id']; ?>" type="checkbox"><?php echo $categorie['name']; ?>
+              </div>
+            <?php endforeach; ?>
+          </div>
+        </div>
+        <div class="filter_submit">
+          <button type="submit" name="action" value="filter">Filter</button>
+        </div>
+      </form>
     </aside>
 
     <div class="products_webshop">
@@ -77,7 +76,9 @@
         <?php foreach ($products as $product) : ?>
           <div class="product">
             <div class="product_image">
-              <?php echo '<img src="' . $product['image_url'] . '" alt="' . $product['name'] . '" />'; ?>
+              <a href="index.php?page=detail&id=<?php echo $product['id']; ?>">
+                <img src="<?php echo $product['thumbnail_url']; ?>" alt="<?php echo $product['name']; ?>" />
+              </a>
             </div>
             <div class="product_information">
               <div>
@@ -96,6 +97,9 @@
                   <button class="btn-add" type="submit" name="action" value="add">+</button>
                 </form>
               </div>
+            </div>
+            <div>
+              <p><a href="index.php?page=detail&id=<?php echo $product['id']; ?>">Bekijk product</a> </p>
             </div>
           </div>
         <?php endforeach; ?>

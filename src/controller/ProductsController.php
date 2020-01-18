@@ -18,7 +18,18 @@ class ProductsController extends Controller
 
   public function index()
   {
-    $products = $this->productDAO->selectAllWithFilter();
+    $data = array();
+    if (!empty($_GET['search'])) {
+      $data['search'] = $_GET['search'];
+    }
+    if (!empty($_GET['price'])) {
+      $data['price'] = $_GET['price'];
+    }
+    if (!empty($_GET['categories'])) {
+      $data['categories'] = $_GET['categories'];
+    }
+
+    $products = $this->productDAO->selectAllWithFilter($data);
     $this->set('products', $products);
 
     $categories = $this->categorieDAO->selectAll();
@@ -31,6 +42,12 @@ class ProductsController extends Controller
       $_SESSION['error'] = 'No Product Found';
       header('Location: index.php');
     }
+
+    $data = array();
+    $data['id'] = $product['id'];
+    $data['categories'] = array($product['categorie_id']);
+    $similarproducts = $this->productDAO->selectAllWithFilter($data);
+    $this->set('similarproducts', $similarproducts);
 
     $this->set('product', $product);
   }
