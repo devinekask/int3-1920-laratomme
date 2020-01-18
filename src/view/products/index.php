@@ -42,18 +42,12 @@
       <div class="filter_option">
         <p>Selecteer een categorie</p>
         <div class="categorie_options">
-          <div>
-            <input name="checkbox1" id="checkbox1" type="checkbox">
-            <label for="checkbox1">Humo</label>
-          </div>
-          <div>
-            <input name="checkbox2" id="checkbox2" type="checkbox">
-            <label for="checkbox2">Boeken</label>
-          </div>
-          <div>
-            <input name="checkbox3" id="checkbox3" type="checkbox">
-            <label for="checkbox3">Boek toebehoren</label>
-          </div>
+          <?php foreach ($categories as $categorie) : ?>
+            <div>
+              <input name="<?php echo $categorie['id']; ?>" type="checkbox">
+              <label for="<?php echo $categorie['id']; ?>"><?php echo $categorie['name']; ?></label>
+            </div>
+          <?php endforeach; ?>
         </div>
       </div>
       <div class="filter_submit">
@@ -83,14 +77,14 @@
         <?php foreach ($products as $product) : ?>
           <div class="product">
             <div class="product_image">
-              <!-- //<?php echo '<img src="' . $productImage['image'] . '" alt="' . $product['name'] . '" />'; ?> -->
+              <?php echo '<img src="' . $product['image_url'] . '" alt="' . $product['name'] . '" />'; ?>
             </div>
             <div class="product_information">
               <div>
                 <p class="product-title"><?php echo $product['name']; ?></p>
                 <!-- link naar detailpagina in naam en image -->
                 <div>
-                  <!-- <p class="categorie"><?php echo $product['Categorie']; ?></p> -->
+                  <p class="categorie"><?php echo $product['categorie']; ?></p>
                 </div>
                 <div>
                   <p class="price"> <?php echo money_format("%i", $product['price']); ?></p>

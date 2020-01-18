@@ -2,24 +2,27 @@
 
 require_once __DIR__ . '/Controller.php';
 require_once __DIR__ . '/../dao/ProductDAO.php';
-require_once __DIR__ . '/../dao/ProductImagesDAO.php';
+require_once __DIR__ . '/../dao/CategorieDAO.php';
 
 class ProductsController extends Controller
 {
 
   private $productDAO;
-  private $productImagesDAO;
+  private $categorieDAO;
 
   function __construct()
   {
     $this->productDAO = new ProductDAO();
-    $this->productImagesDAO = new ProductImagesDAO();
+    $this->categorieDAO = new CategorieDAO();
   }
 
   public function index()
   {
-    $products = $this->productDAO->selectAll();
+    $products = $this->productDAO->selectAllWithFilter();
     $this->set('products', $products);
+
+    $categories = $this->categorieDAO->selectAll();
+    $this->set('categories', $categories);
   }
 
   public function detail()
@@ -29,9 +32,6 @@ class ProductsController extends Controller
       header('Location: index.php');
     }
 
-    // $productImages = $this->productImagesDAO->selectImagesByProductId($product['id']);
-
     $this->set('product', $product);
-    // $this->set('productImages', $productImages);
   }
 }
