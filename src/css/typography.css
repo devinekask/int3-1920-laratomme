@@ -9,15 +9,36 @@ h1 {
   font-size: var(--fontBig);
   font-family: var(--font);
   font-weight: var(--fontWeightBold);
+}
+
+/* h2 {
+  font-size: var(--fontLarger);
+  font-family: var(--font);
+  font-weight: var(--fontWeightBold);
+} */
+
+.title_red {
+  text-decoration: none;
+  font-size: var(--fontMedium);
+  font-family: var(--font);
+  font-weight: var(--fontWeightBold);
+  color: var(--colorRed);
+}
+
+.title_red::before {
+  display: inline-block;
+  content: '';
+  width: 17px;
+  height: 13px;
+  background: url(../assets/img/icons/arrow_red.svg) no-repeat;
+  margin: 5px 0 0 5px;
+  padding-right: 1.5rem;
+}
+
+.header_title {
   color: var(--colorWhite);
   background-color: var(--colorRed);
   width: fit-content;
   padding: var(--paddingLittle);
   text-transform: var(--textUppercase);
-}
-
-h2 {
-  font-size: var(--fontLarger);
-  font-family: var(--font);
-  font-weight: var(--fontWeightBold);
 }

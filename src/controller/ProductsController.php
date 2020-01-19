@@ -18,18 +18,20 @@ class ProductsController extends Controller
 
   public function index()
   {
-    $data = array();
-    if (!empty($_GET['search'])) {
-      $data['search'] = $_GET['search'];
-    }
-    if (!empty($_GET['price'])) {
-      $data['price'] = $_GET['price'];
-    }
-    if (!empty($_GET['categories'])) {
-      $data['categories'] = $_GET['categories'];
+    if (empty($_SESSION['filter']) || (!empty($_GET['action']) && $_GET['action'] == 'reset_filter')) {
+      $_SESSION['filter'] = array();
     }
 
-    $products = $this->productDAO->selectAllWithFilter($data);
+    if (!empty($_GET['action']) && $_GET['action'] == 'filter') {
+      $_SESSION['filter']['search'] = !empty($_GET['search']) ? $_GET['search'] : null;
+      $_SESSION['filter']['price'] = !empty($_GET['price']) ? $_GET['price'] : null;
+      $_SESSION['filter']['categories'] = !empty($_GET['categories']) ? $_GET['categories'] : null;
+    }
+
+    $maxprice = $this->productDAO->getMaxPrice();
+    $this->set('maxprice', round($maxprice['price'], -2));
+
+    $products = $this->productDAO->selectAllWithFilter($_SESSION['filter']);
     $this->set('products', $products);
 
     $categories = $this->categorieDAO->selectAll();

@@ -6,8 +6,16 @@
   height: 100vh;
 }
 
-.main {
+.grid_index {
   display: grid;
   grid-template-columns: 1fr 1076px 1fr;
   grid-template-rows: 124px 312px 1fr;
+}
+
+.grid_cart {
+  display: grid;
+  justify-content: center;
+  margin: 0 auto;
+  height: 100vh;
+  grid-template-columns: 1076px;
 }

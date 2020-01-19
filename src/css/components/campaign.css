@@ -45,7 +45,7 @@
   content: '';
   width: 18px;
   height: 15px;
-  background: url(/assets/img/icons/arrow.svg) no-repeat;
+  background: url(../../assets/img/icons/arrow.svg) no-repeat;
   margin: 5px 0 0 5px;
 }
 

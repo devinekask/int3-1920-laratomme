@@ -10,7 +10,7 @@ class ProductDAO extends DAO
     $sql = "SELECT p.id, p.name, p.price, p.description_long, c.name AS categorie, p.thumbnail_url FROM int3_bi_products AS p INNER JOIN int3_bi_categorie AS c ON p.categorie_id = c.id WHERE 1 = 1";
 
     if (!empty($data['search'])) {
-      $sql .= " AND p.name = :search";
+      $sql .= " AND p.name LIKE :search";
     }
 
     if (!empty($data['price'])) {
@@ -22,7 +22,13 @@ class ProductDAO extends DAO
     }
 
     if (!empty($data['id'])) {
-      $sql .= " AND p.id != :id LIMIT 3";
+      $sql .= " AND p.id != :id";
+    }
+
+    $sql .= " ORDER BY p.name";
+
+    if (!empty($data['id'])) {
+      $sql .= " LIMIT 3";
     }
 
     $stmt = $this->pdo->prepare($sql);
@@ -32,7 +38,7 @@ class ProductDAO extends DAO
     }
 
     if (!empty($data['search'])) {
-      $stmt->bindValue(':search', $data['search']);
+      $stmt->bindValue(':search', '%' . $data['search'] . '%');
     }
 
     if (!empty($data['price'])) {
@@ -53,6 +59,14 @@ class ProductDAO extends DAO
     WHERE p.id = :id";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(':id', $id);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+  }
+
+  public function getMaxPrice()
+  {
+    $sql = "SELECT MAX(price) AS price FROM int3_bi_products";
+    $stmt = $this->pdo->prepare($sql);
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC);
   }

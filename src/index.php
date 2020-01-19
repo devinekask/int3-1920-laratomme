@@ -21,6 +21,14 @@ $routes = array(
   'detail' => array(
     'controller' => 'Products',
     'action' => 'detail'
+  ),
+  'cart' => array(
+    'controller' => 'Order',
+    'action' => 'cart'
+  ),
+  'order' => array(
+    'controller' => 'Order',
+    'action' => 'order'
   )
 );
 

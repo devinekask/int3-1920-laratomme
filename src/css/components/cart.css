@@ -1,0 +1,89 @@
+
+.webshop_cart {
+  margin-top: var(--paddingBigger);
+}
+
+.cart_navigation {
+  display: flex;
+}
+
+.cart_nav--step {
+  padding-right: var(--paddingMedium);
+}
+
+.basket_grid {
+  display: grid;
+  grid-template-columns: 6.25rem 1fr 6.25rem 6.25rem 6.25rem 6.25rem;
+  grid-template-rows: 1fr .3rem 150px .3rem;
+}
+
+.basket_heading--price {
+  grid-column-start: 3;
+}
+
+.basket_heading--first {
+  place-self: center start;
+}
+
+.basket_heading {
+  place-self: center end;
+}
+
+.basket_img {
+  grid-column: 1;
+  grid-row: 3;
+  place-self: center;
+}
+
+.basket_prd--info {
+  grid-column: 2;
+  grid-row: 3;
+  place-self: center start;
+}
+
+.basket_prd-price {
+  grid-column: 3;
+  grid-row: 3;
+  place-self: center end;
+}
+
+.basket_prd--qty {
+  grid-column: 4;
+  grid-row: 3;
+  place-self: center end;
+}
+
+.basket_prd--subtot {
+  grid-column: 5;
+  grid-row: 3;
+  place-self: center end;
+}
+
+.basket_prd--delete {
+  grid-column: 6;
+  grid-row: 3;
+  place-self: center end;
+}
+
+.basket_total {
+  grid-column: 4;
+  grid-row: 5;
+  place-self: center end;
+}
+
+.basket_total--price {
+  grid-column: 5;
+  grid-row: 5;
+  place-self: center end;
+}
+
+.cart_buttons {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 6rem;
+}
+
+.cart_buttons button:focus button:active {
+  appearance: none;
+  outline: none;
+}
