@@ -1,0 +1,10 @@
+.order_overview {
+  display: grid;
+  grid-template-columns: 1fr 77px 77px 77px;
+  grid-template-rows: 44px 62px;
+  width: 468px;
+}
+
+.overview_heading {
+  background-color: var(--colorSecondary);
+}

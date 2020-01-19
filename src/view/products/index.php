@@ -33,22 +33,24 @@
     <div class="wrapper_shop">
       <aside class="controls_webshop">
         <h3>Filters</h3>
-        <form method="GET" action="index.php">
+        <form class="filter_function" method="GET" action="index.php">
           <div class="searchbox filter_item">
             <input name="search" class="searchinput" type="search" maxlength="512" aria-label="Search" placeholder="Zoek in shop..." value="<?php echo !empty($_SESSION['filter']['search']) ? $_SESSION['filter']['search'] : null; ?>">
             <span class="search_icon"></span>
           </div>
           <div class="filter_option filter_item">
             <p class="filter_red">Filter op prijs</p>
-            <p>Prijs tot €<?php echo !empty($_SESSION['filter']['price']) ? $_SESSION['filter']['price'] : $maxprice; ?></p>
-            <input name="price" type="range" min="1" max="<?php echo $maxprice; ?>" value="<?php echo !empty($_SESSION['filter']['price']) ? $_SESSION['filter']['price'] : $maxprice; ?>" class="slider" id="price">
+            <p>Prijs tot €<span class="price_chosen"><?php echo !empty($_SESSION['filter']['price']) ? $_SESSION['filter']['price'] : $maxprice; ?></span></p>
+            <input id="price_range" name="price" type="range" min="1" max="<?php echo $maxprice; ?>" value="<?php echo !empty($_SESSION['filter']['price']) ? $_SESSION['filter']['price'] : $maxprice; ?>" class="slider" id="price">
           </div>
           <div class="filter_option filter_item">
             <p class="filter_red">Selecteer een categorie</p>
             <div class="categorie_options">
               <?php foreach ($categories as $categorie) : ?>
                 <div>
-                  <input name="categories[]" value="<?php echo $categorie['id']; ?>" type="checkbox">
+                  <input name="categories[]" value="<?php echo $categorie['id']; ?>" type="checkbox" <?php if (!empty($_SESSION['filter']['categories']) && in_array($categorie['id'], $_SESSION['filter']['categories'])) {
+                                                                                                        echo 'checked';
+                                                                                                      } ?>>
                   <label for="<?php echo $categorie['id']; ?>" class="checkbox"><?php echo $categorie['name']; ?></label>
                 </div>
               <?php endforeach; ?>

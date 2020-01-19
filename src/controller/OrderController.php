@@ -15,26 +15,30 @@ class OrderController extends Controller
 
   public function cart()
   {
-    if (!empty($_POST['action'])) {
-      if ($_POST['action'] == 'add') {
-        $this->_handleAdd();
-        header('Location: index.php?page=detail&id=' . $_POST['product_id']);
-        exit();
-      }
-      if ($_POST['action'] == 'empty') {
-        $_SESSION['cart'] = array();
-      }
-      if ($_POST['action'] == 'update') {
-        $this->_handleUpdate();
-      }
-      header('Location: index.php?page=cart');
-      exit();
-    }
-    if (!empty($_POST['remove'])) {
-      $this->_handleRemove();
-      header('Location: index.php?page=cart');
-      exit();
-    }
+    // if (!empty($_POST['action'])) {
+    //   if ($_POST['action'] == 'add') {
+    //     $this->_handleAdd();
+    //     header('Location: index.php?page=detail&id=' . $_POST['product_id']);
+    //     exit();
+    //   }
+    //   if ($_POST['action'] == 'empty') {
+    //     $_SESSION['cart'] = array();
+    //   }
+    //   if ($_POST['action'] == 'update') {
+    //     $this->_handleUpdate();
+    //   }
+    //   header('Location: index.php?page=cart');
+    //   exit();
+    // }
+    // if (!empty($_POST['remove'])) {
+    //   $this->_handleRemove();
+    //   header('Location: index.php?page=cart');
+    //   exit();
+    // }
+  }
+
+  public function order()
+  {
   }
 
   private function _handleCheckout()

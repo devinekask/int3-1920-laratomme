@@ -19,3 +19,18 @@
   height: 100vh;
   grid-template-columns: 1076px;
 }
+
+.flex_order {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--paddingBigger);
+}
+
+.grid_order {
+  grid-template-columns: 1076px;
+  height: 100vh;
+}
+
+.order_betalen {
+  width: 640px;
+}

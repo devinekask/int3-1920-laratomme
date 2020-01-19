@@ -1,6 +1,28 @@
 require('./style.css');
 
 {
+  const init = () => {
+    const $filterForm = document.querySelector('.filter_function');
+    if ($filterForm) {
+      const $priceRange = document.querySelector('#price_range');
+      if ($priceRange) {
+        $priceRange.addEventListener('input', editPriceText);
+        $priceRange.addEventListener('change', editPriceText);
+      }
+    }
+
+  };
+
+  const editPriceText = e => {
+    const $priceText = document.querySelector('.price_chosen');
+    if ($priceText) {
+      $priceText.textContent = e.target.value;
+    }
+  };
+
+
+
+
   // const $todosList = document.getElementById(`todosList`),
   //   $insertTodoForm = document.getElementById(`insertTodoForm`),
   //   $inputText = document.getElementById(`inputText`);
@@ -59,4 +81,6 @@ require('./style.css');
   // };
 
   // init();
+
+  init();
 }

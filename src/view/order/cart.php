@@ -41,7 +41,7 @@
     </div>
     <div class="cart_buttons">
       <button class="btn-update" type="submit" name="action" value="update">Update winkelmandje</button>
-      <button class="btn-red btn-bestellen" type="submit" name="action" value="bestellen">Bestellen</button>
+      <button class="btn-red btn-bestellen" type="submit" name="action" value="bestellen"><a href="index.php?page=order">Bestellen</a></button>
     </div>
   </section>
 </div>
