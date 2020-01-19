@@ -12,11 +12,17 @@
   grid-template-rows: 124px 312px 1fr;
 }
 
+.grid_detail {
+  display: grid;
+  grid-template-columns: 1076px;
+  justify-content: center;
+  margin: var(--paddingBigger) auto;
+}
+
 .grid_cart {
   display: grid;
   justify-content: center;
   margin: 0 auto;
-  height: 100vh;
   grid-template-columns: 1076px;
 }
 
@@ -28,7 +34,6 @@
 
 .grid_order {
   grid-template-columns: 1076px;
-  height: 100vh;
 }
 
 .order_betalen {
