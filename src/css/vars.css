@@ -12,7 +12,8 @@
   --paddingLarger: 1.56rem; /* 25px */
   --paddingBig: 1.88rem; /* 30px */
   --paddingBigger: 2.5rem; /* 40px */
-  --fontSmall: .88rem; /* 12px */
+  --fontSmall: .75rem; /* 12px */
+  --fontBetween: .88rem; /*14px */
   --fontRegular: 1rem; /* 16px */
   --fontMedium: 1.13rem; /* 18px */
   --fontLarger: 1.38rem; /* 22px */

@@ -55,23 +55,6 @@
     </aside>
 
     <div class="products_webshop">
-      <div class="refinements_webshop">
-        <div class="filter_nav">
-          <p>Alle producten</p>
-          <!-- via js aangeven welke producten weergegeven worden -->
-        </div>
-        <div class="sort_webshop">
-          <p>Sorteer op populariteit</p>
-          <div>
-            <ul>
-              <li>Sorteer op recentheid</li>
-              <li>Sorteer op populariteit</li>
-              <li>Sorteer op prijs: laag > hoog</li>
-              <li>Sorteer op prijs: hoog > laag</li>
-            </ul>
-          </div>
-        </div>
-      </div>
       <div class="products_list">
         <?php foreach ($products as $product) : ?>
           <div class="product">
@@ -81,25 +64,22 @@
               </a>
             </div>
             <div class="product_information">
-              <div>
-                <p class="product-title"><?php echo $product['name']; ?></p>
-                <!-- link naar detailpagina in naam en image -->
-                <div>
-                  <p class="categorie"><?php echo $product['categorie']; ?></p>
-                </div>
-                <div>
-                  <p class="price"> <?php echo money_format("%i", $product['price']); ?></p>
-                </div>
+              <div class="product_information--text">
+                <p class="categorie"><?php echo $product['categorie']; ?></p>
+                <a class="product_title" href="index.php?page=detail&id=<?php echo $product['id']; ?>">
+                  <?php echo $product['name']; ?>
+                </a>
+                <p class="price"> <?php echo ($product['price']); ?></p>
               </div>
               <div>
                 <form method="post" action="index.php?page=cart">
                   <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>" />
-                  <button class="btn-add" type="submit" name="action" value="add">+</button>
+                  <button class="btn-add" type="submit" name="action" value="add"><span>+</span></button>
                 </form>
               </div>
             </div>
             <div>
-              <p><a href="index.php?page=detail&id=<?php echo $product['id']; ?>">Bekijk product</a> </p>
+              <p><a class="bekijk" href="index.php?page=detail&id=<?php echo $product['id']; ?>">Bekijk product</a> </p>
             </div>
           </div>
         <?php endforeach; ?>
