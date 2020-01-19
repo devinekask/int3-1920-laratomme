@@ -45,8 +45,6 @@
 
 .filter_submit {
   text-align: center;
-  background: var(--colorRed);
-  box-shadow: 0 4px 0 var(--colorText);
   transform: perspective(1px) translateZ(0);
   transition-duration: .1s;
 }
@@ -74,32 +72,31 @@
   transform: translateX(6px);
 }
 
-button {
-  appearance: none;
-}
-
-button:focus {
-  appearance: none;
-  outline: none;
-}
-
-input:focus {
-  appearance: none;
-  outline: none;
-}
-
 .filter_submit button {
+  background: var(--colorRed);
+  box-shadow: 0 4px 0 var(--colorText);
   appearance: none;
   border: none;
   color: var(--colorWhite);
-  background: var(--colorRed);
-  width: fit-content;
+  width: -webkit-fill-available;
   padding-top: var(--paddingLittle);
   padding-bottom: var(--paddingLittle);
   padding-right: var(--paddingBigger);
   padding-left: var(--paddingBigger);
   font-weight: var(--fontWeightBold);
   text-transform: var(--textUppercase);
+}
+
+button:focus {
+  outline: thin dotted;
+}
+
+button button:focus button:active {
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 
 .arrow_white::after {
@@ -163,10 +160,13 @@ input[type=checkbox]:hover {
 
 input[type=checkbox]:checked {
   background-color: var(--colorRed);
-  outline: none;
 }
 
 .categorie_options div {
   display: flex;
   align-items: center;
+}
+
+a:focus {
+  outline: thin dotted;
 }

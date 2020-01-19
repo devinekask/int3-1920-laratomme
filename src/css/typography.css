@@ -11,12 +11,6 @@ h1 {
   font-weight: var(--fontWeightBold);
 }
 
-/* h2 {
-  font-size: var(--fontLarger);
-  font-family: var(--font);
-  font-weight: var(--fontWeightBold);
-} */
-
 .title_red {
   text-decoration: none;
   font-size: var(--fontMedium);

@@ -33,7 +33,7 @@
     <div class="wrapper_shop">
       <aside class="controls_webshop">
         <h3>Filters</h3>
-        <form class="filter_function" method="GET" action="index.php">
+        <form class="filter_function" method="POST" action="index.php">
           <div class="searchbox filter_item">
             <input name="search" class="searchinput" type="search" maxlength="512" aria-label="Search" placeholder="Zoek in shop..." value="<?php echo !empty($_SESSION['filter']['search']) ? $_SESSION['filter']['search'] : null; ?>">
             <span class="search_icon"></span>
@@ -83,7 +83,7 @@
                   <p class="price"> <?php echo ($product['price']); ?></p>
                 </div>
                 <div>
-                  <form method="post" action="index.php?page=cart">
+                  <form method="post" action="index.php">
                     <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>" />
                     <button class="btn-add" type="submit" name="action" value="add"><span>+</span></button>
                   </form>

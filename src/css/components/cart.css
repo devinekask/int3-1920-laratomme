@@ -85,5 +85,4 @@
 
 .cart_buttons button:focus button:active {
   appearance: none;
-  outline: none;
 }

@@ -18,7 +18,7 @@ class ProductDAO extends DAO
     }
 
     if (!empty($data['categories'])) {
-      $sql .= " AND p.categorie_id in (:categories)";
+      $sql .= " AND p.categorie_id in (" . implode(",", $data['categories']) . ")";
     }
 
     if (!empty($data['id'])) {
@@ -43,10 +43,6 @@ class ProductDAO extends DAO
 
     if (!empty($data['price'])) {
       $stmt->bindValue(':price', $data['price']);
-    }
-
-    if (!empty($data['categories'])) {
-      $stmt->bindValue(':categories', implode(",", $data['categories']));
     }
 
     $stmt->execute();

@@ -18,14 +18,18 @@ class ProductsController extends Controller
 
   public function index()
   {
-    if (empty($_SESSION['filter']) || (!empty($_GET['action']) && $_GET['action'] == 'reset_filter')) {
+    if (empty($_SESSION['filter']) || (!empty($_POST['action']) && $_POST['action'] == 'reset_filter')) {
       $_SESSION['filter'] = array();
     }
 
-    if (!empty($_GET['action']) && $_GET['action'] == 'filter') {
-      $_SESSION['filter']['search'] = !empty($_GET['search']) ? $_GET['search'] : null;
-      $_SESSION['filter']['price'] = !empty($_GET['price']) ? $_GET['price'] : null;
-      $_SESSION['filter']['categories'] = !empty($_GET['categories']) ? $_GET['categories'] : null;
+    if (!empty($_POST['action']) && $_POST['action'] == 'filter') {
+      $_SESSION['filter']['search'] = !empty($_POST['search']) ? $_POST['search'] : null;
+      $_SESSION['filter']['price'] = !empty($_POST['price']) ? $_POST['price'] : null;
+      $_SESSION['filter']['categories'] = !empty($_POST['categories']) ? $_POST['categories'] : null;
+    }
+
+    if (!empty($_POST['action']) && $_POST['action'] == 'add') {
+      $this->addToCart($_POST['product_id'], 1);
     }
 
     $maxprice = $this->productDAO->getMaxPrice();
@@ -45,6 +49,10 @@ class ProductsController extends Controller
       header('Location: index.php');
     }
 
+    if (!empty($_POST['action']) && $_POST['action'] == 'add') {
+      $this->addToCart($_POST['product_id'], $_POST['quantity']);
+    }
+
     $data = array();
     $data['id'] = $product['id'];
     $data['categories'] = array($product['categorie_id']);
@@ -52,5 +60,17 @@ class ProductsController extends Controller
     $this->set('similarproducts', $similarproducts);
 
     $this->set('product', $product);
+  }
+
+  private function addToCart($product_id, $quantity)
+  {
+    if (empty($_SESSION['cart'])) {
+      $_SESSION['cart'] = array();
+    }
+    if (array_key_exists($product_id, $_SESSION['cart'])) {
+      $_SESSION['cart'][$product_id] += $quantity;
+    } else {
+      $_SESSION['cart'][$product_id] = $quantity;
+    }
   }
 }
