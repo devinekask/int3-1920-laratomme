@@ -1,10 +1,27 @@
 <!-- Checkout page-->
 <div class="flex_order">
   <div class="grid_order">
+    <h1 class="header_title">Jouw Winkelmandje</h1>
+    <h2><a class="title_red" href="index.php">Verder winkelen</a></h2>
+    <div class="cart_navigation">
+      <div class="cart_nav--step crumb <?php echo (empty($_POST['action']) || $_POST['action'] === 'cart') ? 'process_active' : '' ?>">
+        <p class="process_title--first">1. Winkelmandje</p>
+      </div>
+      <div class="cart_nav--step crumb<?php echo (!empty($_POST['action']) && $_POST['action'] === 'information') ? 'process_active' : '' ?>">
+        <p class="process_title">2. Informatie</p>
+      </div>
+      <div class="cart_nav--step crumb <?php echo (!empty($_POST['action']) && $_POST['action'] === 'shipping') ? 'process_active' : '' ?>">
+        <p class="process_title">3. Verzenden</p>
+      </div>
+      <div class="cart_nav--step<?php echo (!empty($_POST['action']) && $_POST['action'] === 'payment') ? 'process_active' : '' ?>">
+        <p class="process_title">4. Betalen</p>
+      </div>
+    </div>
+
     <section class="order_information">
       <form action="index.php?page=order" method="POST" id="order">
         <div>
-          <h1 class="order_information--title">Contact informatie</h1>
+          <h1 class="order_information--title title_red">Contact informatie</h1>
           <p>Vul je emailadres in zodat we je kunnen informeren over je bestelling.</p>
           <div class="form_part">
             <input type="email" id="email" name="email" value="" placeholder="Email" required>
@@ -16,7 +33,7 @@
         </div>
         <div>
           <div>
-            <h1 class="order_information--title">Verzend informatie</h1>
+            <h1 class="order_information--title title_red">Verzend informatie</h1>
           </div>
           <p>Vul jouw gegevens in, zodat de bestelling naar de juiste plaats verzonden kan worden.</p>
           <div class="form_part">
@@ -49,7 +66,7 @@
 
     <!-- <section class="order_verzenden">
       <div>
-        <h1 class="order_information--title">Overzicht gegevens</h1>
+        <h1 class="order_information--title title_red">Overzicht gegevens</h1>
         <p>Hier vind je een overzicht van jouw contact en verzend gegevens.</p>
         <div>
           <div>
@@ -66,7 +83,7 @@
       </div>
 
       <div>
-        <h1 class="order_information--title">Verzendmethode</h1>
+        <h1 class="order_information--title title_red">Verzendmethode</h1>
         <p>Duid je verzendmethode naar voorkeur aan.</p>
         <div>
           <div>
@@ -94,7 +111,7 @@
 
     <!-- <section class="order_betalen">
       <div>
-        <h1 class="order_information--title">Overzicht gegevens</h1>
+        <h1 class="order_information--title title_red">Overzicht gegevens</h1>
         <p>Hier vind je een overzicht van jouw contact en verzend gegevens.</p>
         <div>
           <div>
@@ -115,7 +132,7 @@
         </div>
       </div>
       <div>
-        <h1 class="order_information--title">Kortingscode</h1>
+        <h1 class="order_information--title title_red">Kortingscode</h1>
         <p>Vul hier je kortingscode in die je bij het Humo magazine hebt gevonden.</p>
         <div>
           <input type="text" placeholder="Kortingscode">
@@ -123,7 +140,7 @@
         </div>
       </div>
       <div>
-        <h1 class="order_information--title">Betaalmethode</h1>
+        <h1 class="order_information--title title_red">Betaalmethode</h1>
         <p>Duid je betaalmethode naar voorkeur aan.</p>
         <div>
           <input type="radio" id="payment1" name="payment" value="bancontact">
@@ -165,18 +182,18 @@
   </div>
 
   <div class="order_overview">
-    <div class="overview_heading">
-      <p>Totaal</p>
-      <p>totaalprijs</p>
+    <div class="overview_header">
+      <p class="overview_header--text">Totaal</p>
+      <p class="overview_header--text">totaalprijs</p>
     </div>
-    <p>Naam</p>
-    <p>Aantal</p>
-    <p>Prijs</p>
-    <p>Subtotaal</p>
-    <p>Product beschrijving</p>
-    <p>1</p>
-    <p>€12,99</p>
-    <p>€12,99</p>
+    <p class="overview_heading overview_name">Naam</p>
+    <p class="overview_heading overview_qty">Aantal</p>
+    <p class="overview_heading overview_price">Prijs</p>
+    <p class="overview_heading overview_subt">Subtotaal</p>
+    <p class="overview_namevalue">Naam</p>
+    <p class="overview_qtyvalue">1</p>
+    <p class="overview_pricevalue">€12,99</p>
+    <p class="overview_subtvalue">€12,99</p>
   </div>
 
 </div>

@@ -1,10 +1,83 @@
 .order_overview {
   display: grid;
-  grid-template-columns: 1fr 77px 77px 77px;
-  grid-template-rows: 44px 62px;
-  width: 468px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 44px 31px 31px;
+  width: 500px;
+  height: 100%;
+  border: solid 2px var(--colorSecondary);
+}
+
+.overview_header {
+  background-color: var(--colorSecondary);
+  grid-column: span 4;
+  grid-row: 1;
+  display: flex;
+  justify-content: space-between;
+  font-weight: var(--fontWeightBold);
+  padding-right: var(--paddingSmall);
+  padding-left: var(--paddingSmall);
+}
+
+.overview_header--text {
+  place-self: center;
 }
 
 .overview_heading {
-  background-color: var(--colorSecondary);
+  padding-right: var(--paddingSmall);
+  padding-left: var(--paddingSmall);
+  color: var(--colorDarkGray);
+  font-size: var(--fontSmall);
+}
+
+.overview_name {
+  background-color: none;
+  grid-row: 2;
+  grid-column: 1;
+  place-self: center start;
+}
+
+.overview_qty {
+  grid-row: 2;
+  grid-column: 2;
+  place-self: center end;
+}
+
+.overview_price {
+  grid-row: 2;
+  grid-column: 3;
+  place-self: center end;
+}
+
+.overview_subt {
+  grid-row: 2;
+  grid-column: 4;
+  place-self: center end;
+}
+
+.overview_namevalue {
+  grid-row: 3;
+  place-self: center start;
+  padding-right: var(--paddingSmall);
+  padding-left: var(--paddingSmall);
+}
+
+.overview_qtyvalue {
+  grid-row: 3;
+  place-self: center end;
+  padding-right: var(--paddingSmall);
+  padding-left: var(--paddingSmall);
+}
+
+.overview_pricevalue {
+  grid-row: 3;
+  place-self: center end;
+  padding-right: var(--paddingSmall);
+  padding-left: var(--paddingSmall);
+}
+
+.overview_subtvalue {
+  grid-row: 3;
+  place-self: center end;
+  padding-right: var(--paddingSmall);
+  padding-left: var(--paddingSmall);
 }
