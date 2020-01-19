@@ -1,4 +1,9 @@
 <!-- webshop all products page -->
+<section class="product_added hidden">
+  <p>Product is toegevoegd aan je winkelmandje.</p>
+  <p><a href="index.php?page=cart">Bekijk je winkelmandje<span class="arrow_icon"></a></p>
+</section>
+
 <section class="title_webshop">
   <h1 class="header_title">Webshop Humo</h1>
   <img src="/assets/img/dotted.png" alt="dotted line">

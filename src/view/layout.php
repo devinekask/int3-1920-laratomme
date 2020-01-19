@@ -14,17 +14,17 @@
   <header class="header">
     <div class="width_content">
       <ul>
-        <li>Home</li>
-        <li>Actua</li>
-        <li>Humor</li>
-        <li>Tv/Film</li>
+        <li class="menu_item">Home</li>
+        <li class="menu_item">Actua</li>
+        <li class="menu_item">Humor</li>
+        <li class="menu_item">Tv/Film</li>
       </ul>
       <img class="logo_humo" src="./assets/img/humo_logo.svg" alt="logo_humo">
       <ul>
-        <li>Muziek</li>
-        <li>Boeken</li>
-        <li><a href="index.php">Webshop</a></li>
-        <!-- <li><a href="index.php?page=cart"><?php echo $numItems; ?>Item(s)<img src="./src/assets/cart_icon" alt="cart_icon"></a></li> -->
+        <li class="menu_item">Muziek</li>
+        <li class="menu_item">Boeken</li>
+        <li class="menu_item"><a class="shop_link" href="index.php">Webshop</a></li>
+        <li class="cart_items"><a class="cart_items" href="index.php?page=cart">Item(s)<img src="/assets/img/icons/cart_icon.svg" alt="cart_icon"></a></li>
       </ul>
     </div>
   </header>

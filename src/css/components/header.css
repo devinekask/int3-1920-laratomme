@@ -12,13 +12,24 @@
   justify-content: space-evenly;
 }
 
+.cart_items {
+  font-size: var(--fontBetween);
+  text-decoration: none;
+  color: var(--colortext);
+  display: flex;
+}
+
+.cart_items:hover {
+  text-decoration: underline;
+}
+
 .header ul {
   list-style-type: none;
   display: contents;
   line-height: 70px;
 }
 
-.header li {
+.menu_item {
   text-transform: var(--textUppercase);
   font-size: var(--fontLarger);
   font-weight: var(--fontWeightBold);
@@ -31,7 +42,7 @@
   align-self: center;
 }
 
-.header a {
+.shop_link {
   text-decoration: none;
   padding-left: var(--paddingMedium);
   padding-right: var(--paddingMedium);
