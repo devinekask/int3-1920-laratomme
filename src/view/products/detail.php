@@ -27,9 +27,7 @@
         <form method="post" action="index.php?page=detail&id=<?php echo $product['id']; ?>">
           <input type="number" name="quantity" min="1" max="50" value="1">
           <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>" />
-          <!-- <div class="btn_red--div"> -->
           <button class="btn-add--text btn_red" type="submit" name="action" value="add">Toevoegen aan winkelmandje<span class="cart_white"></span></button>
-          <!-- </div> -->
         </form>
       </div>
       <div class="detail_product_part">

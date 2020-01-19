@@ -1,7 +1,7 @@
 <!-- Checkout page-->
 <div class="flex_order">
   <div class="grid_order">
-    <!-- <section class="order_information">
+    <section class="order_information">
       <form action="index.php?page=order" method="POST" id="order">
         <div>
           <h1 class="order_information--title">Contact informatie</h1>
@@ -45,7 +45,7 @@
           <div><a href="">Verder naar verzendmethode</a></div>
         </div>
       </form>
-    </section> -->
+    </section>
 
     <!-- <section class="order_verzenden">
       <div>
@@ -92,7 +92,7 @@
       <div><a href="">Verder naar betaalmethode</a></div>
     </section> -->
 
-    <section class="order_betalen">
+    <!-- <section class="order_betalen">
       <div>
         <h1 class="order_information--title">Overzicht gegevens</h1>
         <p>Hier vind je een overzicht van jouw contact en verzend gegevens.</p>
@@ -160,9 +160,9 @@
             af te ronden.</div>
         </div>
       </div>
-    </section>
-  </div>
+    </section> -->
 
+  </div>
 
   <div class="order_overview">
     <div class="overview_heading">
