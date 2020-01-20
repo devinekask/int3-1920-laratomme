@@ -1,0 +1,65 @@
+.order_information--title {
+  font-size: var(--fontLarger);
+  font-family: var(--font);
+  font-weight: var(--fontWeightBold);
+  color: var(--colorRed);
+  margin-bottom: 0;
+}
+
+.order_checkbox input {
+  appearance: none;
+  margin-right: .6rem;
+  width: 17px;
+  height: 17px;
+  border: solid 1px var(--colorDarkGray);
+  background-color: white;
+}
+
+input:focus {
+  outline: thin dotted;
+}
+
+.form_part input {
+  padding: 1rem .5rem;
+  background-color: var(--colorWhite);
+  border: solid 1px var(--colorDarkGray);
+  width: -webkit-fill-available;
+}
+
+.form_information {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: .7rem;
+}
+
+.order_information_part {
+  margin-bottom: var(--paddingBigger);
+}
+
+.order_information--buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.button_back {
+  text-decoration: none;
+  font-weight: var(--fontWeightBold);
+  color: var(--colorRed);
+}
+
+.button_back:hover {
+  text-decoration: underline;
+}
+
+.button_onward {
+  background: var(--colorRed);
+  box-shadow: 0 4px 0 var(--colorText);
+  text-decoration: none;
+  color: var(--colorWhite);
+  width: fit-content;
+  border-radius: 2px;
+  font-weight: var(--fontWeightBold);
+  padding: .6rem 1rem;
+}

@@ -29,11 +29,12 @@
 .flex_order {
   display: flex;
   justify-content: center;
-  margin-top: var(--paddingBigger);
 }
 
 .grid_order {
   grid-template-columns: 1076px;
+  margin-right: var(--paddingBigger);
+  margin-top: var(--paddingBigger);
 }
 
 .order_betalen {

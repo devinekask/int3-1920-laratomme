@@ -68,9 +68,14 @@ class ProductsController extends Controller
       $_SESSION['cart'] = array();
     }
     if (array_key_exists($product_id, $_SESSION['cart'])) {
-      $_SESSION['cart'][$product_id] += $quantity;
+      $_SESSION['cart'][$product_id]['quantity'] += $quantity;
     } else {
-      $_SESSION['cart'][$product_id] = $quantity;
+      if (empty($product_id) || !$product = $this->productDAO->selectById($product_id)) {
+        $_SESSION['error'] = 'No Product Found';
+        header('Location: index.php');
+      }
+      $_SESSION['cart'][$product_id] = $product;
+      $_SESSION['cart'][$product_id]['quantity'] = $quantity;
     }
   }
 }

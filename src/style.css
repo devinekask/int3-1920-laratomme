@@ -19,3 +19,6 @@
 @import './css/components/order_overview.css';
 @import './css/components/payment.css';
 @import './css/components/product_detail.css';
+@import './css/components/order_information.css';
+@import './css/components/floating_label.css';
+@import './css/components/order_verzenden.css';

@@ -1,10 +1,16 @@
+.overview_containter {
+  border-left: solid 3px var(--colorSecondary);
+  height: 100vh;
+}
+
 .order_overview {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 44px 31px 31px;
+  grid-template-rows: 44px;
   width: 500px;
-  height: 100%;
   border: solid 2px var(--colorSecondary);
+  margin-top: var(--paddingBigger);
+  margin-left: var(--paddingBigger);
 }
 
 .overview_header {
@@ -31,52 +37,20 @@
 
 .overview_name {
   background-color: none;
-  grid-row: 2;
-  grid-column: 1;
   place-self: center start;
 }
 
-.overview_qty {
-  grid-row: 2;
-  grid-column: 2;
-  place-self: center end;
-}
-
-.overview_price {
-  grid-row: 2;
-  grid-column: 3;
-  place-self: center end;
-}
-
-.overview_subt {
-  grid-row: 2;
-  grid-column: 4;
+.overview_qty, .overview_price, .overview_subt {
   place-self: center end;
 }
 
 .overview_namevalue {
-  grid-row: 3;
   place-self: center start;
   padding-right: var(--paddingSmall);
   padding-left: var(--paddingSmall);
 }
 
-.overview_qtyvalue {
-  grid-row: 3;
-  place-self: center end;
-  padding-right: var(--paddingSmall);
-  padding-left: var(--paddingSmall);
-}
-
-.overview_pricevalue {
-  grid-row: 3;
-  place-self: center end;
-  padding-right: var(--paddingSmall);
-  padding-left: var(--paddingSmall);
-}
-
-.overview_subtvalue {
-  grid-row: 3;
+.overview_qtyvalue, .overview_pricevalue, .overview_subtvalue {
   place-self: center end;
   padding-right: var(--paddingSmall);
   padding-left: var(--paddingSmall);

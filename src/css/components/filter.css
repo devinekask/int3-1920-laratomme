@@ -53,6 +53,12 @@
   font-weight: var(--fontWeightMedium);
   margin-left: var(--paddingSmall);
   padding: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.filter_reset:hover {
+  text-decoration: underline;
 }
 
 .arrow_white {

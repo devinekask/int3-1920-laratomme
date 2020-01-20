@@ -18,63 +18,75 @@
       </div>
     </div>
 
-    <section class="order_information">
+    <!-- <section class="order_information">
       <form action="index.php?page=order" method="POST" id="order">
-        <div>
-          <h1 class="order_information--title title_red">Contact informatie</h1>
+        <div class="order_information_part">
+          <h1 class="order_information--title">Contact informatie</h1>
           <p>Vul je emailadres in zodat we je kunnen informeren over je bestelling.</p>
           <div class="form_part">
             <input type="email" id="email" name="email" value="" placeholder="Email" required>
           </div>
-          <div>
-            <input type="checkbox" name="newsletter" id="newsletter">
-            <p>Schrijf me in voor een weekelijkse nieuwsbrief met Humo nieuws en acties.</p>
-          </div>
+          <p class="order_checkbox"><input type="checkbox" name="newsletter" id="newsletter">Schrijf me in voor een weekelijkse nieuwsbrief met Humo nieuws en acties.</p>
         </div>
-        <div>
+
+        <div class="order_information_part">
           <div>
-            <h1 class="order_information--title title_red">Verzend informatie</h1>
+            <h1 class="order_information--title">Verzend informatie</h1>
           </div>
           <p>Vul jouw gegevens in, zodat de bestelling naar de juiste plaats verzonden kan worden.</p>
-          <div class="form_part">
-            <input type="text" id="firstname" name="first_name" value="" placeholder="Voornaam" required>
+          <div class="form_information">
+
+            <div class="form_part floating_wrapper">
+              <input class="floating_label_input" type="text" id="firstname" placeholder="Voornaam">
+              <label class="floating_label" for="firstname">Voornaam</label>
+            </div>
+
+            <div class="form_part">
+              <input class="floating_label_input" type="text" id="lastname" placeholder="Achternaam">
+              <label class="floating_label" for="lastname">Achternaam</label>
+            </div>
+
+            <div class="form_part">
+              <input class="floating_label_input" type="text" id="adres" placeholder="Adres + nummer">
+              <label class="floating_label" for="adres">Adres + nummer</label>
+            </div>
+
+            <div class="form_part">
+              <input class="floating_label_input" type="text" id="block" placeholder="Appartement, suite, etc (optioneel)">
+              <label class="floating_label" for="block">Adres + nummer</label>
+            </div>
+
+            <div class="form_part">
+              <input class="floating_label_input" type="text" id="postal" placeholder="Postcode">
+              <label class="floating_label" for="postal">Postcode</label>
+            </div>
+
+            <div class="form_part">
+              <input class="floating_label_input" type="text" id="city" placeholder="Stad">
+              <label class="floating_label" for="city">Stad</label>
+            </div>
+
           </div>
-          <div class="form_part">
-            <input type="text" id="lastname" name="last_name" value="" placeholder="Achternaam" required>
-          </div>
-          <div class="form_part">
-            <input type="text" id="Adres" name="adres" value="" placeholder="Adres + nummer" required>
-          </div>
-          <div class="form_part">
-            <input type="text" id="block" name="block" value="" placeholder="Appartement, suite, etc (optioneel)">
-          </div>
-          <div class="form_part">
-            <input type="text" id="postal" name="postal" value="" placeholder="Postcode" required>
-          </div>
-          <div class="form_part">
-            <input type="text" id="city" name="city" value="" placeholder="Stad" required>
-          </div>
-          <div>
-            <input type="checkbox" name="saveinfo" id="safeinfo">
-            <p>Onthoud deze gegevens voor een volgende aankoop.</p>
-          </div>
-          <div><a href="index.php?page=cart">Terug naar winkelmandje</a></div>
-          <div><a href="">Verder naar verzendmethode</a></div>
+          <p class="order_checkbox"><input type="checkbox" name="saveinfo" id="safeinfo">Onthoud deze gegevens voor een volgende aankoop.</p>
+        </div>
+        <div class="order_information--buttons">
+          <a class="button_back" href="index.php?page=cart">Terug naar winkelmandje</a>
+          <a class="button_onward" href="">Verder naar verzendmethode</a>
         </div>
       </form>
-    </section>
+    </section> -->
 
-    <!-- <section class="order_verzenden">
-      <div>
-        <h1 class="order_information--title title_red">Overzicht gegevens</h1>
+    <section class="order_verzenden">
+      <div class="order_information_part">
+        <h1 class="order_information--title">Overzicht gegevens</h1>
         <p>Hier vind je een overzicht van jouw contact en verzend gegevens.</p>
-        <div>
-          <div>
+        <div class="order_info_grid">
+          <div class="info_grid_part">
             <p>Contact</p>
             <p>emailadres customer</p>
             <p><a href="">Wijzig</a></p>
           </div>
-          <div>
+          <div class="info_grid_part">
             <p>Verzend naar</p>
             <p>Adres informatie customer</p>
             <p><a href="">Wijzig</a></p>
@@ -82,11 +94,11 @@
         </div>
       </div>
 
-      <div>
-        <h1 class="order_information--title title_red">Verzendmethode</h1>
+      <div class="order_information_part">
+        <h1 class="order_information--title">Verzendmethode</h1>
         <p>Duid je verzendmethode naar voorkeur aan.</p>
-        <div>
-          <div>
+        <div class="order_info_grid">
+          <div class="info_grid_part">
             <input type="checkbox" name="shipping1" id="shipping">
             <div>
               <label for="shipping1">Gratis verzending</label>
@@ -94,7 +106,7 @@
             </div>
             <p>Gratis</p>
           </div>
-          <div>
+          <div class="info_grid_part">
             <input type="checkbox" name="shipping2" id="shipping">
             <div>
               <label for="shipping2">Express verzending</label>
@@ -104,10 +116,12 @@
           </div>
         </div>
       </div>
+      <div class="order_information--buttons">
+        <a class="button_back" href="index.php?page=cart">Terug naar informatie</a>
+        <a class="button_onward" href="">Verder naar betaalmethode</a>
+      </div>
 
-      <div><a href="index.php?page=cart">Terug naar informatie</a></div>
-      <div><a href="">Verder naar betaalmethode</a></div>
-    </section> -->
+    </section>
 
     <!-- <section class="order_betalen">
       <div>
@@ -181,19 +195,29 @@
 
   </div>
 
-  <div class="order_overview">
-    <div class="overview_header">
-      <p class="overview_header--text">Totaal</p>
-      <p class="overview_header--text">totaalprijs</p>
+  <div class="overview_containter">
+    <div class="order_overview">
+      <div class="overview_header">
+        <p class="overview_header--text">Totaal</p>
+        <p class="overview_header--text">totaalprijs</p>
+      </div>
+      <p class="overview_heading overview_name">Naam</p>
+      <p class="overview_heading overview_qty">Aantal</p>
+      <p class="overview_heading overview_price">Prijs</p>
+      <p class="overview_heading overview_subt">Subtotaal</p>
+      <p class="overview_namevalue">Naam</p>
+      <p class="overview_qtyvalue">1</p>
+      <p class="overview_pricevalue">€12,99</p>
+      <p class="overview_subtvalue">€12,99</p>
+      <p class="overview_namevalue">Naam</p>
+      <p class="overview_qtyvalue">1</p>
+      <p class="overview_pricevalue">€12,99</p>
+      <p class="overview_subtvalue">€12,99</p>
+      <p class="overview_namevalue">Naam</p>
+      <p class="overview_qtyvalue">1</p>
+      <p class="overview_pricevalue">€12,99</p>
+      <p class="overview_subtvalue">€12,99</p>
     </div>
-    <p class="overview_heading overview_name">Naam</p>
-    <p class="overview_heading overview_qty">Aantal</p>
-    <p class="overview_heading overview_price">Prijs</p>
-    <p class="overview_heading overview_subt">Subtotaal</p>
-    <p class="overview_namevalue">Naam</p>
-    <p class="overview_qtyvalue">1</p>
-    <p class="overview_pricevalue">€12,99</p>
-    <p class="overview_subtvalue">€12,99</p>
   </div>
 
 </div>

@@ -1,0 +1,75 @@
+.floating_label_input{
+  border-width: 0;
+  color: rgba(#2c3e50, .75);
+  &:focus {
+    outline: 0;
+    box-shadow: 0;
+  }
+
+  &::placeholder {
+    color: transparent;
+  }
+}
+
+.floating_label_input {
+  &,
+  & + .floating_label {
+    line-height: 1;
+    font: inherit;
+    padding: 1.5em;
+    height: 4em;
+  }
+}
+
+.floating_label_input {
+  & + .floating_label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    user-select: none;
+  }
+}
+
+.floating_label_input {
+  &,
+  & + .floating_label {
+    position: relative;
+  }
+}
+
+.floating_label_input {
+  border-bottom: 3px solid rgba(white, .05);
+  background-color: transparent;
+  color: rgba(white, .75);
+}
+
+.floating_label_input {
+  & + .floating_label {
+    transition: transform .25s, opacity .25s ease-in-out;
+    transform-origin: 0 0;
+    opacity: .5;
+  }
+ }
+
+ .floating_label_input{
+  &:focus,
+  &:not(:placeholder-shown) {
+    border-color: rgba(white, .1);
+    & + .floating_label {
+      transform: translate(1%, -30%) scale(.8);
+      opacity: .25;
+    }
+  }
+}
+
+.floating-label-input {
+  &:valid {
+    &:not(:placeholder-shown) {
+      border-color: rgba(#2ed573, .3);
+    }
+  }
+
+  &:invalid {
+    border-color: rgba(#ff4757, .3);
+  }
+}

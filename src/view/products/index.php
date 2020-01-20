@@ -60,7 +60,7 @@
             <button type="submit" name="action" value="filter">Filter<span class="arrow_white"></span></button>
           </div>
           <div>
-            <button class="filter_reset" type="submit" name="action" value="reset_filter">Reset filter<span class="arrow_white"></span></button>
+            <button class="filter_reset" type="submit" name="action" value="reset_filter">Reset filter</button>
           </div>
         </form>
       </aside>
