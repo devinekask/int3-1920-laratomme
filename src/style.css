@@ -14,11 +14,11 @@
 @import './css/components/title_webshop.css';
 @import './css/components/footer.css';
 @import './css/components/filter.css';
-@import './css/components/product_added.css';
+@import './css/components/infobox.css';
+@import './css/components/errorbox.css';
 @import './css/components/cart.css';
 @import './css/components/order_overview.css';
-@import './css/components/payment.css';
 @import './css/components/product_detail.css';
 @import './css/components/order_information.css';
 @import './css/components/floating_label.css';
-@import './css/components/order_verzenden.css';
+@import './css/components/order_shipping.css';

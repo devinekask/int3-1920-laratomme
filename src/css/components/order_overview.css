@@ -1,6 +1,5 @@
 .overview_containter {
   border-left: solid 3px var(--colorSecondary);
-  height: 100vh;
 }
 
 .order_overview {
@@ -31,6 +30,8 @@
 .overview_heading {
   padding-right: var(--paddingSmall);
   padding-left: var(--paddingSmall);
+  padding-top: var(--paddingSmall);
+  margin: 0;
   color: var(--colorDarkGray);
   font-size: var(--fontSmall);
 }
@@ -54,4 +55,13 @@
   place-self: center end;
   padding-right: var(--paddingSmall);
   padding-left: var(--paddingSmall);
+}
+
+.overview_totprice::before, .overview_pricevalue::before, .overview_subtvalue::before {
+  content: '\20AC';
+}
+
+.overview_border_top {
+  border-top: solid 2px var(--colorSecondary);
+  grid-column: span 4;
 }

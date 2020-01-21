@@ -1,13 +1,8 @@
 <!-- webshop all products page -->
 <div class="grid_index">
-  <section class="product_added hidden">
-    <p>Product is toegevoegd aan je winkelmandje.</p>
-    <p><a href="index.php?page=cart">Bekijk je winkelmandje<span class="arrow_icon"></a></p>
-  </section>
-
   <section class="title_webshop">
     <h1 class="header_title">Webshop Humo</h1>
-    <img src="./assets/img/dotted.png" alt="dotted line">
+    <!-- <img src="./assets/img/dotted.png" alt="dotted line"> -->
   </section>
 
   <section class="campaign">
@@ -87,10 +82,8 @@
                     <input type="hidden" name="product_id" value="<?php echo $product['id']; ?>" />
                     <button class="btn-add" type="submit" name="action" value="add"><span>+</span></button>
                   </form>
+                  <p><a class="bekijk" href="index.php?page=detail&id=<?php echo $product['id']; ?>">Bekijk product</a> </p>
                 </div>
-              </div>
-              <div>
-                <p><a class="bekijk" href="index.php?page=detail&id=<?php echo $product['id']; ?>">Bekijk product</a> </p>
               </div>
             </div>
           <?php endforeach; ?>

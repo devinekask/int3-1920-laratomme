@@ -10,13 +10,15 @@
   display: grid;
   grid-template-columns: 1fr 1076px 1fr;
   grid-template-rows: 124px 312px 1fr;
+  margin-top: var(--paddingBigger);
 }
 
 .grid_detail {
   display: grid;
   grid-template-columns: 1076px;
   justify-content: center;
-  margin: var(--paddingBigger) auto;
+  margin-top: var(--paddingBigger);
+  margin-bottom: var(--paddingBiggest);
 }
 
 .grid_cart {
@@ -24,6 +26,8 @@
   justify-content: center;
   margin: 0 auto;
   grid-template-columns: 1076px;
+  margin-top: var(--paddingBigger);
+  margin-bottom: var(--paddingBiggest);
 }
 
 .flex_order {
@@ -35,6 +39,7 @@
   grid-template-columns: 1076px;
   margin-right: var(--paddingBigger);
   margin-top: var(--paddingBigger);
+  margin-bottom: var(--paddingBiggest);
 }
 
 .order_betalen {

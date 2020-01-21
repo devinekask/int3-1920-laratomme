@@ -47,6 +47,8 @@ input:focus {
   text-decoration: none;
   font-weight: var(--fontWeightBold);
   color: var(--colorRed);
+  background: transparent;
+  border: none;
 }
 
 .button_back:hover {
@@ -62,4 +64,5 @@ input:focus {
   border-radius: 2px;
   font-weight: var(--fontWeightBold);
   padding: .6rem 1rem;
+  border: none;
 }

@@ -1,0 +1,16 @@
+.error_box {
+  background-color: var(--colorWhite);
+  border: 1px solid var(--colorRed);
+  width: fit-content;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: var(--paddingBig) auto;
+}
+
+.error_box p {
+  padding: 0 var(--paddingBig);
+  font-weight: var(--fontWeightBold);
+  color: var(--colorRed);
+}

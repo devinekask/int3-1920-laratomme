@@ -45,7 +45,7 @@ class ProductsController extends Controller
   public function detail()
   {
     if (empty($_GET['id']) || !$product = $this->productDAO->selectById($_GET['id'])) {
-      $_SESSION['error'] = 'No Product Found';
+      $_SESSION['error'] = 'Er is geen product gevonden.';
       header('Location: index.php');
     }
 
@@ -64,18 +64,24 @@ class ProductsController extends Controller
 
   private function addToCart($product_id, $quantity)
   {
-    if (empty($_SESSION['cart'])) {
-      $_SESSION['cart'] = array();
+    if (empty($product_id) || !$product = $this->productDAO->selectById($product_id)) {
+      $_SESSION['error'] = 'Er is geen product gevonden.';
+      header('Location: index.php');
     }
-    if (array_key_exists($product_id, $_SESSION['cart'])) {
-      $_SESSION['cart'][$product_id]['quantity'] += $quantity;
+    if (empty($_SESSION['order'])) {
+      $_SESSION['order'] = array();
+      $_SESSION['order']['orderlines'] = array();
+    }
+    $amount = $quantity * $product['price'];
+    if (array_key_exists($product_id, $_SESSION['order']['orderlines'])) {
+      $_SESSION['order']['orderlines'][$product_id]['quantity'] += $quantity;
+      $_SESSION['order']['ordertotal'] += $amount;
     } else {
-      if (empty($product_id) || !$product = $this->productDAO->selectById($product_id)) {
-        $_SESSION['error'] = 'No Product Found';
-        header('Location: index.php');
-      }
-      $_SESSION['cart'][$product_id] = $product;
-      $_SESSION['cart'][$product_id]['quantity'] = $quantity;
+      $_SESSION['order']['orderlines'][$product_id] = $product;
+      $_SESSION['order']['orderlines'][$product_id]['quantity'] = $quantity;
+      $_SESSION['order']['ordertotal'] = $amount;
     }
+    $_SESSION['info'] = 'Het product is toegevoegd aan je winkelmandje.
+      <a href="index.php?page=cart">Bekijk je winkelmandje<span class="arrow_icon"></a>';
   }
 }

@@ -1,0 +1,52 @@
+.order_info_grid {
+  display: grid;
+  border: solid 1px var(--colorDarkGray);
+}
+
+.order_info_grid p {
+  padding-left: 1rem;
+}
+
+.info_grid_part {
+  display: grid;
+  grid-template-columns: 7rem 1fr;
+}
+
+.info_grid_part2 {
+  display: grid;
+  grid-template-columns: 2rem 1fr 7rem;
+}
+
+.info_grid_part2 input {
+  place-self: center;
+}
+
+.info_grid_part2 p {
+  margin: 0;
+}
+
+.info_grid_part2 div {
+  padding: .4rem;
+  place-self: center start;
+}
+
+.bottomline {
+  border-bottom: solid 1px var(--colorDarkGray);
+}
+
+input[type=radio] {
+  appearance: none;
+  border: solid 1px var(--colorDarkGray);
+  background-color: var(--colorWhite);
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+}
+
+input[type=radio]:hover {
+  background-color: var(--colorLightGray);
+}
+
+input[type=radio]:checked {
+  background-color: var(--colorDarkGray);
+}

@@ -19,11 +19,12 @@
 .productpage_crumbs li::before {
   content: url(../../assets/img/icons/arrows_crumb.svg);
   padding-right: var(--paddingLittle);
+  padding-left: var(--paddingLittle);
 }
 
 .productpage_crumbs li:first-child::before {
   content: '';
-  padding-right: 0;
+  padding-left: 0;
 }
 
 .detail_product--title {
@@ -129,6 +130,8 @@ input[type=number] {
   grid-template-columns: 240px 240px 240px;
   grid-gap: 2.5rem;
   grid-gap: var(--paddingBigger);
-  margin-bottom: 2.5rem;
+}
+
+.otherproducts h2 {
   margin-bottom: var(--paddingBigger);
 }

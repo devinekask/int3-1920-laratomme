@@ -19,7 +19,7 @@
         </div>
       </div>
 
-      <?php if (!empty($order)) { ?>
+      <?php if (!empty($order) && !empty($order['orderlines'])) { ?>
         <div class="basket">
           <div class="basket_grid">
             <p class="basket_heading--first">Product</p>
@@ -30,10 +30,8 @@
 
 
             <?php
-            $totalprice = 0;
-            foreach ($order as $orderline) :
+            foreach ($order['orderlines'] as $orderline) :
               $subtotal = $orderline['quantity'] * $orderline['price'];
-              $totalprice += $subtotal;
             ?>
               <div class="basket_img"><img src="<?php echo $orderline['thumbnail_url'] ?>" alt="product image"></div>
               <div class="basket_prd--info">
@@ -50,7 +48,7 @@
             <?php endforeach; ?>
 
             <p class="basket_total">Totaal</p>
-            <p class="basket_total--price"><?php echo $totalprice; ?></p>
+            <p class="basket_total--price"><?php echo $order['ordertotal']; ?></p>
           </div>
         </div>
         <div class="cart_buttons">
@@ -58,6 +56,12 @@
           <!-- <a href="index.php?page=order"></a> -->
           <button class="btn-bestellen" type="submit" name="action" value="bestellen">Bestellen <span class="cart_white"></span></button>
         </div>
+      <?php } else { ?>
+        <div class="cart_empty">
+          <p>Je winkelmandje is momenteel leeg. :(</p>
+          <a href="index.php">Ga naar de webshop</a>
+        </div>
+
       <?php } ?>
     </form>
   </section>

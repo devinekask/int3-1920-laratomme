@@ -1,0 +1,25 @@
+.info_box {
+  background-color: var(--colorSecondary);
+  border: 1px solid var(--colorText);
+  width: fit-content;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: var(--paddingBig) auto;
+}
+
+.info_box a {
+  text-decoration: none;
+  color: var(--colorText);
+  padding: 0 var(--paddingBig);
+}
+
+.info_box a:hover {
+  text-decoration: underline;
+}
+
+.info_box p {
+  padding: 0 var(--paddingBig);
+  font-weight: var(--fontWeightBold);
+}

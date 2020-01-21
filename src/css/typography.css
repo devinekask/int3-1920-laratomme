@@ -36,3 +36,12 @@ h1 {
   padding: var(--paddingLittle);
   text-transform: var(--textUppercase);
 }
+
+.txt_bold {
+  font-weight: var(--fontWeightBold);
+}
+
+.text_small_gray {
+  color: var(--colorDarkGray);
+  font-size: var(--fontSmall);
+}
