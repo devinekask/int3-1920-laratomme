@@ -4,19 +4,20 @@
 }
 
 .wrapper_shop {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr;
+
+  @media (--regular-screen-and-up) {
+    grid-template-columns: auto 1fr;
+  }
 }
 
 .products_list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: var(--paddingBigger);
+  grid-gap: var(--paddingMedium);
   margin-bottom: var(--paddingBiggest);
-
-  /* display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; */
+  grid-template-columns: repeat(auto-fit, 230px);
+  justify-content: center;
 }
 
 .controls_webshop {

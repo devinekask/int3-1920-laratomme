@@ -30,6 +30,7 @@
 
 @custom-media --only-small-screen (width <= 320px);
 @custom-media --only-regular-screen (width <= 786px);
-@custom-media --header--only-regular-screen (width <= 1075px);
+@custom-media --header--only-regular-screen (width <= 1024px);
+@custom-media --regular-screen-and-up (width => 1024px);
 @custom-media --only-medium-screen (width <= 1280px);
 @custom-media --only-large-screen (width >= 1440px);

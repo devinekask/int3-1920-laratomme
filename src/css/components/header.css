@@ -24,11 +24,9 @@
   display: flex;
 
   @media (--header--only-regular-screen) {
-    display: flex;
     flex-direction: column-reverse;
     align-items: center;
     margin-top: 1rem;
-
   }
 }
 
