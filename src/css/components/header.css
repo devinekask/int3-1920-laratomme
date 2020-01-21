@@ -14,6 +14,7 @@
   width: var(--largeWidth);
   display: inline-flex;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .cart_items {
@@ -21,6 +22,22 @@
   text-decoration: none;
   color: var(--colortext);
   display: flex;
+
+  @media (--header--only-regular-screen) {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-top: 1rem;
+
+  }
+}
+
+.cart_items img {
+  @media (--header--only-regular-screen) {
+    margin-bottom: -1.5rem;
+    height: 34px;
+  }
+
 }
 
 .cart_items:hover {
@@ -40,10 +57,30 @@
   display: inline-block;
   vertical-align: middle;
   margin: 0;
+
+  @media (--header--only-regular-screen) {
+    display: none;
+  }
+}
+
+.hamburger_icon {
+  display: none;
+
+  @media (--header--only-regular-screen) {
+    display: inline;
+    appearance: none;
+    border: none;
+    background-color: none;
+  }
 }
 
 .header .logo_humo {
   align-self: center;
+
+  @media (--only-small-screen) {
+    width: 120px;
+    height: 40px;
+  }
 }
 
 .shop_link {

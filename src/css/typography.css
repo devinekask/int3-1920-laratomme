@@ -35,6 +35,10 @@ h1 {
   width: fit-content;
   padding: var(--paddingLittle);
   text-transform: var(--textUppercase);
+
+  @media (--only-small-screen) {
+    margin: 0 auto;
+  }
 }
 
 .txt_bold {

@@ -36,9 +36,13 @@ class OrderController extends Controller
     }
 
     if (!empty($_POST['delete'])) {
-      $productId = $_POST['delete'];
-      if (!empty($_SESSION['order']['orderlines'][$productId])) {
-        unset($_SESSION['order']['orderlines'][$productId]);
+      $product_variant_id = $_POST['delete'];
+      if (!empty($_SESSION['order']['orderlines'][$product_variant_id])) {
+        unset($_SESSION['order']['orderlines'][$product_variant_id]);
+      }
+      $this->updateOrderLines();
+      if (count($_SESSION['order']['orderlines']) === 0) {
+        $_SESSION['order'] = array();
       }
     }
 
@@ -82,10 +86,10 @@ class OrderController extends Controller
             $data['payment_type'] = $_SESSION['order']['payment'];
             $orderid = $this->orderDAO->insertOrder($data);
             if ($orderid) {
-              foreach ($_SESSION['order']['orderlines'] as $productId => $orderline) {
+              foreach ($_SESSION['order']['orderlines'] as $product_variant_id => $orderline) {
                 $data = array();
                 $data['order_id'] = $orderid;
-                $data['product_id'] = $productId;
+                $data['product_variant_id'] = $product_variant_id;
                 $data['quantity'] = $orderline['quantity'];
                 $this->orderItemDAO->insertOrderItem($data);
               }
@@ -93,7 +97,7 @@ class OrderController extends Controller
           }
 
           $_SESSION['order'] = array();
-
+          $_SESSION['info'] = 'Je hebt je bestelling afgerond. Binnekort ontvang je je producten.';
           header('Location: index.php');
           exit();
           break;
@@ -109,11 +113,13 @@ class OrderController extends Controller
   private function updateOrderLines()
   {
     $_SESSION['order']['ordertotal'] = 0;
-    foreach ($_POST['quantity'] as $productId => $quantity) {
-      if (!empty($_SESSION['order']['orderlines'][$productId])) {
-        $price = $_SESSION['order']['orderlines'][$productId]['price'];
-        $_SESSION['order']['orderlines'][$productId]['quantity'] = $quantity;
+    $_SESSION['order']['ordercount'] = 0;
+    foreach ($_POST['quantity'] as $product_variant_id => $quantity) {
+      if (!empty($_SESSION['order']['orderlines'][$product_variant_id])) {
+        $price = $_SESSION['order']['orderlines'][$product_variant_id]['variant']['price'];
+        $_SESSION['order']['orderlines'][$product_variant_id]['quantity'] = $quantity;
         $_SESSION['order']['ordertotal'] += $price * $quantity;
+        $_SESSION['order']['ordercount'] += $quantity;
       }
     }
   }

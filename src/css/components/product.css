@@ -1,17 +1,16 @@
 .product {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
+  display: grid;
+
+  /* width: 230px; */
 }
 
 .product_image {
   width: 230px;
   height: 240px;
-  background-color: var(--colorWhite);
-  display: flex;
+  display: grid;
   justify-content: flex-start;
-  align-items: center;
+  align-items: end;
+  background-color: var(--colorWhite);
   transition-duration: .3s;
   transition-property: transform;
 }
@@ -20,15 +19,28 @@
   transform: scale(1.1);
 }
 
-.product_information {
+.product_information form {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  text-decoration: none;
+}
+
+.product_variant_add {
+  display: flex;
+  flex-direction: column;
 }
 
 .product_information--text {
   margin-right: .8rem;
+  display: grid;
+}
+
+.product_information--text form {
+  display: grid;
+  grid-gap: 1rem;
+}
+
+.product_information--text select {
+  margin-top: var(--paddingMedium);
 }
 
 .categorie {
@@ -46,9 +58,13 @@
 }
 
 .price {
-  font-size: var(--fontBetween);
   color: var(--colorText);
   font-weight: var(--fontWeightBold);
+}
+
+.variant_name {
+  font-weight: var(--fontWeightBold);
+  font-size: var(--fontBetween);
 }
 
 .price::before {
@@ -77,22 +93,31 @@
 
 .btn-add {
   appearance: none;
+  padding: .6rem;
   background-color: var(--colorRed);
-  border-radius: 50%;
-  width: 38px;
-  height: 38px;
+  box-shadow: 0 4px 0 var(--colorText);
+  border-radius: 2px;
   border: none;
-  font-size: 2rem;
   color: var(--colorWhite);
+  font-weight: var(--fontWeightBold);
+}
+
+.plus_icon {
+  padding-left: .6rem;
+  font-size: var(--fontMedium);
+  /* transition-duration: 1s;
+  transition-property: transform;
+  transition-timing-function: ease-in-out;
+  transform: rotate(360deg);
+  transform: perspective(1px) translateZ(0); */
+}
+
+/* .btn-add:hover .plus_icon {
   transition-duration: 1s;
   transition-property: transform;
   transition-timing-function: ease-in-out;
-}
-
-.btn-add:hover {
-  transition: 1s;
-  transform: rotate(180deg);
-}
+  transform: rotate(360deg);
+} */
 
 .btn-add:focus .btn-add:active {
   appearance: none;

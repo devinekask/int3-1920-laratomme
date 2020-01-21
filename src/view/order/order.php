@@ -214,11 +214,14 @@
         <p class="overview_heading overview_price">Prijs</p>
         <p class="overview_heading overview_subt">Subtotaal</p>
         <?php foreach ($order['orderlines'] as $orderline) :
-          $subtotal = $orderline['quantity'] * $orderline['price']; ?>
+          $subtotal = $orderline['quantity'] * $orderline['variant']['price']; ?>
           <p class="overview_border_top"></p>
-          <p class="overview_namevalue"><?php echo $orderline['name'] ?></p>
+          <p class="overview_namevalue"><?php echo $orderline['name'] ?>
+            <?php if ($orderline['name'] != $orderline['variant']['name']) { ?>
+              <br><?php echo $orderline['variant']['name'] ?>
+            <?php } ?></p>
           <p class="overview_qtyvalue"><?php echo $orderline['quantity'] ?></p>
-          <p class="overview_pricevalue"><?php echo $orderline['price'] ?></p>
+          <p class="overview_pricevalue"><?php echo $orderline['variant']['price'] ?></p>
           <p class="overview_subtvalue"><?php echo $subtotal ?></p>
         <?php endforeach; ?>
         <?php if (!empty($order['shipping_type'])) { ?>

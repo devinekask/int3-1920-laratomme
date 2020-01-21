@@ -13,6 +13,10 @@
   grid-template-columns: repeat(3, 1fr);
   grid-gap: var(--paddingBigger);
   margin-bottom: var(--paddingBiggest);
+
+  /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; */
 }
 
 .controls_webshop {

@@ -29,7 +29,7 @@ class ProductsController extends Controller
     }
 
     if (!empty($_POST['action']) && $_POST['action'] == 'add') {
-      $this->addToCart($_POST['product_id'], 1);
+      $this->addToCart($_POST['product_variant_id'], 1);
     }
 
     $maxprice = $this->productDAO->getMaxPrice();
@@ -50,7 +50,7 @@ class ProductsController extends Controller
     }
 
     if (!empty($_POST['action']) && $_POST['action'] == 'add') {
-      $this->addToCart($_POST['product_id'], $_POST['quantity']);
+      $this->addToCart($_POST['product_variant_id'], $_POST['quantity']);
     }
 
     $data = array();
@@ -62,25 +62,33 @@ class ProductsController extends Controller
     $this->set('product', $product);
   }
 
-  private function addToCart($product_id, $quantity)
+  private function addToCart($product_variant_id, $quantity)
   {
-    if (empty($product_id) || !$product = $this->productDAO->selectById($product_id)) {
+    if (empty($product_variant_id) || !$variant = $this->productDAO->selectVariantById($product_variant_id)) {
+      $_SESSION['error'] = 'Er is geen product variant gevonden.';
+      header('Location: index.php');
+      exit();
+    }
+    if (empty($variant['product_id']) || !$product = $this->productDAO->selectById($variant['product_id'])) {
       $_SESSION['error'] = 'Er is geen product gevonden.';
       header('Location: index.php');
+      exit();
     }
     if (empty($_SESSION['order'])) {
       $_SESSION['order'] = array();
       $_SESSION['order']['orderlines'] = array();
     }
-    $amount = $quantity * $product['price'];
-    if (array_key_exists($product_id, $_SESSION['order']['orderlines'])) {
-      $_SESSION['order']['orderlines'][$product_id]['quantity'] += $quantity;
-      $_SESSION['order']['ordertotal'] += $amount;
-    } else {
-      $_SESSION['order']['orderlines'][$product_id] = $product;
-      $_SESSION['order']['orderlines'][$product_id]['quantity'] = $quantity;
-      $_SESSION['order']['ordertotal'] = $amount;
+
+    if (!array_key_exists($product_variant_id, $_SESSION['order']['orderlines'])) {
+      $_SESSION['order']['orderlines'][$product_variant_id] = $product;
+      $_SESSION['order']['orderlines'][$product_variant_id]['variant'] = $variant;
     }
+
+
+    $amount = $quantity * $variant['price'];
+    $_SESSION['order']['orderlines'][$product_variant_id]['quantity'] = !empty($_SESSION['order']['orderlines'][$product_variant_id]['quantity']) ? $_SESSION['order']['orderlines'][$product_variant_id]['quantity'] + $quantity : $quantity;
+    $_SESSION['order']['ordertotal'] = !empty($_SESSION['order']['ordertotal']) ? $_SESSION['order']['ordertotal'] + $amount : $amount;
+    $_SESSION['order']['ordercount'] = !empty($_SESSION['order']['ordercount']) ? $_SESSION['order']['ordercount'] + $quantity : $quantity;
     $_SESSION['info'] = 'Het product is toegevoegd aan je winkelmandje.
       <a href="index.php?page=cart">Bekijk je winkelmandje<span class="arrow_icon"></a>';
   }

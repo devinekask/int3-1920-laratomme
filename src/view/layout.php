@@ -26,6 +26,10 @@
   <div class="layout">
     <header class="header">
       <div class="width_content">
+        <div class="hamburger_icon">
+          <input type="checkbox">
+          <img src="./assets/img/icons/hamburger.svg" alt="hamburger menu icon">
+        </div>
         <ul>
           <li class="menu_item">Home</li>
           <li class="menu_item">Actua</li>
@@ -37,7 +41,7 @@
           <li class="menu_item">Muziek</li>
           <li class="menu_item">Boeken</li>
           <li class="menu_item"><a class="shop_link" href="index.php">Webshop</a></li>
-          <li class="cart_items"><a class="cart_items" href="index.php?page=cart">Item(s)<img src="./assets/img/icons/cart_icon.svg" alt="cart_icon"></a></li>
+          <li class="cart_items"><a class="cart_items" href="index.php?page=cart"><?php echo (!empty($_SESSION['order']['ordercount']) ? $_SESSION['order']['ordercount'] : 0); ?> Item(s)<img src="./assets/img/icons/cart_icon.svg" alt="cart_icon"></a></li>
         </ul>
       </div>
     </header>

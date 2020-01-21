@@ -30,20 +30,22 @@
 
 
             <?php
-            foreach ($order['orderlines'] as $orderline) :
-              $subtotal = $orderline['quantity'] * $orderline['price'];
+            foreach ($order['orderlines'] as $product_variant_id => $orderline) :
+              $subtotal = $orderline['quantity'] * $orderline['variant']['price'];
             ?>
               <div class="basket_img"><img src="<?php echo $orderline['thumbnail_url'] ?>" alt="product image"></div>
               <div class="basket_prd--info">
                 <p class="basket_prd_title"><?php echo $orderline['name'] ?></p>
-                <p><?php echo $orderline['description_long'] ?></p>
+                <?php if ($orderline['name'] != $orderline['variant']['name']) { ?>
+                  <p><?php echo $orderline['variant']['name'] ?></p>
+                <?php } ?>
               </div>
-              <p class="basket_prd-price"><?php echo $orderline['price'] ?></p>
+              <p class="basket_prd-price"><?php echo $orderline['variant']['price'] ?></p>
               <div class="basket_prd--qty">
-                <input type="number" name="quantity[<?php echo $orderline['id'] ?>]" min="1" max="50" value="<?php echo $orderline['quantity'] ?>">
+                <input type="number" name="quantity[<?php echo $product_variant_id ?>]" min="1" max="50" value="<?php echo $orderline['quantity'] ?>">
               </div>
               <p class="basket_prd--subtot"><?php echo $subtotal; ?></p>
-              <button type="submit" name="delete" value="<?php echo $orderline['id'] ?>" class="basket_prd--delete">X Verwijder</button>
+              <button type="submit" name="delete" value="<?php echo $product_variant_id ?>" class="basket_prd--delete">X Verwijder</button>
               <img class="basket_line2" src="./assets/img/icons/line.png" alt="line">
             <?php endforeach; ?>
 
@@ -53,7 +55,6 @@
         </div>
         <div class="cart_buttons">
           <button class="btn-update" type="submit" name="action" value="update">Update winkelmandje</button>
-          <!-- <a href="index.php?page=order"></a> -->
           <button class="btn-bestellen" type="submit" name="action" value="bestellen">Bestellen <span class="cart_white"></span></button>
         </div>
       <?php } else { ?>

@@ -11,6 +11,14 @@
   background-color: var(--colorText);
   display: flex;
   justify-content: center;
+  height: 9.4rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  @media (--only-regular-screen) {
+    height: 4.9rem;
+  }
 }
 
 .flex_footer {

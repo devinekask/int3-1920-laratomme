@@ -34,8 +34,9 @@
 }
 
 .detail_product--price {
-  font-size: var(--fontLarger);
+  font-size: var(--fontMedium);
   font-weight: var(--fontWeightBold);
+  color: var(--colorRed);
   margin: 0;
 }
 
@@ -118,7 +119,7 @@ input[type=number] {
 }
 
 .detail_product_part {
-  margin-bottom: var(--paddingLarger);
+  margin-bottom: var(--paddingSmall);
 }
 
 .product_buy {
@@ -134,4 +135,14 @@ input[type=number] {
 
 .otherproducts h2 {
   margin-bottom: var(--paddingBigger);
+}
+
+select {
+  border: solid red 2px;
+  padding: .5rem;
+  background-color: white;;
+}
+
+.detail_product_buy {
+  margin-top: var(--paddingSmall);
 }
