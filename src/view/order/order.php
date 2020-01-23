@@ -121,7 +121,7 @@
           </div>
         </section>
 
-      <?php } else if ($_POST['action'] === 'payment') { ?>
+      <?php } else if ($_POST['action'] === 'payment' || $_POST['action'] === 'submit_code') { ?>
 
         <section class="order_betalen">
 
@@ -149,7 +149,7 @@
             <h1 class="order_information--title">Kortingscode</h1>
             <p>Vul hier je kortingscode in die je bij het Humo magazine hebt gevonden.</p>
             <div class="korting_part">
-              <input type="text" placeholder="Kortingscode">
+              <input type="text" placeholder="Kortingscode" name="code" value="<?php echo !empty($_SESSION['order']['discount']) ? $_SESSION['order']['discount']['code'] : null; ?>">
               <button class="korting_button" type="submit" name="action" value="submit_code">Toepassen</button>
             </div>
           </div>
@@ -207,7 +207,7 @@
       <div class="order_overview">
         <div class="overview_header">
           <p class="overview_header--text">Totaal</p>
-          <p class="overview_header--text overview_totprice"><?php echo $order['ordertotal'] + (!empty($order['shipping_type']) ? $order['shipping_type']['price'] : 0);  ?></p>
+          <p class="overview_header--text overview_totprice"><?php echo round($order['ordertotal'] * (1 - (!empty($order['discount']) ? $order['discount']['percentage'] : 0)) + (!empty($order['shipping_type']) ? $order['shipping_type']['price'] : 0), 2);  ?></p>
         </div>
         <p class="overview_heading overview_name">Naam</p>
         <p class="overview_heading overview_qty">Aantal</p>
@@ -230,6 +230,13 @@
           <p class="overview_qtyvalue">1</p>
           <p class="overview_pricevalue"><?php echo $order['shipping_type']['price'] ?></p>
           <p class="overview_subtvalue"><?php echo $order['shipping_type']['price'] ?></p>
+        <?php } ?>
+        <?php if (!empty($order['discount'])) { ?>
+          <p class="overview_border_top"></p>
+          <p class="overview_namevalue">Korting</p>
+          <p class="overview_qtyvalue">1</p>
+          <p class="overview_pricevalue">-<?php echo round($order['ordertotal'] * $order['discount']['percentage'], 2); ?></p>
+          <p class="overview_subtvalue">-<?php echo round($order['ordertotal'] * $order['discount']['percentage'], 2) ?></p>
         <?php } ?>
       </div>
     </div>

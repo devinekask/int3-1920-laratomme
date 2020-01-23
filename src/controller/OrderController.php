@@ -5,6 +5,7 @@ require_once __DIR__ . '/../dao/ShippingTypeDAO.php';
 require_once __DIR__ . '/../dao/CustomerDAO.php';
 require_once __DIR__ . '/../dao/OrderDAO.php';
 require_once __DIR__ . '/../dao/OrderItemDAO.php';
+require_once __DIR__ . '/../dao/DiscountDAO.php';
 
 class OrderController extends Controller
 {
@@ -13,6 +14,7 @@ class OrderController extends Controller
   private $customerDAO;
   private $orderDAO;
   private $orderItemDAO;
+  private $discountDAO;
 
   function __construct()
   {
@@ -20,6 +22,7 @@ class OrderController extends Controller
     $this->customerDAO = new CustomerDAO();
     $this->orderDAO = new OrderDAO();
     $this->orderItemDAO = new OrderItemDAO();
+    $this->discountDAO = new DiscountDAO();
   }
 
   public function cart()
@@ -75,6 +78,18 @@ class OrderController extends Controller
           $shippingType = $this->shippingTypeDAO->selectByID($_POST['shipping']);
           $_SESSION['order']['shipping_type'] = $shippingType;
           break;
+        case 'submit_code':
+          $code = $_POST['code'];
+          if (!empty($code)) {
+            $discount = $this->discountDAO->selectByCode($code);
+            if (!empty($discount) && empty($discount['order_id'])) {
+              $_SESSION['order']['discount'] = $discount;
+              $_SESSION['info'] = 'Code gevonden en toegevoegd.';
+            } else {
+              $_SESSION['error'] = 'Geen geldige code gevonden.';
+            }
+          }
+          break;
         case 'complete':
           $_SESSION['order']['payment'] = $_POST['payment'];
 
@@ -84,6 +99,7 @@ class OrderController extends Controller
             $data['customer_id'] = $customerid;
             $data['shipping_type_id'] = $_SESSION['order']['shipping_type']['id'];
             $data['payment_type'] = $_SESSION['order']['payment'];
+            $data['discount_id'] = !empty($_SESSION['order']['discount']) ? $_SESSION['order']['discount']['id'] : null;
             $orderid = $this->orderDAO->insertOrder($data);
             if ($orderid) {
               foreach ($_SESSION['order']['orderlines'] as $product_variant_id => $orderline) {

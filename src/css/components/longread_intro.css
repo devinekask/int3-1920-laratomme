@@ -1,0 +1,31 @@
+.lr_intro_image {
+  display: block;
+  text-align: center;
+}
+
+.intro_sub {
+  color: var(--colorOrange);
+  font-size: var(--fontTitleBig);
+  font-weight: var(--fontWeightBold);
+  line-height: 120%;
+  letter-spacing: .1em;
+  font-family: var(--fontSecondary);
+  padding-bottom: var(--paddingBig);
+}
+
+.longread_intro {
+  background-color: var(--colorText);
+  padding: 5.6rem;
+  background-size: auto auto;
+  background-image: repeating-linear-gradient(180deg, transparent, transparent 100px, rgba(23, 172, 56, .59) 100px, rgba(23, 172, 56, .59) 101px), repeating-linear-gradient(90deg, transparent, transparent 100px, rgba(23, 172, 56, .59) 100px, rgba(23, 172, 56, 0.59) 101px);
+}
+
+.intro_sub_small {
+  color: var(--colorLightGreen);
+  font-size: var(--fontTitleSmall);
+  font-weight: var(--fontWeightMedium);
+  line-height: 120%;
+  letter-spacing: .1em;
+  font-family: var(--fontSecondary);
+  padding-top: var(--paddingLittle);
+}

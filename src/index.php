@@ -29,6 +29,10 @@ $routes = array(
   'order' => array(
     'controller' => 'Order',
     'action' => 'order'
+  ),
+  'neuromancer' => array(
+    'controller' => 'Longread',
+    'action' => 'neuromancer'
   )
 );
 

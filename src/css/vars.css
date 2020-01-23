@@ -7,6 +7,9 @@
   --colorDarkGray: #504d4e;
   --colorLightGray: #e5e5e5;
   --colorYellow: #fce34e;
+  --colorLightGreen: #17ac38;
+  --colorDarkGreen: #145b2c;
+  --colorOrange: #ff572b;
   --paddingLittle: .63rem; /*10px*/
   --paddingSmall: .94rem; /* 15px */
   --paddingMedium: 1.25rem; /* 20px */
@@ -20,7 +23,12 @@
   --fontMedium: 1.13rem; /* 18px*/
   --fontLarger: 1.38rem; /* 22px */
   --fontBig: 1.63rem; /* 26px */
+  --fontTitleSmall: 1.75rem;/*28px */
+  --fontTitleMedium: 2.13rem;/*34px */
+  --fontTitleBig: 2.25rem;/*36px */
+  --fontTitleHuge: 4.07rem;/*65px */
   --font: 'Roboto', sans-serif;
+  --fontSecondary: 'Orbitron', sans-serif;
   --textUppercase: uppercase;
   --fontWeightRegular: 400;
   --fontWeightMedium: 500;
@@ -32,5 +40,5 @@
 @custom-media --only-regular-screen (width <= 786px);
 @custom-media --header--only-regular-screen (width <= 1024px);
 @custom-media --regular-screen-and-up (width => 1024px);
-@custom-media --only-medium-screen (width <= 1280px);
+@custom-media (width <= 1280px);
 @custom-media --only-large-screen (width >= 1440px);

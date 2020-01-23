@@ -37,12 +37,14 @@
           </div>
         </form>
       </div>
-      <div class="detail_product_part">
-        <p class="boek_text--bolder">Leer het boek kennen voordat je het aankoopt.</p>
-        <div class="arrow_moveout">
-          <p><a class="button_bookpage" href="book.html">Naar boekpagina<span class="arrow_icon"></span></a></p>
+      <?php if (!empty($product['longread_page'])) { ?>
+        <div class="detail_product_part">
+          <p class="boek_text--bolder">Leer het boek kennen voordat je het aankoopt.</p>
+          <div class="arrow_moveout">
+            <p><a class="button_bookpage" href="index.php?page=neuromancer&id=<?php echo $product['id']; ?>">Naar boekpagina<span class="arrow_icon"></span></a></p>
+          </div>
         </div>
-      </div>
+      <?php } ?>
     </div>
   </section>
 
@@ -77,7 +79,7 @@
                     <?php endforeach; ?></select>
                 <?php } ?>
                 <input type="hidden" name="quantity" value="1" />
-                <button class="btn-add" type="submit" name="action" value="add"><span>+</span></button>
+                <button class="btn-add" type="submit" name="action" value="add">Toevoegen<span class="plus_icon">+</span></button>
               </form>
             </div>
           </div>

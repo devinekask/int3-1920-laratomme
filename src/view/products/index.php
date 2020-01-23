@@ -16,8 +16,11 @@
           <p>Laat je meeslepen door Humo’s top 10 SF, met onder andere The Handmaids Tale en Neuromancer.</p>
         </div>
         <div class="arrow_moveout">
-          <p><a class="campaign_button" href="">Bekijk boeken <span class="arrow_icon"></span></a></p>
-          <!-- link naar boeken categorie in webshop -->
+          <form action="index.php" method="POST">
+            <p>
+              <input type="hidden" name="categories[]" value="1">
+              <button class="campaign_button" type="submit" name="action" value="filter">Bekijk boeken <span class="arrow_icon"></span></button></p>
+          </form>
         </div>
       </div>
     </div>

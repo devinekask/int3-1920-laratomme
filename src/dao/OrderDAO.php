@@ -8,12 +8,13 @@ class OrderDAO extends DAO
   {
     $errors = $this->validate($data);
     if (empty($errors)) {
-      $sql = "INSERT INTO `int3_bi_orders`(`customer_id`, `shipping_type_id`, `payment_type`)
-            VALUES (:customer_id, :shipping_type_id, :payment_type)";
+      $sql = "INSERT INTO `int3_bi_orders`(`customer_id`, `shipping_type_id`, `payment_type`, `discount_id`)
+            VALUES (:customer_id, :shipping_type_id, :payment_type, :discount_id)";
       $stmt = $this->pdo->prepare($sql);
       $stmt->bindValue(':customer_id', $data['customer_id']);
       $stmt->bindValue(':shipping_type_id', $data['shipping_type_id']);
       $stmt->bindValue(':payment_type', $data['payment_type']);
+      $stmt->bindValue(':discount_id', $data['discount_id']);
       if ($stmt->execute()) {
         return $this->pdo->lastInsertId();
       }

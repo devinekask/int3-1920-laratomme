@@ -59,3 +59,22 @@
 .order_betalen {
   width: 640px;
 }
+
+.lr_section {
+  display: grid;
+}
+
+.text_side {
+  right: 0;
+  position: absolute;
+}
+
+.container_longread {
+  max-width: 1090px;
+  margin: auto;
+  width: 100vw;
+
+  @media (--only-medium-screen) {
+    max-width: 685px;
+  }
+}

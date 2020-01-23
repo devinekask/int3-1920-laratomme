@@ -48,7 +48,7 @@ class ProductDAO extends DAO
 
   public function selectById($id)
   {
-    $sql = "SELECT p.id, p.name, p.description_long, p.image_url, p.thumbnail_url, c.id AS categorie_id, c.name AS categorie FROM int3_bi_products AS p INNER JOIN int3_bi_categorie AS c ON p.categorie_id = c.id
+    $sql = "SELECT p.id, p.name, p.description_long, p.image_url, p.thumbnail_url, c.id AS categorie_id, c.name AS categorie, p.longread_page FROM int3_bi_products AS p INNER JOIN int3_bi_categorie AS c ON p.categorie_id = c.id
     WHERE p.id = :id";
     $stmt = $this->pdo->prepare($sql);
     $stmt->bindValue(':id', $id);

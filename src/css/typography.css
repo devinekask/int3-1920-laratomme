@@ -49,3 +49,37 @@ h1 {
   color: var(--colorDarkGray);
   font-size: var(--fontSmall);
 }
+
+.h2_lightgreen, .h2_orange, .h2_darkgreen, .h2_white {
+  font-size: var(--fontTitleMedium);
+  font-weight: var(--fontWeightBold);
+  font-family: var(--fontSecondary);
+  line-height: 120%;
+  letter-spacing: .1em;
+  border-bottom: 2px solid;
+  padding-bottom: .6rem;
+  max-width: 1280px;
+  right: 0;
+  position: absolute;
+
+  @media (--only-medium-screen) {
+    max-width: 970px;
+  }
+
+}
+
+.h2_lightgreen {
+  color: var(--colorLightGreen);
+}
+
+.h2_orange {
+  color: var(--colorOrange);
+}
+
+.h2_darkgreen {
+  color: var(--colorDarkGren);
+}
+
+.h2_white {
+  color: var(--colorWhite);
+}
