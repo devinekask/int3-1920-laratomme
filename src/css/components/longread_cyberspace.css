@@ -18,14 +18,14 @@
 
 .border_green {
   border: solid 3px var(--colorLightGreen);
-  max-width: 440px;
+  max-width: 27.5rem;
   height: fit-content;
   padding: 1.5rem;
 }
 
 .border_orange {
   border: solid 3px var(--colorOrange);
-  max-width: 440px;
+  max-width: 27.5rem;
   height: fit-content;
   padding: 1.5rem;
 }

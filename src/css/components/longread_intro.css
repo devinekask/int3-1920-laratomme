@@ -17,7 +17,7 @@
   background-color: var(--colorText);
   padding: 5.6rem;
   background-size: auto auto;
-  background-image: repeating-linear-gradient(180deg, transparent, transparent 100px, rgba(23, 172, 56, .59) 100px, rgba(23, 172, 56, .59) 101px), repeating-linear-gradient(90deg, transparent, transparent 100px, rgba(23, 172, 56, .59) 100px, rgba(23, 172, 56, 0.59) 101px);
+  background-image: repeating-linear-gradient(180deg, transparent, transparent 100px, rgba(23, 172, 56, .59) 100px, rgba(23, 172, 56, .59) 101px), repeating-linear-gradient(90deg, transparent, transparent 100px, rgba(23, 172, 56, .59) 100px, rgba(23, 172, 56, .59) 101px);
 }
 
 .intro_sub_small {

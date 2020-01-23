@@ -1,0 +1,48 @@
+.preview_image {
+  max-width: fit-content;
+  margin: auto;
+  width: 100vw;
+  margin-top: .6rem;
+  position: relative;
+  display: block;
+}
+
+.preview_text {
+  position: absolute;
+  top: 5%;
+  left: 8%;
+  width: 85%;
+  height: 83%;
+  overflow-y: auto;
+  line-height: 170%;
+  text-align: left;
+}
+
+.longread_preview {
+  margin-top: 10rem;
+  margin-bottom: 6.25rem;
+  background-size: auto auto;
+  background-image: repeating-linear-gradient(180deg, transparent, transparent 70px, rgba(20, 91, 44, 1) 70px, rgba(20, 91, 44, 1) 71px), repeating-linear-gradient(90deg, transparent, transparent 70px, rgba(20, 91, 44, 1) 70px, rgba(20, 91, 44, 1) 71px);
+  padding: var(--paddingBigger) 0;
+}
+
+.side_preview {
+  margin-top: 8rem;
+}
+
+.skip_align {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.skip_align a {
+  text-decoration: none;
+  color: var(--colorDarkGreen);
+  font-weight: var(--fontWeightBold);
+  font-size: var(--fontMedium);
+}
+
+.skip_align a:hover {
+  text-decoration: underline;
+  color: var(--colorOrange);
+}

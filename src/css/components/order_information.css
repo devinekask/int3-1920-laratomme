@@ -9,8 +9,8 @@
 .order_checkbox input {
   appearance: none;
   margin-right: .6rem;
-  width: 17px;
-  height: 17px;
+  width: 1.06rem;
+  height: 1.06rem;
   border: solid 1px var(--colorDarkGray);
   background-color: white;
 }

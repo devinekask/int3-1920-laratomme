@@ -1,0 +1,22 @@
+.themas_content {
+  margin-top: 6.5rem;
+}
+
+.thema_grid {
+  background-image: url(/assets/img/themas_bkg.svg);
+  background-repeat: no-repeat;
+  width: 895px;
+  height: 462px;
+
+  /* @media (--only-large-screen) {
+    background-image: url(assets/img/themas_bkg_medium.svg);
+  }
+
+  @media (--only-small-screen) {
+    background-image: url(assets/img/themas_bkg_small.svg);
+  }
+
+  @media (--only-extra-small-screen) {
+    background-image: url(assets/img/themas_bkg_mini.svg);
+  } */
+}

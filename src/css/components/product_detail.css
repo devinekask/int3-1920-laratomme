@@ -54,8 +54,8 @@
 }
 
 input[type=number] {
-  width: 40px;
-  height: 38px;
+  width: 2.5rem;
+  height: 2.4rem;
   border: solid 1px var(--colorLightGray);
   text-align: center;
 }
@@ -63,8 +63,8 @@ input[type=number] {
 .cart_white::after {
   display: inline-block;
   content: '';
-  width: 27px;
-  height: 23px;
+  width: 1.69rem;
+  height: 1.44rem;
   background: url(../../assets/img/icons/cart_icon_white.svg) no-repeat;
   margin: 5px 0 0 5px;
 }
@@ -128,7 +128,7 @@ input[type=number] {
 
 .otherproduct_list {
   display: grid;
-  grid-template-columns: 240px 240px 240px;
+  grid-template-columns: 15rem 15rem 15rem;
   grid-gap: 2.5rem;
   grid-gap: var(--paddingBigger);
 }
@@ -140,7 +140,9 @@ input[type=number] {
 select {
   border: solid red 2px;
   padding: .5rem;
-  background-color: white;;
+  background-color: white;
+  width: fit-content;
+  margin: .6rem 0;
 }
 
 .detail_product_buy {

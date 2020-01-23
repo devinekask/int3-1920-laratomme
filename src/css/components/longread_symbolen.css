@@ -1,0 +1,30 @@
+.longread_symbolen {
+  margin-top: 10rem;
+  margin-bottom: 6.25rem;
+}
+
+.symbolen_content {
+  margin: 6.5rem auto;
+  max-width: 893px;
+}
+
+.symbool {
+  display: flex;
+}
+
+.margin-symbool-right {
+  margin-right: var(--paddingLarger);
+}
+
+.margin-symbool-left {
+  margin-left: var(--paddingLarger);
+}
+
+.dotted_green_line {
+  color: var(--colorLightGreen);
+  margin: var(--paddingBigger) 0;
+}
+
+.side_symbolen {
+  margin-top: 8rem;
+}

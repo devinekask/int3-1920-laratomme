@@ -34,19 +34,19 @@
   border-bottom: solid 1px var(--colorDarkGray);
 }
 
-input[type=radio] {
+.checkout_radio {
   appearance: none;
   border: solid 1px var(--colorDarkGray);
   background-color: var(--colorWhite);
-  height: 15px;
-  width: 15px;
+  height: .94rem;
+  width: .94rem;
   border-radius: 50%;
 }
 
-input[type=radio]:hover {
+.checkout_radio:hover {
   background-color: var(--colorLightGray);
 }
 
-input[type=radio]:checked {
+.checkout_radio:checked {
   background-color: var(--colorDarkGray);
 }

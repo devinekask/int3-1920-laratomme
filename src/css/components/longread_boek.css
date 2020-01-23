@@ -1,0 +1,28 @@
+.longread_boek {
+  margin-top: 10rem;
+  margin-bottom: 6.25rem;
+}
+
+.boek_content {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  margin-top: 5.63rem;
+}
+
+.boek_text {
+  max-width: 32.5rem;
+  margin-left: var(--paddingMedium);
+}
+
+.boek_text div {
+  margin-bottom: var(--paddingMedium);
+}
+
+.boek_text p {
+  margin: 0;
+}
+
+.side_boek {
+  margin-top: 11rem;
+}

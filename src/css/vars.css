@@ -10,6 +10,7 @@
   --colorLightGreen: #17ac38;
   --colorDarkGreen: #145b2c;
   --colorOrange: #ff572b;
+  --colorHighlight: #9cfab1;
   --paddingLittle: .63rem; /*10px*/
   --paddingSmall: .94rem; /* 15px */
   --paddingMedium: 1.25rem; /* 20px */
@@ -26,7 +27,7 @@
   --fontTitleSmall: 1.75rem;/*28px */
   --fontTitleMedium: 2.13rem;/*34px */
   --fontTitleBig: 2.25rem;/*36px */
-  --fontTitleHuge: 4.07rem;/*65px */
+  --fontTitleHuge: 2.8rem;/*45px */
   --font: 'Roboto', sans-serif;
   --fontSecondary: 'Orbitron', sans-serif;
   --textUppercase: uppercase;
@@ -36,9 +37,15 @@
   --largeWidth: 1076px;
 }
 
-@custom-media --only-small-screen (width <= 320px);
-@custom-media --only-regular-screen (width <= 786px);
+/* @custom-media --only-small-screen (width <= 786px);
+@custom-media --only-regular-screen (width > 786px);
 @custom-media --header--only-regular-screen (width <= 1024px);
 @custom-media --regular-screen-and-up (width => 1024px);
-@custom-media (width <= 1280px);
-@custom-media --only-large-screen (width >= 1440px);
+@custom-media --only-medium-screen (width <= 1280px);
+@custom-media --only-large-screen (width >= 1440px); */
+
+@custom-media --only-extra-small-screen (width <= 600px);
+@custom-media --only-small-screen (width => 600px);
+@custom-media --only-medium-screen (width => 786px);
+@custom-media --only-large-screen (width => 992px);
+@custom-media --only-extra-large-screen (width => 1280px);

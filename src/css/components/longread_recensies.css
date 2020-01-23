@@ -1,0 +1,32 @@
+.longread_recensies {
+  margin-top: 10rem;
+  margin-bottom: 6.25rem;
+  background-color: var(--colorDarkGreen);
+}
+
+.container_recensies {
+  margin-bottom: 6rem;
+  margin-top: 6rem;
+  width: 100vw;
+  max-width: 33.75rem;
+}
+
+.container_recensies p {
+  text-align: center;
+  color: var(--colorWhite);
+  padding-bottom: var(--paddingBigger);
+}
+
+.container_recensies img {
+  margin: auto;
+  display: flex;
+  padding-bottom: var(--paddingBigger);
+}
+
+.recensies_text {
+  margin-top: 6.5rem;
+}
+
+.side_recensies {
+  margin-top: 16rem;
+}

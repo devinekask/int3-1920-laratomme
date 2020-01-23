@@ -10,7 +10,7 @@
 .grid_index {
   display: grid;
   margin: auto;
-  max-width: 1024px;
+  max-width: 64rem;
   grid-template-rows: auto;
   margin-top: var(--paddingBigger);
 
@@ -29,7 +29,7 @@
 
 .grid_detail {
   display: grid;
-  grid-template-columns: 1076px;
+  grid-template-columns: 67.25rem;
   justify-content: center;
   margin-top: var(--paddingBigger);
   margin-bottom: var(--paddingBiggest);
@@ -39,7 +39,7 @@
   display: grid;
   justify-content: center;
   margin: 0 auto;
-  grid-template-columns: 1076px;
+  grid-template-columns: 67.25rem;
   margin-top: var(--paddingBigger);
   margin-bottom: var(--paddingBiggest);
 }
@@ -50,18 +50,19 @@
 }
 
 .grid_order {
-  grid-template-columns: 1076px;
+  grid-template-columns: 67.25rem;
   margin-right: var(--paddingBigger);
   margin-top: var(--paddingBigger);
   margin-bottom: var(--paddingBiggest);
 }
 
 .order_betalen {
-  width: 640px;
+  width: 40rem;
 }
 
 .lr_section {
   display: grid;
+  align-items: center;
 }
 
 .text_side {
@@ -70,11 +71,11 @@
 }
 
 .container_longread {
-  max-width: 1090px;
+  max-width: 68.13rem;
   margin: auto;
   width: 100vw;
 
   @media (--only-medium-screen) {
-    max-width: 685px;
+    max-width: 42.8rem;
   }
 }

@@ -77,9 +77,21 @@ h1 {
 }
 
 .h2_darkgreen {
-  color: var(--colorDarkGren);
+  color: var(--colorDarkGreen);
 }
 
 .h2_white {
   color: var(--colorWhite);
+}
+
+.h3_green {
+  color: var(--colorLightGreen);
+  font-weight: var(--fontWeightMedium);
+  font-family: var(--fontSecondary);
+}
+
+.h3_orange {
+  color: var(--colorOrange);
+  font-weight: var(--fontWeightMedium);
+  font-family: var(--fontSecondary);
 }

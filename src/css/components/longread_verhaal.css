@@ -1,0 +1,12 @@
+.longread_verhaal {
+  text-align: center;
+  color: var(--colorLightGreen);
+  text-transform: var(--textUppercase);
+  font-weight: var(--fontWeightBold);
+  font-family: var(--fontSecondary);
+  font-size: var(--fontTitleHuge);
+  padding: var(--paddingBiggest) 0;
+  margin: 6.5rem 0;
+  background-size: auto auto;
+  background-image: repeating-linear-gradient(180deg, transparent, transparent 70px, #17ac38 70px, #17ac38 71px), repeating-linear-gradient(90deg, transparent, transparent 70px, #17ac38 70px, #17ac38 71px);
+}

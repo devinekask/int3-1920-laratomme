@@ -2,11 +2,13 @@
   background-color: var(--colorSecondary);
   border: 1px solid var(--colorText);
   width: fit-content;
-  display: block;
-  display: flex;
+  /* display: block; */
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   margin: var(--paddingBig) auto;
+  position: relative;
+  top: 3rem;
 }
 
 .info_box a {

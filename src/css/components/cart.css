@@ -9,10 +9,10 @@
 
 .process_active {
   color: var(--colorRed);
+  font-weight: var(--fontWeightBold);
 }
 
 .process_title {
-  color: var(--colorDarkGray);
   text-transform: var(--textUppercase);
 }
 
@@ -23,7 +23,6 @@
 }
 
 .process_title--first {
-  color: var(--colorDarkGray);
   text-transform: var(--textUppercase);
 }
 
@@ -59,14 +58,14 @@
 }
 
 .basket_img {
-  place-self: center;
-  width: 100px;
-  height: 140px;
+  align-self: center;
+  max-width: 100px;
+  max-height: 140px;
 }
 
 .basket_img img {
-  width: 100px;
-  height: 140px;
+  max-width: 100px;
+  max-height: 140px;
 }
 
 .basket_prd--info {

@@ -1,0 +1,25 @@
+.auteur_border {
+  border: solid 3px var(--colorLightGreen);
+  max-width: 45.3rem;
+  height: fit-content;
+  padding: 1.5rem;
+  margin-right: 1rem;
+}
+
+.auteur_content {
+  display: flex;
+  margin-top: 5.63rem;
+}
+
+.longread_auteur {
+  margin-top: 10rem;
+  margin-bottom: 6.25rem;
+}
+
+.highlight {
+  background-color: var(--colorHighlight);
+}
+
+.side_auteur {
+  margin-top: 6rem;
+}

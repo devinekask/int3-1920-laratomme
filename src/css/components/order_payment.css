@@ -9,13 +9,16 @@ button [type='submit'] {
 
 .payoption label {
   padding: .2rem;
+  display: inline-flex;
+  align-items: center;
 }
 
 .payoption img {
   place-self: center end;
 }
 
-.korting_part input {
+.korting_input {
+  appearance: none;
   padding: .55rem .5rem;
   background-color: white;
   background-color: var(--colorWhite);
@@ -25,6 +28,7 @@ button [type='submit'] {
 }
 
 .korting_button {
+  appearance: none;
   background: var(--colorRed);
   box-shadow: 0 4px 0 var(--colorText);
   text-decoration: none;
@@ -33,5 +37,4 @@ button [type='submit'] {
   border-radius: 2px;
   font-weight: var(--fontWeightBold);
   padding: .6rem 1rem;
-  border: none;
 }

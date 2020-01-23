@@ -6,15 +6,15 @@
       <h2><a class="title_red" href="index.php">Verder winkelen</a></h2>
       <div class="cart_navigation">
         <div class="cart_nav--step crumb <?php echo (empty($_POST['action']) || $_POST['action'] === 'cart') ? 'process_active' : '' ?>">
-          <p class="process_title--first">1. Winkelmandje</p>
+          <p class="process_title--first ">1. Winkelmandje</p>
         </div>
-        <div class="cart_nav--step crumb<?php echo (!empty($_POST['action']) && $_POST['action'] === 'information') ? 'process_active' : '' ?>">
+        <div class="cart_nav--step crumb <?php echo (!empty($_POST['action']) && $_POST['action'] === 'information') ? 'process_active' : '' ?>">
           <p class="process_title">2. Informatie</p>
         </div>
-        <div class="cart_nav--step crumb <?php echo (!empty($_POST['action']) && $_POST['action'] === 'shipping') ? 'process_active' : '' ?>">
+        <div class="cart_nav--step crumb  <?php echo (!empty($_POST['action']) && $_POST['action'] === 'shipping') ? 'process_active' : '' ?>">
           <p class="process_title">3. Verzenden</p>
         </div>
-        <div class="cart_nav--step<?php echo (!empty($_POST['action']) && $_POST['action'] === 'payment') ? 'process_active' : '' ?>">
+        <div class="cart_nav--step <?php echo (!empty($_POST['action']) && $_POST['action'] === 'payment') ? 'process_active' : '' ?>">
           <p class="process_title">4. Betalen</p>
         </div>
       </div>
@@ -102,7 +102,7 @@
 
               <?php foreach ($shipping_types as $shipping_type) : ?>
                 <div class="info_grid_part2 bottomline">
-                  <input type="radio" name="shipping" value="<?php echo $shipping_type['id']; ?>" required <?php echo !empty($order['shipping_type']) && $order['shipping_type']['id'] == $shipping_type['id'] ? "checked" : ""; ?>>
+                  <input class="checkout_radio" type="radio" name="shipping" value="<?php echo $shipping_type['id']; ?>" required <?php echo !empty($order['shipping_type']) && $order['shipping_type']['id'] == $shipping_type['id'] ? "checked" : ""; ?>>
                   <div>
                     <p><?php echo $shipping_type['name']; ?></p>
                     <p class="text_small_gray"><?php echo $shipping_type['description']; ?></p>
@@ -149,7 +149,7 @@
             <h1 class="order_information--title">Kortingscode</h1>
             <p>Vul hier je kortingscode in die je bij het Humo magazine hebt gevonden.</p>
             <div class="korting_part">
-              <input type="text" placeholder="Kortingscode" name="code" value="<?php echo !empty($_SESSION['order']['discount']) ? $_SESSION['order']['discount']['code'] : null; ?>">
+              <input class="korting_input" type="text" placeholder="Kortingscode" name="code" value="<?php echo !empty($_SESSION['order']['discount']) ? $_SESSION['order']['discount']['code'] : null; ?>">
               <button class="korting_button" type="submit" name="action" value="submit_code">Toepassen</button>
             </div>
           </div>
@@ -161,31 +161,31 @@
               af te ronden.</p>
             <div class="order_info_grid">
               <div class="info_grid_part2 bottomline payoption">
-                <input type="radio" id="payment1" name="payment" value="bancontact" required>
+                <input class="checkout_radio" type="radio" id="payment1" name="payment" value="bancontact" required>
                 <label for="payment1">Bancontact</label>
                 <img src="./assets/img/icons/bancontact.png" alt="bancontact icon">
               </div>
 
               <div class="info_grid_part2 bottomline payoption">
-                <input type="radio" id="payment2" name="payment" value="paypal">
+                <input class="checkout_radio" type="radio" id="payment2" name="payment" value="paypal">
                 <label for="payment2">Paypal</label>
                 <img src="./assets/img/icons/paypal.png" alt="paypal icon">
               </div>
 
               <div class="info_grid_part2 bottomline payoption">
-                <input type="radio" id="payment3" name="payment" value="ideal">
+                <input class="checkout_radio" type="radio" id="payment3" name="payment" value="ideal">
                 <label for="payment3">IDEAL</label>
                 <img src="./assets/img/icons/ideal.png" alt="ideal icon">
               </div>
 
               <div class="info_grid_part2 bottomline payoption">
-                <input type="radio" id="payment4" name="payment" value="belfius">
+                <input class="checkout_radio" type="radio" id="payment4" name="payment" value="belfius">
                 <label for="payment4">Belfius</label>
                 <img src="./assets/img/icons/belfius.png" alt="belfius icon">
               </div>
 
               <div class="info_grid_part2 payoption">
-                <input type="radio" id="payment5" name="payment" value="kbc">
+                <input class="checkout_radio" type="radio" id="payment5" name="payment" value="kbc">
                 <label for="payment5">KBC</label>
                 <img src="./assets/img/icons/kbc.png" alt="kbc icon">
               </div>
