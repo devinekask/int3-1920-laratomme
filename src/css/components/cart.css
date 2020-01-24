@@ -2,9 +2,25 @@
   text-decoration: underline;
 }
 
+.webshop_cart {
+  margin: 0 1rem;
+
+  @media (--screen-under-786) {
+    width: 100vw;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
 .cart_navigation {
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: var(--paddingBig);
+
+  @media (--screen-under-786) {
+    justify-content: center;
+  }
+
 }
 
 .process_active {
@@ -20,6 +36,11 @@
   grid-column: 4;
   place-self: center end;
   font-weight: var(--fontWeightBold);
+
+   @media (--screen-under-786) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
 }
 
 .process_title--first {
@@ -36,6 +57,11 @@
   display: grid;
   grid-template-columns: 6.25rem 1fr 6.25rem 6.25rem 6.25rem 6.25rem;
   grid-template-rows: 1fr .3rem 150px .3rem;
+
+  @media (--screen-under-786) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
 }
 
 .basket_line {
@@ -104,6 +130,11 @@
   justify-content: flex-end;
   margin-right: 6rem;
   margin-top: var(--paddingMedium);
+
+  @media (--screen-under-786) {
+    margin-right: 0;
+    justify-content: center;
+  }
 }
 
 .cart_buttons button:focus button:active {
@@ -200,4 +231,10 @@
 .cart_empty a:hover {
   background-color: var(--colorRed);
   color: var(--colorWhite);
+}
+
+.basket_small {
+  @media (--screen-under-786) {
+    display: none;
+  }
 }

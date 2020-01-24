@@ -4,10 +4,18 @@
 
 .order_overview {
   display: grid;
-  width: 31.25rem;
+  max-width: 31.25rem;
   border: solid 2px var(--colorSecondary);
   margin-top: var(--paddingBigger);
   margin-left: var(--paddingBigger);
+
+  @media (--screen-under-786) {
+    margin: 0 auto 4rem;
+  }
+
+  @media (--screen-under-320) {
+    overflow-x: auto;
+  }
 }
 
 .overview_header {
@@ -35,7 +43,7 @@
 }
 
 .overview_name {
-  background-color: none;
+  background-color: transparent;
   place-self: center start;
 }
 

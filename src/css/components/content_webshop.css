@@ -7,8 +7,8 @@
   display: grid;
   grid-template-columns: auto 1fr;
 
-  @media (--regular-screen-and-up) {
-    grid-template-columns: auto 1fr;
+  @media (--screen-under-786) {
+    grid-template-columns: auto;
   }
 }
 

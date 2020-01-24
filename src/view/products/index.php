@@ -7,10 +7,15 @@
   <section class="campaign">
     <div class="campaign_content">
       <div class="campaign_image">
-        <img src="./assets/img/boekencovers.jpg" alt="campaign_books_humo">
+        <picture>
+          <source media="(max-width: 786px)" type="image/webp" srcset="./assets/img/boekencovers_small_result.webp" />
+          <source srcset="./assets/img/boekencovers_result.webp" />
+          <img src="./assets/img/boekencovers.jpg" alt="campaign_books_humo">
+        </picture>
+
       </div>
       <div class="campaign_information">
-        <div>
+        <div class="campaign_par">
           <h2>10 weken lang een Science Ficiton boek bij Humo!</h2>
           <p>Ontvang kortingsbon bij Humo en bestel je boek online via de webshop.</p>
           <p>Laat je meeslepen door Humo’s top 10 SF, met onder andere The Handmaids Tale en Neuromancer.</p>
@@ -45,10 +50,10 @@
             <div class="categorie_options">
               <?php foreach ($categories as $categorie) : ?>
                 <div>
-                  <input name="categories[]" value="<?php echo $categorie['id']; ?>" type="checkbox" <?php if (!empty($_SESSION['filter']['categories']) && in_array($categorie['id'], $_SESSION['filter']['categories'])) {
-                                                                                                        echo 'checked';
-                                                                                                      } ?>>
-                  <label for="<?php echo $categorie['id']; ?>" class="checkbox"><?php echo $categorie['name']; ?></label>
+                  <input id="categorie_<?php echo $categorie['id']; ?>" name="categories[]" value="<?php echo $categorie['id']; ?>" type="checkbox" <?php if (!empty($_SESSION['filter']['categories']) && in_array($categorie['id'], $_SESSION['filter']['categories'])) {
+                                                                                                                                                      echo 'checked';
+                                                                                                                                                    } ?>>
+                  <label for="categorie_<?php echo $categorie['id']; ?>" class="checkbox"><?php echo $categorie['name']; ?></label>
                 </div>
               <?php endforeach; ?>
             </div>

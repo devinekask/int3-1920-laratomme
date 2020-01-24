@@ -25,6 +25,12 @@ h1 {
   font-family: var(--font);
   font-weight: var(--fontWeightBold);
   color: var(--colorRed);
+
+  @media (--screen-under-786) {
+    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .title_red::before {
@@ -44,8 +50,9 @@ h1 {
   padding: var(--paddingLittle);
   text-transform: var(--textUppercase);
 
-  @media (--only-small-screen) {
-    margin: 0 auto;
+  @media (--screen-under-786) {
+    margin: 2rem auto;
+    text-align: center;
   }
 }
 
@@ -70,10 +77,6 @@ h1 {
   right: 0;
   position: absolute;
 
-  /* @media (--only-medium-screen) {
-    max-width: 970px;
-  } */
-
   @media (--screen-under-786) {
     font-size: var(--fontTitleSmall);
   }
@@ -82,7 +85,6 @@ h1 {
     font-size: var(--fontBig);
     text-align: center;
   }
-
 }
 
 .h2_lightgreen {

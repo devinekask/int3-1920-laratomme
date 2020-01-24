@@ -6,16 +6,16 @@
       <h2><a class="title_red" href="index.php">Verder winkelen</a></h2>
       <div class="cart_navigation">
         <div class="cart_nav--step crumb <?php echo (empty($_POST['action']) || $_POST['action'] === 'cart') ? 'process_active' : '' ?>">
-          <p class="process_title--first ">1. Winkelmandje</p>
+          <p class="process_title--first ">1. <span class="basket_small"> Winkelmandje</span></p>
         </div>
         <div class="cart_nav--step crumb <?php echo (!empty($_POST['action']) && $_POST['action'] === 'information') ? 'process_active' : '' ?>">
-          <p class="process_title">2. Informatie</p>
+          <p class="process_title">2.<span class="basket_small"> Informatie</span></p>
         </div>
         <div class="cart_nav--step crumb  <?php echo (!empty($_POST['action']) && $_POST['action'] === 'shipping') ? 'process_active' : '' ?>">
-          <p class="process_title">3. Verzenden</p>
+          <p class="process_title">3.<span class="basket_small"> Verzenden</span></p>
         </div>
         <div class="cart_nav--step <?php echo (!empty($_POST['action']) && $_POST['action'] === 'payment') ? 'process_active' : '' ?>">
-          <p class="process_title">4. Betalen</p>
+          <p class="process_title">4.<span class="basket_small"> Betalen</span></p>
         </div>
       </div>
 
@@ -26,8 +26,9 @@
           <div class="order_information_part">
             <h1 class="order_information--title">Contact informatie</h1>
             <p>Vul je emailadres in zodat we je kunnen informeren over je bestelling.</p>
-            <div class="form_part">
-              <input type="email" name="email" value="<?php echo !empty($order['customer']['email']) ? $order['customer']['email'] : null; ?>" placeholder="Email" required>
+            <div class="form_part floating_wrapper">
+              <input class="floating_label_input" id="email" type="email" name="email" value="<?php echo !empty($order['customer']['email']) ? $order['customer']['email'] : null; ?>" required>
+              <label class="floating_label" for="email">Email</label>
             </div>
             <p class="order_checkbox"><input type="checkbox" name="newsletter" <?php echo !empty($order['customer']['newsletter']) ? "checked" : ""; ?>>Schrijf me in voor een weekelijkse nieuwsbrief met Humo nieuws en acties.</p>
           </div>
@@ -103,7 +104,7 @@
 
               <?php foreach ($shipping_types as $shipping_type) : ?>
                 <div class="info_grid_part2 bottomline">
-                  <input class="checkout_radio" type="radio" name="shipping" value="<?php echo $shipping_type['id']; ?>" required <?php echo !empty($order['shipping_type']) && $order['shipping_type']['id'] == $shipping_type['id'] ? "checked" : ""; ?>>
+                  <input id="shipping" class="checkout_radio" type="radio" name="shipping" value="<?php echo $shipping_type['id']; ?>" required <?php echo !empty($order['shipping_type']) && $order['shipping_type']['id'] == $shipping_type['id'] ? "checked" : ""; ?>>
                   <div>
                     <p><?php echo $shipping_type['name']; ?></p>
                     <p class="text_small_gray"><?php echo $shipping_type['description']; ?></p>

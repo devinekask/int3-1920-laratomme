@@ -1,6 +1,10 @@
 .order_info_grid {
   display: grid;
   border: solid 1px var(--colorDarkGray);
+
+  @media (max-width: 425px) {
+    display: flow-root;
+  }
 }
 
 .order_info_grid p {
@@ -10,6 +14,10 @@
 .info_grid_part {
   display: grid;
   grid-template-columns: 7rem 1fr;
+
+  @media (max-width: 425px) {
+    display: flow-root;
+  }
 }
 
 .info_grid_part2 {

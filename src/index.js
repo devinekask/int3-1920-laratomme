@@ -1,6 +1,9 @@
 require('./style.css');
 
 {
+  const $longreadAwards = document.querySelector('.longread_awards');
+  const $longreadThemas = document.querySelector('.longread_themas');
+
   const init = () => {
     const $filterForm = document.querySelector('.filter_function');
     if ($filterForm) {
@@ -11,6 +14,78 @@ require('./style.css');
       }
     }
 
+    if ($longreadAwards) {
+      initAward();
+    }
+
+    if ($longreadThemas) {
+      initThema();
+    }
+  };
+
+  const initAward = () => {
+    const $awardLinks = $longreadAwards.querySelectorAll('.award_link');
+    $awardLinks.forEach($link => {
+      $link.addEventListener('click', e => {
+        e.preventDefault();
+        showAward($link);
+      });
+    });
+  };
+
+  const showAward = $link => {
+    const $awardPictures = $longreadAwards.querySelectorAll('.award_picture');
+    $awardPictures.forEach($picture => {
+      $picture.classList.add('award_picture_grey');
+    });
+    $link.querySelector('.award_picture').classList.remove('award_picture_grey');
+
+    const $awardText = $longreadAwards.querySelector('.award_text');
+    const $awardTexts = $awardText.querySelectorAll('p');
+    $awardTexts.forEach($awardPar => {
+      $awardPar.classList.add('award_text_hidden');
+    });
+
+    const $chosenAward = $link.querySelector('div').classList[0];
+    const $chosenText = $awardText.querySelector(`.${$chosenAward}_text`);
+    $chosenText.classList.remove('award_text_hidden');
+  };
+
+
+  const initThema = () => {
+    const $themaLinks = $longreadThemas.querySelectorAll('.thema_link');
+    $themaLinks.forEach($link => {
+      $link.addEventListener('click', e => {
+        e.preventDefault();
+        showThema($link);
+      });
+    });
+  };
+
+  const showThema = $link => {
+    const $themaPictures = $longreadThemas.querySelectorAll('.thema_link_image');
+    $themaPictures.forEach($picture => {
+      $picture.src = 'assets/img/thema_white.svg';
+    });
+    $link.querySelector('.thema_link_image').src = 'assets/img/thema_green.svg';
+
+    const $themaLinkTexts = $longreadThemas.querySelectorAll('.thema_link_text');
+    $themaLinkTexts.forEach($linkText => {
+      $linkText.classList.add('thema_text_white');
+      $linkText.classList.remove('thema_text_green');
+    });
+    $link.querySelector('.thema_link_text').classList.add('thema_text_green');
+    $link.querySelector('.thema_link_text').classList.remove('thema_text_white');
+
+    const $themaText = $longreadThemas.querySelector('.thema_text');
+    const $themaTexts = $themaText.querySelectorAll('div');
+    $themaTexts.forEach($themaPar => {
+      $themaPar.classList.add('thema_text_hidden');
+    });
+
+    const $chosenThema = $link.querySelector('div').classList[0];
+    const $chosenText = $themaText.querySelector(`.${$chosenThema}_text`);
+    $chosenText.classList.remove('thema_text_hidden');
   };
 
   const editPriceText = e => {
@@ -21,66 +96,6 @@ require('./style.css');
   };
 
 
-
-
-  // const $todosList = document.getElementById(`todosList`),
-  //   $insertTodoForm = document.getElementById(`insertTodoForm`),
-  //   $inputText = document.getElementById(`inputText`);
-
-  // const init = () => {
-  //   if ($todosList) {
-  //     loadTodos();
-  //   }
-  //   if ($insertTodoForm) {
-  //     $insertTodoForm.addEventListener(`submit`, handleSubmitInsertTodoForm);
-  //   }
-  // };
-
-  // const loadTodos = () => {
-  //   fetch(`index.php`, {
-  //     headers: new Headers({
-  //       Accept: `application/json`
-  //     })
-  //   })
-  //     .then(r => r.json())
-  //     .then(data => handleLoadTodos(data));
-  // };
-
-  // const handleLoadTodos = data => {
-  //   $todosList.innerHTML = data.map(todo => createTodoListItem(todo)).join(``);
-  // };
-
-  // const createTodoListItem = todo => {
-  //   return `<li>${todo.text}</li>`;
-  // };
-
-  // const handleSubmitInsertTodoForm = e => {
-  //   e.preventDefault();
-  //   fetch($insertTodoForm.getAttribute('action'), {
-  //     headers: new Headers({
-  //       Accept: `application/json`
-  //     }),
-  //     method: 'post',
-  //     body: new FormData($insertTodoForm)
-  //   })
-  //     .then(r => r.json())
-  //     .then(data => handleLoadSubmit(data));
-  // };
-
-  // const handleLoadSubmit = data => {
-  //   const $errorText = document.querySelector(`.error--text`);
-  //   $errorText.textContent = '';
-  //   if (data.result === 'ok') {
-  //     $inputText.value = '';
-  //     loadTodos();
-  //   } else {
-  //     if (data.errors.text) {
-  //       $errorText.textContent = data.errors.text;
-  //     }
-  //   }
-  // };
-
-  // init();
 
   init();
 }

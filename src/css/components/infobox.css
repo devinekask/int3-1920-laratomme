@@ -2,10 +2,6 @@
   background-color: var(--colorSecondary);
   border: 1px solid var(--colorText);
   width: fit-content;
-  /* display: block; */
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
   margin: var(--paddingBig) auto;
   position: relative;
   top: 3rem;
@@ -15,6 +11,11 @@
   text-decoration: none;
   color: var(--colorText);
   padding: 0 var(--paddingBig);
+
+  @media (--screen-under-786) {
+    padding: 0;
+    text-decoration: underline;
+  }
 }
 
 .info_box a:hover {

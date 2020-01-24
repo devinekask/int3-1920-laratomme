@@ -1,4 +1,12 @@
 .title_webshop {
   grid-column: 2;
   align-self: center;
+
+  @media (--screen-under-786) {
+    margin-left: 2rem;
+  }
+
+  @media (--screen-under-320) {
+    margin: 1rem 3rem;
+  }
 }

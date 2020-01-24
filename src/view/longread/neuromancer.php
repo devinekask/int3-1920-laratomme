@@ -137,7 +137,7 @@
 
 
 
-<section id="preview" id="preview" class="longread_preview lr_section">
+<section id="preview" class="longread_preview lr_section">
   <div>
     <h2 class="container_longread h2_darkgreen">Lees een preview van het boek</h2>
     <div class="skip_align">
@@ -166,7 +166,7 @@
 </section>
 
 
-<section id="recensies" id="recensies" class="longread_recensies lr_section">
+<section id="recensies" class="longread_recensies lr_section">
   <div class="container_longread container_recensies">
     <h2 class="h2_white container_longread">Recensies</h2>
     <div class="recensies_text">
@@ -205,42 +205,44 @@
       </div>
 
       <div class="award_images">
-
-        <label class="award1" for="award1">
-          <input class="award_button" type="radio" id="award1" name="award" value="award1" checked>
-          <picture class="award_picture">
-            <source media="(max-width: 786px)" srcset="./assets/img/award1_small.png" />
-            <source media="(max-width: 1280px)" srcset="./assets/img/award1_medium.png" />
-            <source media="(min-width: 1280px)" srcset="./assets/img/award1.png" />
-            <img src="./assets/img/award1.png" alt="Philip K Dick award">
-          </picture>
-          <p class="h3_orange ">Meer informatie over award <span></span></p>
-          <p class="award_text">Philip K. Dick Award is een Amerikaanse sciencefictionprijs die jaarlijks in Norwescon wordt uitgereikt en wordt gesponsord door de Philadelphia Science Fiction Society en (sinds 2005) de Philip K. Dick Trust. De prijs is vernoemd naar sciencefiction- en fantasieschrijver Philip K. Dick en wordt uitgereikt sinds 1983, het jaar na zijn dood.</p>
-        </label>
-
-        <label class="award2" for="award2">
-          <input class="award_button" type="radio" id="award2" name="award" value="award2">
-          <picture class="award_picture">
-            <source media="(max-width: 786px)" srcset="./assets/img/award2_small.png" />
-            <source media="(max-width: 1280px)" srcset="./assets/img/award2_medium.png" />
-            <source media="(min-width: 1280px)" srcset="./assets/img/award2.png" />
-            <img src="./assets/img/award2.png" alt="Hugo Award">
-          </picture>
-          <p class="h3_orange">Meer informatie over award <span></span></p>
-          <p class="award_text">De Hugo Award is een jaarlijkse literaire prijs voor de beste sciencefiction- of fantasiewerken en -prestaties van het voorgaande jaar, uitgereikt op de World Science Fiction Convention en gekozen door haar leden.</p>
-        </label>
-
-        <label class="award3" for="award3">
-          <input class="award_button" type="radio" id="award3" name="award" value="award3">
-          <picture class="award_picture">
-            <source media="(max-width: 786px)" srcset="./assets/img/award3_small.png" />
-            <source media="(max-width: 1280px)" srcset="./assets/img/award3_medium.png" />
-            <source media="(min-width: 1280px)" srcset="./assets/img/award3.png" />
-            <img src="./assets/img/award3.png" alt="Nebula Award">
-          </picture>
-          <p class="h3_orange">Meer informatie over award <span></span></p>
-          <p class="award_text">De Nebula Awards erkennen jaarlijks de beste werken van sciencefiction of fantasie die in de Verenigde Staten worden gepubliceerd. De awards worden georganiseerd en uitgereikt door de Science Fiction and Fantasy Writers of America (SFWA), een non-profit vereniging van professionele sciencefiction- en fantasieschrijvers.</p>
-        </label>
+        <a class="award_link" href="index.php?page=<?php echo $_GET['page'] . '&id=' . $_GET['id']; ?>&award=1#awards">
+          <div class="award_1">
+            <picture class="award_picture <?php echo empty($_GET['award']) ||  $_GET['award'] === '1' ? "" : 'award_picture_grey' ?>">
+              <source media="(max-width: 786px)" srcset="./assets/img/award1_small.png" />
+              <source media="(max-width: 1280px)" srcset="./assets/img/award1_medium.png" />
+              <source media="(min-width: 1280px)" srcset="./assets/img/award1.png" />
+              <img src="./assets/img/award1.png" alt="Philip K Dick award">
+            </picture>
+            <p class="h3_orange ">Meer informatie over award</p>
+          </div>
+        </a>
+        <a class="award_link" href="index.php?page=<?php echo $_GET['page'] . '&id=' . $_GET['id']; ?>&award=2#awards">
+          <div class="award_2">
+            <picture class="award_picture  <?php echo !empty($_GET['award']) &&  $_GET['award'] === '2' ? "" : 'award_picture_grey' ?>">
+              <source media="(max-width: 786px)" srcset="./assets/img/award2_small.png" />
+              <source media="(max-width: 1280px)" srcset="./assets/img/award2_medium.png" />
+              <source media="(min-width: 1280px)" srcset="./assets/img/award2.png" />
+              <img src="./assets/img/award2.png" alt="Hugo Award">
+            </picture>
+            <p class="h3_orange ">Meer informatie over award</p>
+          </div>
+        </a>
+        <a class="award_link" href="index.php?page=<?php echo $_GET['page'] . '&id=' . $_GET['id']; ?>&award=3#awards">
+          <div class="award_3">
+            <picture class="award_picture <?php echo !empty($_GET['award']) &&  $_GET['award'] === '3' ? "" : 'award_picture_grey' ?>">
+              <source media="(max-width: 786px)" srcset="./assets/img/award3_small.png" />
+              <source media="(max-width: 1280px)" srcset="./assets/img/award3_medium.png" />
+              <source media="(min-width: 1280px)" srcset="./assets/img/award3.png" />
+              <img src="./assets/img/award3.png" alt="Nebula Award">
+            </picture>
+            <p class="h3_orange ">Meer informatie over award</p>
+          </div>
+        </a>
+      </div>
+      <div class="award_text">
+        <p class="award_1_text <?php echo empty($_GET['award']) ||  $_GET['award'] === '1' ? "" : 'award_text_hidden' ?>"><span class="highlight">Philip K. Dick Award</span> is een Amerikaanse sciencefictionprijs die jaarlijks in Norwescon wordt uitgereikt en wordt gesponsord door de Philadelphia Science Fiction Society en (sinds 2005) de Philip K. Dick Trust. De prijs is vernoemd naar sciencefiction- en fantasieschrijver Philip K. Dick en wordt uitgereikt sinds 1983, het jaar na zijn dood.</p>
+        <p class="award_2_text <?php echo !empty($_GET['award']) &&  $_GET['award'] === '2' ? "" : 'award_text_hidden' ?>"><span class="highlight">De Hugo Award </span> is een jaarlijkse literaire prijs voor de beste sciencefiction- of fantasiewerken en -prestaties van het voorgaande jaar, uitgereikt op de World Science Fiction Convention en gekozen door haar leden.</p>
+        <p class="award_3_text <?php echo !empty($_GET['award']) &&  $_GET['award'] === '3' ? "" : 'award_text_hidden' ?>"><span class="highlight">De Nebula Awards</span> erkennen jaarlijks de beste werken van sciencefiction of fantasie die in de Verenigde Staten worden gepubliceerd. De awards worden georganiseerd en uitgereikt door de Science Fiction and Fantasy Writers of America (SFWA), een non-profit vereniging van professionele sciencefiction- en fantasieschrijvers.</p>
       </div>
     </div>
   </div>
@@ -383,48 +385,78 @@
   </div>
 </section>
 
-<section class="lr_section longread_themas">
+<section id="themas" class="lr_section longread_themas">
   <div class="container_longread">
     <h2 class="container_longread h2_darkgreen">Thema's in Neuromancer</h2>
     <div class="themas_content">
-      <p>Klik op een thema om er over te lezen.</p>
+      <p class="thema_intro">Klik op een thema om er over te lezen.</p>
+      <p class="thema_intro">
+        <- Scroll voor meer ->
+      </p>
       <div class="thema_wrapper">
-        <div class="thema"><a href="">Mensheid en technologie</a><img src="assets/img/thema_white.svg" alt="thema illustratie"></div>
-        <div class="thema"><a href="">Kennis en informatie</a><img src="assets/img/thema_white.svg" alt="thema illustratie"></div>
-        <div class="thema"><a href="">Versnippering</a><img src="assets/img/thema_white.svg" alt="thema illustratie"></div>
-        <div class="thema"><a href="">Identiteit</a><img src="assets/img/thema_white.svg" alt="thema illustratie"></div>
-        <div class="thema"><a href="">Tijd</a><img src="assets/img/thema_white.svg" alt="thema illustratie"></div>
-        <div class="hidden"><img src="assets/img/thema_green.svg" alt="thema illustratie"></div>
+
+        <a class="thema_link" href="index.php?page=<?php echo $_GET['page'] . '&id=' . $_GET['id']; ?>&thema=1#themas">
+          <div class="thema_1">
+            <img class="thema_link_image" src="assets/img/<?php echo empty($_GET['thema']) || $_GET['thema'] === '1' ? "thema_green" : 'thema_white' ?>.svg" alt="thema illustratie">
+            <span class="thema_link_text <?php echo empty($_GET['thema']) || $_GET['thema'] === '1' ? "thema_text_green" : 'thema_text_white' ?>">Mensheid en technologie</span>
+          </div>
+        </a>
+        <a class="thema_link" href="index.php?page=<?php echo $_GET['page'] . '&id=' . $_GET['id']; ?>&thema=2#themas">
+          <div class="thema_2">
+            <img class="thema_link_image" src="assets/img/<?php echo !empty($_GET['thema']) && $_GET['thema'] === '2' ? "thema_green" : 'thema_white' ?>.svg" alt="thema illustratie">
+            <span class="thema_link_text <?php echo !empty($_GET['thema']) && $_GET['thema'] === '2' ? "thema_text_green" : 'thema_text_white' ?>"> Kennis en informatie</span>
+          </div>
+        </a>
+        <a class="thema_link" href="index.php?page=<?php echo $_GET['page'] . '&id=' . $_GET['id']; ?>&thema=3#themas">
+          <div class="thema_3">
+            <img class="thema_link_image" src="assets/img/<?php echo !empty($_GET['thema']) && $_GET['thema'] === '3' ? "thema_green" : 'thema_white' ?>.svg" alt="thema illustratie">
+            <span class="thema_link_text <?php echo !empty($_GET['thema']) && $_GET['thema'] === '3' ? "thema_text_green" : 'thema_text_white' ?>"> Versnippering</span>
+          </div>
+        </a>
+        <a class="thema_link" href="index.php?page=<?php echo $_GET['page'] . '&id=' . $_GET['id']; ?>&thema=4#themas">
+          <div class="thema_4">
+            <img class="thema_link_image" src="assets/img/<?php echo !empty($_GET['thema']) && $_GET['thema'] === '4' ? "thema_green" : 'thema_white' ?>.svg" alt="thema illustratie">
+            <span class="thema_link_text <?php echo !empty($_GET['thema']) && $_GET['thema'] === '4' ? "thema_text_green" : 'thema_text_white' ?>"> Identiteit</span>
+          </div>
+        </a>
+        <a class="thema_link" href="index.php?page=<?php echo $_GET['page'] . '&id=' . $_GET['id']; ?>&thema=5#themas">
+          <div class="thema_5">
+            <img class="thema_link_image" src="assets/img/<?php echo !empty($_GET['thema']) && $_GET['thema'] === '5' ? "thema_green" : 'thema_white' ?>.svg" alt="thema illustratie">
+            <span class="thema_link_text <?php echo !empty($_GET['thema']) && $_GET['thema'] === '5' ? "thema_text_green" : 'thema_text_white' ?>"> Tijd</span>
+          </div>
+        </a>
       </div>
-      <div class="text_thema1">
-        <p>Mensheid en technologie</p>
-        <p>In heel Neuromancer onderzoekt Gibson de vraag wat het betekent om mens te zijn en hoe technologie de mensheid beïnvloedt en hervormt. Hij benadert deze vraag vanuit verschillende richtingen. Hij omvat personages die dood zijn maar in leven worden gehouden als digitale constructies. Andere karakters worden chirurgisch aangevuld.</p>
-      </div>
-      <div>
-        <p>Kennis en informatie</p>
-        <p>Kennis en informatie spelen in deze roman een grote rol. Net als bij andere thema's neemt ook dit thema vele vormen aan. Veel van wat Case doet in de eerste hoofdstukken van de roman is het zoeken naar kennis en informatie. Hij is zelden succesvol en vaak verkeerd geïnformeerd en ontdekt soms informatie die hij niet weet te gebruiken. Hij raadpleegt een reeks gedeeltelijk geïnformeerde bronnen.
-        </p>
-      </div>
-      <div>
-        <p>Versnippering</p>
-        <p>Mensen en AI ervaren versnippering van hun lichaam en geest.
-          Fragmentatie is een belangrijk thema van deze roman, net als voor het postmodernisme, dat de wereld slechts gedeeltelijk kan worden begrepen. Het neemt vele vormen aan en is zowel vrijwillig als onvrijwillig. Verschillende personages bestaan slechts gedeeltelijk, of hebben slechts een gedeeltelijke persoonlijkheid. Deze voorbeelden van versnippering geven het gevoel dat mensen gebroken zijn.
-        </p>
-      </div>
-      <div>
-        <p>Identiteit</p>
-        <p>In een wereld met kunstmatige persoonlijkheden en augmentatie is identiteit vloeibaar.
-          Identiteit is een belangrijk thema in Neuromancer. De eenvoudigste manier waarop Gibson dit thema ontwikkelt is door middel van taal: veel personages hebben meer dan één naam, en hun bijnamen, of de titels die ze verdienen dragen meer gewicht dan hun voornamen.
-        </p>
-      </div>
-      <div>
-        <p>Tijd</p>
-        <p>Als genre heeft sciencefiction veel aandacht voor de tijd. Het is een genre dat gaat over verandering en dat zich meestal afspeelt in de toekomst. In Neuromancer eb en vloed de tijd.</p>
+      <div class="thema_text">
+        <div class="thema_1_text <?php echo empty($_GET['thema']) || $_GET['thema'] === '1' ? "" : 'thema_text_hidden' ?>">
+          <p class="h3_green">Mensheid en technologie</p>
+          <p>In heel Neuromancer onderzoekt Gibson de vraag wat het betekent om mens te zijn en hoe technologie de mensheid beïnvloedt en hervormt. Hij benadert deze vraag vanuit verschillende richtingen. Hij omvat personages die dood zijn maar in leven worden gehouden als digitale constructies. Andere karakters worden chirurgisch aangevuld.</p>
+        </div>
+        <div class="thema_2_text <?php echo !empty($_GET['thema']) && $_GET['thema'] === '2' ? "" : 'thema_text_hidden' ?>">
+          <p class="h3_green">Kennis en informatie</p>
+          <p>Kennis en informatie spelen in deze roman een grote rol. Net als bij andere thema's neemt ook dit thema vele vormen aan. Veel van wat Case doet in de eerste hoofdstukken van de roman is het zoeken naar kennis en informatie. Hij is zelden succesvol en vaak verkeerd geïnformeerd en ontdekt soms informatie die hij niet weet te gebruiken. Hij raadpleegt een reeks gedeeltelijk geïnformeerde bronnen.
+          </p>
+        </div>
+        <div class="thema_3_text <?php echo !empty($_GET['thema']) && $_GET['thema'] === '3' ? "" : 'thema_text_hidden' ?>">
+          <p class="h3_green">Versnippering</p>
+          <p>Mensen en AI ervaren versnippering van hun lichaam en geest.
+            Fragmentatie is een belangrijk thema van deze roman, net als voor het postmodernisme, dat de wereld slechts gedeeltelijk kan worden begrepen. Het neemt vele vormen aan en is zowel vrijwillig als onvrijwillig. Verschillende personages bestaan slechts gedeeltelijk, of hebben slechts een gedeeltelijke persoonlijkheid. Deze voorbeelden van versnippering geven het gevoel dat mensen gebroken zijn.
+          </p>
+        </div>
+        <div class="thema_4_text <?php echo !empty($_GET['thema']) && $_GET['thema'] === '4' ? "" : 'thema_text_hidden' ?>">
+          <p class="h3_green">Identiteit</p>
+          <p>In een wereld met kunstmatige persoonlijkheden en augmentatie is identiteit vloeibaar.
+            Identiteit is een belangrijk thema in Neuromancer. De eenvoudigste manier waarop Gibson dit thema ontwikkelt is door middel van taal: veel personages hebben meer dan één naam, en hun bijnamen, of de titels die ze verdienen dragen meer gewicht dan hun voornamen.
+          </p>
+        </div>
+        <div class="thema_5_text <?php echo !empty($_GET['thema']) && $_GET['thema'] === '5' ? "" : 'thema_text_hidden' ?>">
+          <p class="h3_green">Tijd</p>
+          <p>Als genre heeft sciencefiction veel aandacht voor de tijd. Het is een genre dat gaat over verandering en dat zich meestal afspeelt in de toekomst. In Neuromancer eb en vloed de tijd.</p>
+        </div>
       </div>
     </div>
   </div>
 
-  <div class="text_side">
+  <div class="text_side side_thema">
     <picture>
       <source media="(max-width: 786px)" srcset="./assets/img/text_side/text_thema's_small.svg" />
       <source media="(max-width: 1280px)" srcset="./assets/img/text_side/text_thema's_small.svg" />

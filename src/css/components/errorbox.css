@@ -2,11 +2,9 @@
   background-color: var(--colorWhite);
   border: 1px solid var(--colorRed);
   width: fit-content;
-  display: block;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   margin: var(--paddingBig) auto;
+  position: relative;
+  top: 3rem;
 }
 
 .error_box p {

@@ -1,6 +1,11 @@
 .controls_webshop {
   background-color: var(--colorSecondary);
   min-width: 16.25rem;
+
+  @media (--screen-under-786) {
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .controls_webshop h3 {
@@ -14,6 +19,10 @@
   padding: .3rem;
   margin-left: 6rem;
   margin-top: -1rem;
+
+  @media (--screen-under-786) {
+    margin-left: 1rem;
+  }
 }
 
 .filter_item {
@@ -32,6 +41,16 @@
   margin-top: 0;
   margin-bottom: var(--paddingSmall);
   cursor: pointer;
+
+  @media (--screen-under-786) {
+    height: 9px;
+    max-width: 400px;
+  }
+
+  @media (--screen-under-320) {
+    height: 9px;
+    max-width: 250px;
+  }
 }
 
 .slider::-webkit-slider-thumb {
@@ -41,6 +60,11 @@
   background: var(--colorWhite);
   border: 2px solid var(--colorDarkGray);
   cursor: pointer;
+
+  @media (--screen-under-786) {
+    height: 25px;
+    width: 25px;
+  }
 }
 
 .filter_submit {
@@ -125,6 +149,10 @@ button button:focus button:active {
   padding-top: var(--paddingLittle);
   padding-bottom: var(--paddingLittle);
   width: 100%;
+
+  @media (--screen-under-786) {
+    font-size: var(--fontSizeRegular);
+  }
 }
 
 .filter_option {
@@ -158,6 +186,11 @@ button button:focus button:active {
   display: inline-block;
   position: relative;
   margin-right: 8px;
+
+  @media (--screen-under-786) {
+    height: 20px;
+    width: 20px;
+  }
 }
 
 input[type=checkbox]:hover {

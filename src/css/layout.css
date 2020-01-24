@@ -28,18 +28,21 @@
 }
 
 .grid_detail {
-  display: grid;
-  grid-template-columns: 67.25rem;
+  max-width: 67rem;
+  margin: 0 auto;
+  width: 100vw;
   justify-content: center;
-  margin-top: var(--paddingBigger);
+  margin-top: var(--paddingBiggest);
   margin-bottom: var(--paddingBiggest);
 }
 
 .grid_cart {
   display: grid;
   justify-content: center;
+  max-width: 67.25rem;
   margin: 0 auto;
-  grid-template-columns: 67.25rem;
+  width: 100vw;
+  grid-template-rows: auto;
   margin-top: var(--paddingBigger);
   margin-bottom: var(--paddingBiggest);
 }
@@ -47,17 +50,25 @@
 .flex_order {
   display: flex;
   justify-content: center;
+
+  @media (--screen-under-786) {
+    flex-direction: column;
+  }
 }
 
 .grid_order {
-  grid-template-columns: 67.25rem;
+  grid-template-columns: auto;
+  max-width: 67.25rem;
+  margin: 0 auto;
   margin-right: var(--paddingBigger);
   margin-top: var(--paddingBigger);
   margin-bottom: var(--paddingBiggest);
+  margin-left: 2rem;
+
 }
 
 .order_betalen {
-  width: 40rem;
+  max-width: 40rem;
 }
 
 .lr_section {

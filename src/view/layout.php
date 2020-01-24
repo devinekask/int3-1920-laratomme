@@ -41,38 +41,33 @@
 
       <header id="#top" class="header_longread">
         <div class="header_bkg">
-          <div class="container" onclick="myFunction(this)">
-            <!-- hamburger menu icon - funtion js toevoegen toggle / css -->
-            <a class="hamburger_longread" href="">
-              <div class="hamburgerbar"></div>
-              <div class="hamburgerbar"></div>
-              <div class="hamburgerbar"></div>
-            </a>
-          </div>
           <div class="logo_humo_longread">
             <img src="./assets/img/humo_logo.svg" alt="Humo logo">
           </div>
+
+          <input class="hamburger_longread" type="checkbox" id="hamburger_longread">
+          <label class="hamburger_bars" for="hamburger_longread">
+            <div class="hamburgerbar bar1"></div>
+            <div class="hamburgerbar bar2"></div>
+            <div class="hamburgerbar bar3"></div>
+          </label>
+
+
           <div class="longread_menu">
             <ul>
-              <li><a href="cyberspace"><?php echo $data['intro']; ?></a></li>
-              <li><a href="auteur">De Auteur - <?php echo $data['author']; ?></a> </li>
-              <li><a href="boek">Het boek - <?php echo $data['book']; ?></a> </li>
-              <li><a href="preview"> Preview</a></li>
-              <li><a href="awards"> Gewonnen awards</a></li>
-              <li><a href="recensies"> Recensies </a></li>
-              <li><a href="vehaal">Het verhaal</a></li>
+              <li><a href="index.php?page=<?php echo $_GET['page'] . '&id=' . $_GET['id']; ?>?menu=cyberspace#cyberspace"><?php echo $data['intro']; ?></a></li>
+              <li><a href="index.php?page=<?php echo $_GET['page'] . '&id=' . $_GET['id']; ?>?menu=auteur#auteur">De Auteur - <?php echo $data['author']; ?></a> </li>
+              <li><a href="index.php?page=<?php echo $_GET['page'] . '&id=' . $_GET['id']; ?>?menu=boek#boek">Het boek - <?php echo $data['book']; ?></a> </li>
+              <li><a href="index.php?page=<?php echo $_GET['page'] . '&id=' . $_GET['id']; ?>?menu=preview#preview"> Preview</a></li>
+              <li><a href="index.php?page=<?php echo $_GET['page'] . '&id=' . $_GET['id']; ?>?menu=awards#awards"> Gewonnen awards</a></li>
+              <li><a href="index.php?page=<?php echo $_GET['page'] . '&id=' . $_GET['id']; ?>?menu=recensies#recensies"> Recensies </a></li>
+              <li><a href="index.php?page=<?php echo $_GET['page'] . '&id=' . $_GET['id']; ?>?menu=verhaal#verhaal">Het verhaal</a></li>
             </ul>
             <div class="longread_menu_bottom">
               <a href="index.php?page=detail&id=<?php echo $_GET['id']; ?>"><span class="arrow_white_right"></span>Terug naar webshop</a>
             </div>
-
             <div class="text_side menu_side">
-              <picture>
-                <!-- <source media="(max-width: 786px)" srcset="./assets/img/text_side/text_recensies_small.svg" />
-                <source media="(max-width: 1280px)" srcset="./assets/img/text_side/text_recensies_small.svg" />
-                <source media="(min-width: 1280px)" srcset="./assets/img/text_side/text_recensies.svg" /> -->
-                <img src="./assets/img/text_side/menu_text.svg" alt="Menu outlined text">
-              </picture>
+              <img src="./assets/img/text_side/menu_text.svg" alt="Menu outlined text">
             </div>
           </div>
         </div>
@@ -101,18 +96,19 @@
       <footer class="footer">
         <div class="width_content flex_footer">
           <div>
+            <p class="footer_item_small_uppercase">Neem een abonnement</p>
             <ul>
-              <li>Privacybeleid</li>
-              <li>Wedstrijdregelement</li>
-              <li>Adverteren</li>
-              <li>Gebruiksvoorwaarden</li>
-              <li>Cookiebeleid</li>
-              <li>Cookie instellingen</li>
-              <li>Contact</li>
-              <li>Colofon</li>
+              <li class="footer_item">Privacybeleid</li>
+              <li class="footer_item">Wedstrijdregelement</li>
+              <li class="footer_item">Adverteren</li>
+              <li class="footer_item">Gebruiksvoorwaarden</li>
+              <li class="footer_item_small">Cookiebeleid</li>
+              <li class="footer_item">Cookie instellingen</li>
+              <li class="footer_item_small">Contact</li>
+              <li class="footer_item_small">Colofon</li>
             </ul>
           </div>
-          <div>
+          <div class="footer_second_row">
             <ul>
               <div class="flex">
                 <li><img src="./assets/img/logo/dpg-media.png" alt="dpg_logo"></li>

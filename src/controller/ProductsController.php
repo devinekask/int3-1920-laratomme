@@ -89,7 +89,6 @@ class ProductsController extends Controller
     $_SESSION['order']['orderlines'][$product_variant_id]['quantity'] = !empty($_SESSION['order']['orderlines'][$product_variant_id]['quantity']) ? $_SESSION['order']['orderlines'][$product_variant_id]['quantity'] + $quantity : $quantity;
     $_SESSION['order']['ordertotal'] = !empty($_SESSION['order']['ordertotal']) ? $_SESSION['order']['ordertotal'] + $amount : $amount;
     $_SESSION['order']['ordercount'] = !empty($_SESSION['order']['ordercount']) ? $_SESSION['order']['ordercount'] + $quantity : $quantity;
-    $_SESSION['info'] = 'Het product is toegevoegd aan je winkelmandje.
-      <a href="index.php?page=cart">Bekijk je winkelmandje<span class="arrow_icon"></a>';
+    $_SESSION['info'] = 'Het product is toegevoegd aan je winkelmandje.<br><a href="index.php?page=cart">Bekijk je winkelmandje<span class="arrow_icon"></a>';
   }
 }

@@ -22,10 +22,9 @@
   color: var(--colortext);
   display: flex;
 
-  @media (--header--only-regular-screen) {
+  @media (--screen-under-320) {
     flex-direction: column-reverse;
     align-items: center;
-    margin-top: 1rem;
   }
 }
 
@@ -34,7 +33,6 @@
     margin-bottom: -1.5rem;
     height: 34px;
   }
-
 }
 
 .cart_items:hover {
@@ -44,7 +42,6 @@
 .header ul {
   list-style-type: none;
   display: contents;
-  line-height: 70px;
 }
 
 .menu_item {
@@ -55,20 +52,26 @@
   vertical-align: middle;
   margin: 0;
 
-  /* @media (--header--only-regular-screen) {
+  @media (--screen-under-786) {
     display: none;
-  } */
+  }
 }
 
 .hamburger_icon {
   display: none;
 
-  /* @media (--header--only-regular-screen) {
+  @media (--screen-under-786) {
     display: inline;
     appearance: none;
     border: none;
     background-color: none;
-  } */
+  }
+}
+
+.hamburger_icon input {
+  appearance: none;
+  border: none;
+  background-color: none;
 }
 
 .header .logo_humo {
@@ -101,7 +104,6 @@
   list-style: none;
   background-color: var(--colorWhite);
   border: 2px solid var(--colorLightGreen);
-  padding: 1rem 2rem;
   margin: 1rem;
   text-align: center;
   text-transform: var(--textUppercase);
@@ -118,18 +120,29 @@
 }
 
 .longread_menu {
-  background-color: var(--colorWhite);
+  /* background-color: var(--colorWhite); */
   /* height: 100vh; */
-  display: none;
-  height: 0;
+  /* max-height: 0; */
   /* display: flex; */
   justify-content: center;
   align-items: center;
+  display: none;
+  clear: both;
+  max-height: 0;
+}
+
+.hamburger_longread:checked ~ .longread_menu {
+  height: 100vh;
+  max-height: none;
+  display: flex;
 }
 
 .longread_menu a {
   text-decoration: none;
   color: var(--colorText);
+  width: 100%;
+  padding: 1rem 2rem;
+  display: block;
 }
 
 .longread_menu ul {
@@ -207,6 +220,14 @@
   background-color: var(--colorText);
   width: 100vw;
   box-shadow: 0 4px 5px rgba(29, 220, 71, .5);
+  display: grid;
+  grid-template-rows: 1fr;
+  padding: 1rem;
+}
+
+.hamburger_bars {
+  grid-row: 1;
+  grid-column: 1;
 }
 
 .hamburgerbar {
@@ -220,4 +241,17 @@
   left: 1rem;
   top: 1rem;
   position: absolute;
+}
+
+.header_longread input {
+  appearance: none;
+  border: none;
+  background: transparent;
+  display: inline-block;
+  position: relative;
+}
+
+.logo_humo_longread {
+  grid-row: 1;
+  grid-column: 1;
 }

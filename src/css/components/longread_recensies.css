@@ -19,6 +19,7 @@
   margin-top: 6rem;
   width: 100vw;
   max-width: 33.75rem;
+  padding: 1rem;
 
   @media (--screen-under-786) {
     margin-top: 3rem;

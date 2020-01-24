@@ -113,7 +113,7 @@ class OrderController extends Controller
           }
 
           $_SESSION['order'] = array();
-          $_SESSION['info'] = 'Je hebt je bestelling afgerond. Binnekort ontvang je je producten.';
+          $_SESSION['info'] = 'Je hebt je bestelling afgerond. Binnenkort ontvang je je producten.';
           header('Location: index.php');
           exit();
           break;

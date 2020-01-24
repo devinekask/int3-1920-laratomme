@@ -6,16 +6,16 @@
       <h2><a class="title_red" href="index.php">Verder winkelen</a></h2>
       <div class="cart_navigation">
         <div class="cart_nav--step crumb process_active">
-          <p class="process_title--first">1. Winkelmandje</p>
+          <p class="process_title--first">1. <span class="basket_small"> Winkelmandje</span></p>
         </div>
         <div class="cart_nav--step crumb">
-          <p class="process_title">2. Informatie</p>
+          <p class="process_title">2. <span class="basket_small">Informatie</span></p>
         </div>
         <div class="cart_nav--step crumb">
-          <p class="process_title">3. Verzenden</p>
+          <p class="process_title">3. <span class="basket_small">Verzenden</span></p>
         </div>
         <div class="cart_nav--step">
-          <p class="process_title">4. Betalen</p>
+          <p class="process_title">4. <span class="basket_small">Betalen</span></p>
         </div>
       </div>
 
@@ -23,9 +23,9 @@
         <div class="basket">
           <div class="basket_grid">
             <p class="basket_heading--first">Product</p>
-            <p class="basket_heading basket_heading--price">Prijs</p>
-            <p class="basket_heading">Aantal</p>
-            <p class="basket_heading">Subtotaal</p>
+            <p class="basket_heading basket_heading--price basket_small">Prijs</p>
+            <p class="basket_heading basket_small">Aantal</p>
+            <p class="basket_heading ">Subtotaal</p>
             <img class="basket_line" src="./assets/img/icons/line.png" alt="line">
 
 
@@ -33,19 +33,19 @@
             foreach ($order['orderlines'] as $product_variant_id => $orderline) :
               $subtotal = $orderline['quantity'] * $orderline['variant']['price'];
             ?>
-              <div class="basket_img"><img src="<?php echo $orderline['thumbnail_url'] ?>" alt="product image"></div>
+              <div class="basket_img basket_small"><img src="<?php echo $orderline['thumbnail_url'] ?>" alt="product image"></div>
               <div class="basket_prd--info">
                 <p class="basket_prd_title"><?php echo $orderline['name'] ?></p>
                 <?php if ($orderline['name'] != $orderline['variant']['name']) { ?>
                   <p><?php echo $orderline['variant']['name'] ?></p>
                 <?php } ?>
               </div>
-              <p class="basket_prd-price"><?php echo $orderline['variant']['price'] ?></p>
-              <div class="basket_prd--qty">
+              <p class="basket_prd-price basket_small"><?php echo $orderline['variant']['price'] ?></p>
+              <div class="basket_prd--qty basket_small">
                 <input type="number" name="quantity[<?php echo $product_variant_id ?>]" min="1" max="50" value="<?php echo $orderline['quantity'] ?>">
               </div>
-              <p class="basket_prd--subtot"><?php echo $subtotal; ?></p>
-              <button type="submit" name="delete" value="<?php echo $product_variant_id ?>" class="basket_prd--delete">X Verwijder</button>
+              <p class="basket_prd--subtot "><?php echo $subtotal; ?></p>
+              <button type="submit" name="delete" value="<?php echo $product_variant_id ?>" class="basket_prd--delete"><span>X Verwijder</span> </button>
               <img class="basket_line2" src="./assets/img/icons/line.png" alt="line">
             <?php endforeach; ?>
 

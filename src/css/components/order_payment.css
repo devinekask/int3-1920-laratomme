@@ -37,4 +37,9 @@ button [type='submit'] {
   border-radius: 2px;
   font-weight: var(--fontWeightBold);
   padding: .6rem 1rem;
+
+  @media (max-width: 375px) {
+    margin-top: 1rem;
+    width: 11.6rem;
+  }
 }
