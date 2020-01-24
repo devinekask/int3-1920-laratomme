@@ -1,5 +1,6 @@
 .longread_verhaal {
   text-align: center;
+  line-height: 120%;
   color: var(--colorLightGreen);
   text-transform: var(--textUppercase);
   font-weight: var(--fontWeightBold);
@@ -9,4 +10,16 @@
   margin: 6.5rem 0;
   background-size: auto auto;
   background-image: repeating-linear-gradient(180deg, transparent, transparent 70px, #17ac38 70px, #17ac38 71px), repeating-linear-gradient(90deg, transparent, transparent 70px, #17ac38 70px, #17ac38 71px);
+
+  @media (--screen-under-786) {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+    font-size: var(--fontTitleMedium);
+  }
+
+  @media (--screen-under-320) {
+    font-size: var(--fontBig);
+    margin: 1rem 0;
+    line-height: 160%;
+  }
 }

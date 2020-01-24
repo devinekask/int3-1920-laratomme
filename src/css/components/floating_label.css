@@ -1,4 +1,4 @@
-.floating_label_input{
+/* .floating_label_input{
   border-width: 0;
   color: rgba(#2c3e50, .75);
   &:focus {
@@ -72,4 +72,4 @@
   &:invalid {
     border-color: rgba(#ff4757, .3);
   }
-}
+} */

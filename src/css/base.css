@@ -22,5 +22,9 @@ body {
 }
 
 main {
-  margin-top: 6rem;
+  margin-top: 4rem;
+
+  @media (--only-small-screen) {
+    margin-top: 2rem;
+  }
 }

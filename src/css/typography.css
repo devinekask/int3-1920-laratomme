@@ -3,6 +3,14 @@ body {
   font-family: var(--font);
   font-weight: var(--fontWeightRegular);
   line-height: 150%;
+
+  @media (--screen-under-786) {
+    font-size: var(--fontRegularSecond);
+  }
+
+  @media (--screen-under-320) {
+    font-size: var(--fontMedium);
+  }
 }
 
 h1 {
@@ -62,8 +70,17 @@ h1 {
   right: 0;
   position: absolute;
 
-  @media (--only-medium-screen) {
+  /* @media (--only-medium-screen) {
     max-width: 970px;
+  } */
+
+  @media (--screen-under-786) {
+    font-size: var(--fontTitleSmall);
+  }
+
+  @media (--screen-under-320) {
+    font-size: var(--fontBig);
+    text-align: center;
   }
 
 }

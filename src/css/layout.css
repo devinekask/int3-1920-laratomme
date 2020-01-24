@@ -68,6 +68,10 @@
 .text_side {
   right: 0;
   position: absolute;
+
+  @media (--screen-under-786) {
+    display: none;
+  }
 }
 
 .container_longread {

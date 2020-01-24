@@ -16,7 +16,7 @@
 }
 
 input:focus {
-  outline: thin dotted;
+  outline: 2px blue thin dotted;
 }
 
 .form_part input {
@@ -65,4 +65,44 @@ input:focus {
   font-weight: var(--fontWeightBold);
   padding: .6rem 1rem;
   border: none;
+}
+
+.form_information input:valid {
+  padding-right: 2rem;
+  border: solid 2px #008a2f;
+  width: -webkit-fill-available;
+  background: url(../../assets/img/correct.svg) no-repeat;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 346px 20px;
+}
+
+.form_information input:invalid {
+  padding-right: 2rem;
+  border: solid 2px #bd1515;
+  width: -webkit-fill-available;
+  background: url(../../assets/img/fault.svg) no-repeat;
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: 346px 20px;
+}
+
+.floating_wrapper {
+  position: relative;
+}
+
+.floating_wrapper label {
+  position: absolute;
+  top: 1px;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transition: .2s;
+  padding-bottom: 2px;
+}
+
+.floating_wrapper input:focus + label {
+  top: 33px;
+  font-size: 12px;
+  color: darkgrey;
 }

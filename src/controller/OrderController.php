@@ -61,7 +61,7 @@ class OrderController extends Controller
         case 'information':
           break;
         case 'shipping':
-          if (!empty($_POST['email'])) {
+          if (!empty($_POST['previous_step']) && $_POST['previous_step'] === 'information') {
             $_SESSION['order']['customer']['email'] = $_POST['email'];
             $_SESSION['order']['customer']['firstname'] = $_POST['firstname'];
             $_SESSION['order']['customer']['lastname'] = $_POST['lastname'];

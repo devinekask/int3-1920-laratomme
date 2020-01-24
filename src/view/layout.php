@@ -40,34 +40,40 @@
     <?php } else { ?>
 
       <header id="#top" class="header_longread">
-        <div class="container">
+        <div class="header_bkg">
           <div class="container" onclick="myFunction(this)">
             <!-- hamburger menu icon - funtion js toevoegen toggle / css -->
             <a class="hamburger_longread" href="">
-              <div class="hamburgerbar1"></div>
-              <div class="hamburgerbar2"></div>
-              <div class="hamburgerbar3"></div>
+              <div class="hamburgerbar"></div>
+              <div class="hamburgerbar"></div>
+              <div class="hamburgerbar"></div>
             </a>
           </div>
           <div class="logo_humo_longread">
-            <picture>
-              <source media="(max-width: 786px)" srcset="./assets/img/humo_logo_small.svg" />
-              <source media="(min-width: 1280px)" srcset="./assets/img/humo_logo.svg" />
-              <img src="./assets/img/humo_logo.svg" alt="Humo logo">
-            </picture>
+            <img src="./assets/img/humo_logo.svg" alt="Humo logo">
           </div>
-          <div class="hidden">
+          <div class="longread_menu">
             <ul>
-              <li><?php echo $data['intro']; ?></li>
-              <li>De Auteur - <?php echo $data['author']; ?></li>
-              <li>Het boek - <?php echo $data['book']; ?></li>
-              <li>Preview</li>
-              <li>Gewonnen awards</li>
-              <li>Recensies</li>
-              <li>Het verhaal</li>
+              <li><a href="cyberspace"><?php echo $data['intro']; ?></a></li>
+              <li><a href="auteur">De Auteur - <?php echo $data['author']; ?></a> </li>
+              <li><a href="boek">Het boek - <?php echo $data['book']; ?></a> </li>
+              <li><a href="preview"> Preview</a></li>
+              <li><a href="awards"> Gewonnen awards</a></li>
+              <li><a href="recensies"> Recensies </a></li>
+              <li><a href="vehaal">Het verhaal</a></li>
             </ul>
-            <p class="side_text_menu">Menu</p>
-            <a href="index.php?page=detail&id=<?php echo $_GET['id']; ?>">Terug naar webshop <span></span></a>
+            <div class="longread_menu_bottom">
+              <a href="index.php?page=detail&id=<?php echo $_GET['id']; ?>"><span class="arrow_white_right"></span>Terug naar webshop</a>
+            </div>
+
+            <div class="text_side menu_side">
+              <picture>
+                <!-- <source media="(max-width: 786px)" srcset="./assets/img/text_side/text_recensies_small.svg" />
+                <source media="(max-width: 1280px)" srcset="./assets/img/text_side/text_recensies_small.svg" />
+                <source media="(min-width: 1280px)" srcset="./assets/img/text_side/text_recensies.svg" /> -->
+                <img src="./assets/img/text_side/menu_text.svg" alt="Menu outlined text">
+              </picture>
+            </div>
           </div>
         </div>
       </header>

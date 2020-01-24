@@ -2,6 +2,16 @@
   margin-top: 10rem;
   margin-bottom: 6.25rem;
   background-color: var(--colorDarkGreen);
+
+  @media (--screen-under-786) {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (--screen-under-320) {
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
 }
 
 .container_recensies {
@@ -9,22 +19,46 @@
   margin-top: 6rem;
   width: 100vw;
   max-width: 33.75rem;
+
+  @media (--screen-under-786) {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (--screen-under-320) {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
 }
 
 .container_recensies p {
   text-align: center;
   color: var(--colorWhite);
   padding-bottom: var(--paddingBigger);
+
+  @media (--screen-under-320) {
+    padding-bottom: 1rem;
+  }
 }
 
 .container_recensies img {
   margin: auto;
   display: flex;
   padding-bottom: var(--paddingBigger);
+
+  @media (--screen-under-320) {
+    padding-bottom: 1rem;
+  }
 }
 
 .recensies_text {
   margin-top: 6.5rem;
+
+  @media (--screen-under-320) {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding: .6rem;
+  }
 }
 
 .side_recensies {

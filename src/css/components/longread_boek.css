@@ -1,6 +1,17 @@
 .longread_boek {
   margin-top: 10rem;
   margin-bottom: 6.25rem;
+
+  @media (--screen-under-786) {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (--screen-under-320) {
+    margin-top: 2rem;
+    margin-bottom: 0;
+    margin-left: 0.5rem;
+  }
 }
 
 .boek_content {
@@ -8,11 +19,16 @@
   flex-direction: row-reverse;
   align-items: center;
   margin-top: 5.63rem;
+
+  @media (--screen-under-786) {
+    flex-direction: column-reverse;
+  }
 }
 
 .boek_text {
   max-width: 32.5rem;
   margin-left: var(--paddingMedium);
+  margin-right: var(--paddingMedium);
 }
 
 .boek_text div {

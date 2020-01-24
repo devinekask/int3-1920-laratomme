@@ -4,16 +4,34 @@
   height: fit-content;
   padding: 1.5rem;
   margin-right: 1rem;
+  margin-bottom: 2rem;
 }
 
 .auteur_content {
   display: flex;
   margin-top: 5.63rem;
+
+  @media (--screen-under-786) {
+    flex-direction: column;
+    align-items: center;
+  }
+
 }
 
 .longread_auteur {
   margin-top: 10rem;
   margin-bottom: 6.25rem;
+
+  @media (--screen-under-786) {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (--screen-under-320) {
+    margin-top: 2rem;
+    margin-bottom: 0;
+    margin-left: 0.5rem;
+  }
 }
 
 .highlight {

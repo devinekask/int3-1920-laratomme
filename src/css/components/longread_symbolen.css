@@ -1,15 +1,50 @@
 .longread_symbolen {
   margin-top: 10rem;
   margin-bottom: 6.25rem;
+
+  @media (--screen-under-786) {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+  }
+
+  @media (--screen-under-320) {
+    margin-top: 2rem;
+    margin-bottom: 0;
+  }
 }
 
 .symbolen_content {
   margin: 6.5rem auto;
   max-width: 893px;
+  display: flex;
+  flex-wrap: wrap;
+
+  @media (--screen-under-320) {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin-top: 1rem;
+    margin-left: .6rem;
+  }
 }
 
-.symbool {
+.flex_row {
   display: flex;
+
+  @media (--screen-under-320) {
+    flex-direction: column;
+    margin-right: 1rem;
+  }
+}
+
+.flex_reserve {
+  display: flex;
+  /* flex-direction: row-reverse; */
+
+  @media (--screen-under-320) {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    margin-right: 1rem;
+  }
 }
 
 .margin-symbool-right {
@@ -23,8 +58,23 @@
 .dotted_green_line {
   color: var(--colorLightGreen);
   margin: var(--paddingBigger) 0;
+
+  @media (--screen-under-320) {
+    display: none;
+  }
 }
 
 .side_symbolen {
   margin-top: 8rem;
+}
+
+.scroll_text_green {
+  display: none;
+
+  @media (--screen-under-320) {
+    display: block;
+    text-align: center;
+    margin-top: 5rem;
+    color: var(--colorLightGreen);
+  }
 }

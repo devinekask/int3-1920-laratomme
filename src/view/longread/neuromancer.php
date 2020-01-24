@@ -10,7 +10,7 @@
   <p class="container_longread intro_sub_small">Boek van William Gibson</p>
 </section>
 
-<section class="longread_cyberspace lr_section">
+<section id="cyberspace" class="longread_cyberspace lr_section">
   <div>
     <h2 class="container_longread h2_lightgreen">In de Cyberspace</h2>
     <div class="container_longread cyberspace_borders">
@@ -57,7 +57,7 @@
 </section>
 
 
-<section class="longread_auteur lr_section">
+<section id="auteur" class="longread_auteur lr_section">
 
   <div class="container_longread">
     <h2 class="container_longread h2_lightgreen">De auteur - William Gibson</h2>
@@ -88,7 +88,7 @@
 
 
 
-<section class="longread_boek lr_section">
+<section id="boek" class="longread_boek lr_section">
   <div class="container_longread">
     <h2 class="container_longread h2_orange">Het boek nu te koop bij Humo</h2>
     <div class="boek_content">
@@ -137,7 +137,7 @@
 
 
 
-<section id="preview" class="longread_preview lr_section">
+<section id="preview" id="preview" class="longread_preview lr_section">
   <div>
     <h2 class="container_longread h2_darkgreen">Lees een preview van het boek</h2>
     <div class="skip_align">
@@ -166,8 +166,7 @@
 </section>
 
 
-
-<section id="recensies" class="longread_recensies lr_section">
+<section id="recensies" id="recensies" class="longread_recensies lr_section">
   <div class="container_longread container_recensies">
     <h2 class="h2_white container_longread">Recensies</h2>
     <div class="recensies_text">
@@ -197,7 +196,7 @@
 
 
 
-<section class="lr_section longread_awards">
+<section id="awards" class="lr_section longread_awards">
   <div class="container_longread">
     <h2 class="h2_orange container_longread">Gewonnen awards</h2>
     <div class="awards_content container_longread">
@@ -256,14 +255,18 @@
   </div>
 </section>
 
-<section class="longread_verhaal">
+<section id="verhaal" class="longread_verhaal">
   <h2 class="container_longread">Het verhaal</h2>
 </section>
 
 <section class="lr_section longread_personages">
   <div class="container_longread">
     <h2 class="container_longread h2_orange">Hoofdpersonages in Neuromancer</h2>
+    <p class="scroll_text">
+      <- Scroll voor meer ->
+    </p>
     <div class="personages_flex">
+
       <div class="personage">
         <img src="./assets/img/case_name.svg" alt="Case outlined letters">
         <div class="border_orange personage_border">
@@ -326,34 +329,47 @@
 <section class="lr_section longread_symbolen">
   <div class="container_longread">
     <h2 class="container_longread h2_lightgreen">Symbolen in Neuromancer</h2>
+    <p class="scroll_text_green">
+      <- Scroll voor meer ->
+    </p>
     <div class="symbolen_content">
-      <div class="symbool">
+
+      <div class="symbool flex_row">
         <img class="margin-symbool-right" src="./assets/img/symbool_ogen.svg" alt="Ogen illustratie">
         <p><span class="h3_green">Ogen</span>, en de daarmee samenhangende kwaliteit van het gezichtsvermogen, zijn zeer symbolisch in Neuromancer. Dit begint met Molly's gespiegelde ogen: niets kan in haar zien. In plaats van in haar ziel te staren, zien mensen die naar haar ogen kijken alleen zichzelf.</p>
       </div>
+
       <img class="dotted_green_line" src="./assets/img/line_dottedgreen.svg" alt="Dotted green line">
-      <div class="symbool">
+
+      <div class="symbool flex_reserve">
         <p><span class="h3_green">Namen</span>
           Geven het doel, de achtergrond en de persoonlijkheid van elk personage aan.
           Ten eerste zijn namen in het hele boek betekenisvol, maar de aard van hun betekenis varieert. Sommige namen zijn bijnamen en vertegenwoordigen overwinningen. Andere namen zijn symbolisch. Nog andere namen zijn betekenisvol vanwege hun paradoxale karakter. Tenslotte, namen betekenen macht. </p>
         <img class="margin-symbool-left" src="./assets/img/symbool_namen.svg" alt="Namen illustratie">
       </div>
+
       <img class="dotted_green_line" src="./assets/img/line_dottedgreen.svg" alt="Dotted green line">
-      <div class="symbool">
+
+      <div class="symbool flex_row">
         <img class="margin-symbool-right" src="./assets/img/symbool_wespen.svg" alt="Wespennest illustratie">
         <p><span class="h3_green">Het wespennest</span> staat symbool voor de invloed en het verlies van identiteit binnen de Tessier-Ashpool-clan.</p>
       </div>
+
       <img class="dotted_green_line" src="./assets/img/line_dottedgreen.svg" alt="Dotted green line">
-      <div class="symbool">
+
+      <div class="symbool flex_reserve">
         <p><span class="h3_green">Videogames</span> zijn op verschillende manieren een belangrijk element in de roman.
           "De matrix heeft zijn wortels in primitieve arcadespellen".</p>
         <img class="margin-symbool-left" src="./assets/img/symbool_games.svg" alt="Videogame console illustratie">
       </div>
+
       <img class="dotted_green_line" src="./assets/img/line_dottedgreen.svg" alt="Dotted green line">
-      <div class="symbool">
+
+      <div class="symbool flex_row">
         <img class="margin-symbool-right" src="./assets/img/symbool_werpster.svg" alt="Werpster illustratie">
         <p>Als metalen sterren zijn <span class="h3_green">shuriken</span> kunstmatige voorstellingen van natuurlijke schoonheid. In de roman zijn ze handelswaar en vertegenwoordigen ze verschillende dingen: de commodificatie van vechtsporten (zoals vechtsportfilms), de globalisering van culturen, en de manier waarop de natuur wordt getemd en gedenaturaliseerd (zoals de majestueuze sterren handheld nieuwigheden worden).</p>
       </div>
+
     </div>
   </div>
 
@@ -372,12 +388,13 @@
     <h2 class="container_longread h2_darkgreen">Thema's in Neuromancer</h2>
     <div class="themas_content">
       <p>Klik op een thema om er over te lezen.</p>
-      <div class="thema_grid">
-        <label for="thema1"><input type="radio" name="thema" id="thema1">Mensheid en technologie</label>
-        <label for="thema2"><input type="radio" name="thema" id="thema2">Kennis en informatie</label>
-        <label for="thema3"><input type="radio" name="thema" id="thema3">Versnippering</label>
-        <label for="thema4"><input type="radio" name="thema" id="thema4">Identiteit</label>
-        <label for="thema5"><input type="radio" name="thema" id="thema5">Tijd</label>
+      <div class="thema_wrapper">
+        <div class="thema"><a href="">Mensheid en technologie</a><img src="assets/img/thema_white.svg" alt="thema illustratie"></div>
+        <div class="thema"><a href="">Kennis en informatie</a><img src="assets/img/thema_white.svg" alt="thema illustratie"></div>
+        <div class="thema"><a href="">Versnippering</a><img src="assets/img/thema_white.svg" alt="thema illustratie"></div>
+        <div class="thema"><a href="">Identiteit</a><img src="assets/img/thema_white.svg" alt="thema illustratie"></div>
+        <div class="thema"><a href="">Tijd</a><img src="assets/img/thema_white.svg" alt="thema illustratie"></div>
+        <div class="hidden"><img src="assets/img/thema_green.svg" alt="thema illustratie"></div>
       </div>
       <div class="text_thema1">
         <p>Mensheid en technologie</p>

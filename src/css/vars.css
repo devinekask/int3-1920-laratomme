@@ -21,6 +21,7 @@
   --fontSmall: .75rem; /* 12px */
   --fontBetween: .88rem; /*14px */
   --fontRegular: 1rem; /* 16px */
+  --fontRegularSecond: 1.06rem;/*17px*/
   --fontMedium: 1.13rem; /* 18px*/
   --fontLarger: 1.38rem; /* 22px */
   --fontBig: 1.63rem; /* 26px */
@@ -47,5 +48,8 @@
 @custom-media --only-extra-small-screen (width <= 600px);
 @custom-media --only-small-screen (width => 600px);
 @custom-media --only-medium-screen (width => 786px);
+@custom-media --only-medium-and-down-screen (width <= 786px);
 @custom-media --only-large-screen (width => 992px);
 @custom-media --only-extra-large-screen (width => 1280px);
+@custom-media --screen-under-786 (width <= 786px);
+@custom-media --screen-under-320 (width <= 320px);

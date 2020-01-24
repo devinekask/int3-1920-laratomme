@@ -2,6 +2,17 @@
   background-color: var(--colorText);
   padding-top: 10rem;
   padding-bottom: 6.25rem;
+
+  @media (--screen-under-786) {
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+  }
+
+  @media (--screen-under-320) {
+    padding-top: 0;
+    padding-bottom: 2rem;
+  }
 }
 
 .text_white {
@@ -41,18 +52,18 @@
 
 .cyberspace_div--orange {
   margin-right: 4.2rem;
-  margin-top: -10rem;
   margin-bottom: 1rem;
-
-  @media (--only-medium-screen) {
-    margin-top: 0;
-  }
 }
 
 .cyberspace_borders {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   margin-top: 5.63rem;
+
+  @media (--screen-under-786) {
+    margin-top: 4.6rem;
+  }
 }
 
 .side_cyberspace {
@@ -76,14 +87,36 @@
   letter-spacing: .1em;
   text-align: center;
   margin-top: 10rem;
+
+  @media (--screen-under-786) {
+    font-size: var(--fontRegular);
+    text-align: left;
+    margin-top: 5rem;
+  }
+
+  @media (--screen-under-320) {
+    font-size: var(--fontRegular);
+    text-align: left;
+    margin-top: 1rem;
+  }
 }
 
 .green_arrow {
   display: block;
   text-align: center;
+
+  @media (--screen-under-786) {
+    width: 40px;
+  }
+
 }
 
 .flex_column {
   display: flex;
   flex-direction: column;
+  align-items: center;
+
+  @media (--screen-under-320) {
+    align-items: flex-start;
+  }
 }

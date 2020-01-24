@@ -22,11 +22,12 @@
       <?php if (empty($_POST['action']) || $_POST['action'] === 'information') { ?>
 
         <section class="order_information">
+          <input type="hidden" name="previous_step" value="information">
           <div class="order_information_part">
             <h1 class="order_information--title">Contact informatie</h1>
             <p>Vul je emailadres in zodat we je kunnen informeren over je bestelling.</p>
             <div class="form_part">
-              <input type="email" name="email" value="<?php echo !empty($order['customer']['email']) ? $order['customer']['email'] : null; ?>" placeholder="Email">
+              <input type="email" name="email" value="<?php echo !empty($order['customer']['email']) ? $order['customer']['email'] : null; ?>" placeholder="Email" required>
             </div>
             <p class="order_checkbox"><input type="checkbox" name="newsletter" <?php echo !empty($order['customer']['newsletter']) ? "checked" : ""; ?>>Schrijf me in voor een weekelijkse nieuwsbrief met Humo nieuws en acties.</p>
           </div>
@@ -39,32 +40,32 @@
             <div class="form_information">
 
               <div class="form_part floating_wrapper">
-                <input class="floating_label_input" type="text" name="firstname" placeholder="Voornaam" value="<?php echo !empty($order['customer']['firstname']) ? $order['customer']['firstname'] : null; ?>">
+                <input class="floating_label_input" id="firstname" type="text" name="firstname" value="<?php echo !empty($order['customer']['firstname']) ? $order['customer']['firstname'] : null; ?>" required>
                 <label class="floating_label" for="firstname">Voornaam</label>
               </div>
 
-              <div class="form_part">
-                <input class="floating_label_input" type="text" name="lastname" placeholder="Achternaam" value="<?php echo !empty($order['customer']['lastname']) ? $order['customer']['lastname'] : null; ?>">
+              <div class="form_part floating_wrapper">
+                <input class="floating_label_input" id="lastname" type="text" name="lastname" value="<?php echo !empty($order['customer']['lastname']) ? $order['customer']['lastname'] : null; ?>" required>
                 <label class="floating_label" for="lastname">Achternaam</label>
               </div>
 
-              <div class="form_part">
-                <input class="floating_label_input" type="text" name="adres" placeholder="Adres + nummer" value="<?php echo !empty($order['customer']['adres']) ? $order['customer']['adres'] : null; ?>">
+              <div class="form_part floating_wrapper">
+                <input class="floating_label_input" id="adres" type="text" name="adres" value="<?php echo !empty($order['customer']['adres']) ? $order['customer']['adres'] : null; ?>" required>
                 <label class="floating_label" for="adres">Adres + nummer</label>
               </div>
 
-              <div class="form_part">
-                <input class="floating_label_input" type="text" name="box" placeholder="Appartement, suite, etc (optioneel)" value="<?php echo !empty($order['customer']['box']) ? $order['customer']['box'] : null; ?>">
-                <label class="floating_label" for="box">Adres + nummer</label>
+              <div class="form_part floating_wrapper">
+                <input class="floating_label_input" id="box" type="text" name="box" value="<?php echo !empty($order['customer']['box']) ? $order['customer']['box'] : null; ?>">
+                <label class="floating_label" for="box">Appartement, suite, etc (optioneel)</label>
               </div>
 
-              <div class="form_part">
-                <input class="floating_label_input" type="text" name="postal" placeholder="Postcode" value="<?php echo !empty($order['customer']['postal']) ? $order['customer']['postal'] : null; ?>">
+              <div class="form_part floating_wrapper">
+                <input class="floating_label_input" id="postal" type="text" name="postal" value="<?php echo !empty($order['customer']['postal']) ? $order['customer']['postal'] : null; ?>" maxlength="4" required>
                 <label class="floating_label" for="postal">Postcode</label>
               </div>
 
-              <div class="form_part">
-                <input class="floating_label_input" type="text" name="city" placeholder="Stad" value="<?php echo !empty($order['customer']['city']) ? $order['customer']['city'] : null; ?>">
+              <div class="form_part floating_wrapper">
+                <input class="floating_label_input" id="city" type="text" name="city" value="<?php echo !empty($order['customer']['city']) ? $order['customer']['city'] : null; ?>" required>
                 <label class="floating_label" for="city">Stad</label>
               </div>
 
@@ -149,7 +150,7 @@
             <h1 class="order_information--title">Kortingscode</h1>
             <p>Vul hier je kortingscode in die je bij het Humo magazine hebt gevonden.</p>
             <div class="korting_part">
-              <input class="korting_input" type="text" placeholder="Kortingscode" name="code" value="<?php echo !empty($_SESSION['order']['discount']) ? $_SESSION['order']['discount']['code'] : null; ?>">
+              <input class="korting_input" type="text" placeholder="H_2020_001" name="code" value="<?php echo !empty($_SESSION['order']['discount']) ? $_SESSION['order']['discount']['code'] : null; ?>">
               <button class="korting_button" type="submit" name="action" value="submit_code">Toepassen</button>
             </div>
           </div>
