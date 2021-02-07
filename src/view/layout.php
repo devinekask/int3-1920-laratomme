@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
-  <title>Webshop Humo</title>
+  <title>Webshop HUMO</title>
   <?php echo $css; ?>
 </head>
 
